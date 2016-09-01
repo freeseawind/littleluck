@@ -1,6 +1,8 @@
 # littleluck
 Java Swing跨平台外观（L&amp;F）实现
 
+![](http://sc1.111ttt.com/2015/1/07/11/100112240509.mp3)
+
 ## 效果预览
 ![JButton](https://raw.githubusercontent.com/freeseawind/littleluck/master/screenshots/1.png)
 
