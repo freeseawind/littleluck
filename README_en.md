@@ -1,7 +1,7 @@
 # littleluck
 Java Swing跨平台外观（L&amp;F）实现
 
-## 效果预览
+## Preview
 ![JButton](https://raw.githubusercontent.com/freeseawind/littleluck/master/screenshots/1.png)
 
 ![JProgressBar](https://raw.githubusercontent.com/freeseawind/littleluck/master/screenshots/6.png)
