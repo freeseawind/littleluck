@@ -12,7 +12,7 @@ littleuck is a cross platform Java Swing LookAndFeel. Its name inspired by a son
 
 ## Minimum requirements
 * JDK 8+ for littleluck
-* [NinePatch](https://github.com/freeseawind/NinePatch) 1.0 for littleluck
+* [NinePatch](https://github.com/freeseawind/NinePatch) for littleluck
 
 ## Quick Start
 
