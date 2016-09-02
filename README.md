@@ -3,7 +3,7 @@ littleuck is a cross platform Java Swing LookAndFeel
 
 ## 功能介绍
 * Translucent shadow window border
-* LCD font for translucent window
+* ClearType font for translucent window
 * Flattening interphase support
 * Suspension scrollbar for scrollpane
 * Android ninepatch draw support
