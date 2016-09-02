@@ -1,9 +1,9 @@
 ## Introduction
-littleuck is a cross platform Java Swing LookAndFeel
+littleuck is a cross platform Java Swing LookAndFeel. Its name inspired by a song I like [小幸运](http://bd.kuwo.cn/yinyue/7204931?from=baidu), where the "it" is dedicated to all the friends who are still struggling Swing.
 
 ## Features
 * Translucent shadow window border
-* LCD font for translucent window
+* ClearType for translucent window
 * Flattening interphase support
 * Suspension scrollbar for scrollpane
 * Android ninepatch draw support
@@ -12,6 +12,7 @@ littleuck is a cross platform Java Swing LookAndFeel
 
 ## Minimum requirements
 * JDK 8+ for littleluck
+* [NinePatch](https://github.com/freeseawind/NinePatch) 1.0 for littleluck
 
 ## Quick Start
 
@@ -60,4 +61,4 @@ public class Startup
 
 ## Contact
 * Issues mail to :love_letter: `iphonewang@foxmail.com`
-* Join qq groupchat `148079860` <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=1db134f79c4bcb759a21302f4243a88ffb20f8f7b6ae5e66c38bd5c02604aa27"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="Java 技术交流群" title="Java 技术交流群"></a>
+* Join QQ groupchat `148079860` <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=1db134f79c4bcb759a21302f4243a88ffb20f8f7b6ae5e66c38bd5c02604aa27"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="Java 技术交流群" title="Java 技术交流群"></a>
