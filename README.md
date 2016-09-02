@@ -1,5 +1,5 @@
 ## Introduction
-littluck is a cross platform Java Swing LookAndFeel
+littleuck is a cross platform Java Swing LookAndFeel
 
 ## Features
 * Translucent shadow window border
