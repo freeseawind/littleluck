@@ -1,7 +1,7 @@
-## Introduction
+## 简介
 littleuck is a cross platform Java Swing LookAndFeel
 
-## Features
+## 功能介绍
 * Translucent shadow window border
 * LCD font for translucent window
 * Flattening interphase support
@@ -10,10 +10,10 @@ littleuck is a cross platform Java Swing LookAndFeel
 * Simple and easy extension
 * Much more...
 
-## Minimum requirements
+## 运行依赖
 * JDK 8+ for littleluck
 
-## Quick Start
+## 快速入门
 
 Download littluck, Add it to you project.
 
@@ -47,7 +47,7 @@ public class Startup
 
 ```
 
-## Preview
+## 图片预览
 ![JButton](https://raw.githubusercontent.com/freeseawind/littleluck/master/screenshots/1.png)
 
 ![JProgressBar](https://raw.githubusercontent.com/freeseawind/littleluck/master/screenshots/6.png)
@@ -58,6 +58,6 @@ public class Startup
 
 :point_right: [more](https://github.com/freeseawind/littleluck/wiki/Screenshots)
 
-## Contact
-* Issues mail to :love_letter: ： `iphonewang@foxmail.com`
-* Join qq groupcha：`148079860` <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=1db134f79c4bcb759a21302f4243a88ffb20f8f7b6ae5e66c38bd5c02604aa27"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="Java 技术交流群" title="Java 技术交流群"></a>
+## 联系作者
+* 如有Bug和建议邮箱至 :love_letter:  `iphonewang@foxmail.com`
+* 欢迎加入Java技术讨论群 `148079860` <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=1db134f79c4bcb759a21302f4243a88ffb20f8f7b6ae5e66c38bd5c02604aa27"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="Java 技术交流群" title="Java 技术交流群"></a>
