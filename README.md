@@ -1,5 +1,5 @@
 ## 简介
-littleuck是Java Swing跨平台外观(L&F)实现, 它的名字的灵感来源于我喜欢的一首歌
+littleuck是Java Swing跨平台外观(L&F)实现。 它的名字的灵感来源于我喜欢的一首歌
 [小幸运](http://bd.kuwo.cn/yinyue/7204931?from=baidu), 在这里把"它"献给所有仍在Swing奋斗的朋友。
 
 ## 功能介绍
@@ -13,7 +13,7 @@ littleuck是Java Swing跨平台外观(L&F)实现, 它的名字的灵感来源于
 
 ## 运行依赖
 * JDK 8+ for littleluck
-* NinePatch 1.0 for littleluck
+* [NinePatch](https://github.com/freeseawind/NinePatch) for littleluck
 
 ## 快速入门
 
