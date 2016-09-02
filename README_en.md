@@ -26,7 +26,7 @@ public class Startup
     public static void main(String[] args)
     {
         // if open it close
-        System.setProperty("awt.useSystemAAFontSettings", "off");
+        // System.setProperty("awt.useSystemAAFontSettings", "on");
 
         EventQueue.invokeLater(new Runnable()
         {
