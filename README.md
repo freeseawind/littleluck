@@ -1,21 +1,23 @@
 ## 简介
-littleuck is a cross platform Java Swing LookAndFeel
+littleuck是Java Swing跨平台外观(L&F)实现, 它的名字的灵感来源于我喜欢的一首歌
+[小幸运](http://bd.kuwo.cn/yinyue/7204931?from=baidu), 在这里把"它"献给所有仍在Swing奋斗的朋友。
 
 ## 功能介绍
-* Translucent shadow window border
-* ClearType font for translucent window
-* Flattening interphase support
-* Suspension scrollbar for scrollpane
-* Android ninepatch draw support
-* Simple and easy extension
-* Much more...
+* 窗体使用半透明阴影边框
+* 解决透明窗体字体渲染问题
+* 扁平化界面
+* 滚动条悬浮的滚动面板
+* 使用安卓点九绘图技术
+* 简单且容易扩展
+* 更多...
 
 ## 运行依赖
 * JDK 8+ for littleluck
+* NinePatch 1.0 for littleluck
 
 ## 快速入门
 
-Download littluck, Add it to you project.
+下载littluck，并添加到你的项目中
 
 `Startup.java`<br>
 
@@ -56,7 +58,7 @@ public class Startup
 
 ![JToolip](https://raw.githubusercontent.com/freeseawind/littleluck/master/screenshots/8.png)
 
-:point_right: [more](https://github.com/freeseawind/littleluck/wiki/Screenshots)
+:point_right: [更多截图](https://github.com/freeseawind/littleluck/wiki/Screenshots)
 
 ## 联系作者
 * 如有Bug和建议邮箱至 :love_letter:  `iphonewang@foxmail.com`
