@@ -61,7 +61,7 @@ public class Startup
 
 ![JToolip](https://raw.githubusercontent.com/freeseawind/littleluck/master/screenshots/8.png)
 
-:point_right: [more](https://github.com/freeseawind/littleluck/wiki/Screenshots)
+:point_right: [more](https://github.com/freeseawind/littleluck/wiki/%E6%9B%B4%E5%A4%9A%E6%88%AA%E5%9B%BE)
 
 ## [Wiki](https://github.com/freeseawind/littleluck/wiki)
 
