@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="lib/AnimatedTransitions.jar"/>
+	<classpathentry kind="lib" path="lib/AppFramework.jar"/>
+	<classpathentry kind="lib" path="lib/swing-worker.jar"/>
+	<classpathentry kind="lib" path="lib/swingx.jar"/>
+	<classpathentry kind="lib" path="lib/TimingFramework.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="E:/03_Program/Jdk8/jdk1.8.0_73/jre/lib/javaws.jar"/>
+	<classpathentry kind="lib" path="lib/littleluck.jar"/>
+	<classpathentry kind="lib" path="lib/ninepatch.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

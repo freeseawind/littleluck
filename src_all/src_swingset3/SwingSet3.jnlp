@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jnlp PUBLIC "-//Sun Microsystems, Inc.//DTD JNLP 1.5//EN" "http://www.netbeans.org/jnlp/DTD/jnlp.dtd">
+<jnlp codebase="http://download.java.net/javadesktop/swingset3" href="SwingSet3.jnlp" spec="6.0+">
+  <information>
+    <title>SwingSet3</title>
+    <vendor>Sun Microsystems, Inc.</vendor>
+    <homepage href="https://swingset3.dev.java.net"/>
+    <description>Demo to showcase features of the Swing UI toolkit in Java 6</description>
+    <icon href="swingset3/resources/images/splash.png" kind="splash"/>
+    <offline-allowed/>
+    <shortcut online="true"/>
+  </information>
+  <resources>
+    <j2se href="http://java.sun.com/products/autodl/j2se" version="1.6+"/>
+    <jar href="SwingSet3.jar" main="false"/>
+    <jar href="lib/AppFramework.jar"/>
+    <jar href="lib/TimingFramework.jar"/>
+    <jar href="lib/swing-worker.jar"/>
+    <jar href="lib/swingx.jar"/>
+  </resources>
+  <application-desc main-class="swingset3.SwingSet3"/>
+</jnlp>
