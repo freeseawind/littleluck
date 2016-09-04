@@ -1,6 +1,6 @@
 ## 简介
 littleuck是Java Swing跨平台外观(L&F)实现。 它的名字的灵感来源于我喜欢的一首歌
-[小幸运](http://bd.kuwo.cn/yinyue/7204931?from=baidu), 在这里把"它"献给所有仍在Swing奋斗的朋友。
+[小幸运](http://bd.kuwo.cn/yinyue/7204931?from=baidu)，在这里把"它"献给所有仍在Swing奋斗的朋友。
 
 ## 功能介绍
 * 窗体使用半透明阴影边框
@@ -59,6 +59,8 @@ public class Startup
 ![JToolip](https://raw.githubusercontent.com/freeseawind/littleluck/master/screenshots/8.png)
 
 :point_right: [更多截图](https://github.com/freeseawind/littleluck/wiki/Screenshots)
+
+## [Wiki](https://github.com/freeseawind/littleluck/wiki)
 
 ## 联系作者
 * 如有Bug和建议邮箱至 :love_letter:  `iphonewang@foxmail.com`

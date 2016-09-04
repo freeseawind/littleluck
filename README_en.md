@@ -59,6 +59,8 @@ public class Startup
 
 :point_right: [more](https://github.com/freeseawind/littleluck/wiki/Screenshots)
 
+## [Wiki](https://github.com/freeseawind/littleluck/wiki)
+
 ## Contact
 * Issues mail to :love_letter: `iphonewang@foxmail.com`
 * Join QQ groupchat `148079860` <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=1db134f79c4bcb759a21302f4243a88ffb20f8f7b6ae5e66c38bd5c02604aa27"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="Java 技术交流群" title="Java 技术交流群"></a>
