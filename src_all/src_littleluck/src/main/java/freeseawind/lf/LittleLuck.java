@@ -29,7 +29,9 @@ public class LittleLuck
 
     private LittleLuck()
     {
-
+        initLookAndFeelParam();
+        
+        initConfig();
     }
 
     public static LittleLuck getSingleton()
@@ -49,10 +51,6 @@ public class LittleLuck
      */
     public void luanchMetalLookAndFeel() throws Exception
     {
-        initLookAndFeelParam();
-
-        initConfig();
-
         UIManager.setLookAndFeel(LuckMetalLookAndFeel.class.getName());
 
         setPlatformFont();

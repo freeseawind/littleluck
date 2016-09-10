@@ -79,6 +79,8 @@ public class LuckRootPaneLayout extends AbstractLayout
                 LuckBackgroundPanel background = rootPaneUI.createContentPane(titlePanel, content);
 
                 window.addPropertyChangeListener(new WindowPropertyListener(background.getTitlePanel()));
+                
+                root.remove(content);
 
                 root.setContentPane(background);
             }
