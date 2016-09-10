@@ -50,7 +50,7 @@ public class LuckTitlePanel extends JPanel
 
     public LuckTitlePanel(boolean isResizeableOnInit, int initStyle)
     {
-    	setOpaque(false);
+        setOpaque(false);
 
         setLayout(createLayout());
 
@@ -79,16 +79,16 @@ public class LuckTitlePanel extends JPanel
 
         if(np != null)
         {
-            np.drawNinePatch((Graphics2D) g, 0, 0, getWidth(), getHeight());
+            np.drawNinePatch((Graphics2D) g, 0, 0, getWidth(), getHeight() - 2);
         }
 
         if(painter != null)
         {
-        	painter.drawComponent(g, this);
+            painter.drawComponent(g, this);
         }
     }
 
-	public boolean isLeftToRight()
+    public boolean isLeftToRight()
     {
         boolean leftToRight = (getWindow() == null)
                 ? getRootPane().getComponentOrientation().isLeftToRight()
@@ -132,14 +132,14 @@ public class LuckTitlePanel extends JPanel
      */
     public void setResizeable(boolean isResizeable)
     {
-    	if(isResizeable)
-    	{
-    		maximizeBtn.setVisible(true);
-    	}
-    	else
-    	{
-    		maximizeBtn.setVisible(false);
-    	}
+        if(isResizeable)
+        {
+            maximizeBtn.setVisible(true);
+        }
+        else
+        {
+            maximizeBtn.setVisible(false);
+        }
     }
 
     /**
@@ -420,9 +420,9 @@ public class LuckTitlePanel extends JPanel
     }
 
     public void setCallback(LuckCanvas painter)
-	{
-		this.painter = painter;
-	}
+    {
+        this.painter = painter;
+    }
 
     public void setState(int state)
     {

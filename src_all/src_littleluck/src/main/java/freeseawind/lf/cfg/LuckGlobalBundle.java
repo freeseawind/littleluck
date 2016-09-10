@@ -51,6 +51,8 @@ public class LuckGlobalBundle extends LuckResourceBundle
     {
         UIManager.put(APPLICATION_TITLE, LuckRes.getString("default.title"));
 
-        UIManager.put("Panel.background", Color.white);
+        UIManager.put(PANEL_BACKGROUND, Color.WHITE);
+        
+        UIManager.put("ColorChooserUI.background", Color.WHITE);
     }
 }

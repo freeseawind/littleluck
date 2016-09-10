@@ -16,6 +16,7 @@ import javax.swing.plaf.basic.BasicRootPaneUI;
 
 import freeseawind.lf.canvas.LuckCanvas;
 import freeseawind.lf.event.WindowMouseHandler;
+import freeseawind.lf.geom.LuckRectangle;
 
 /**
  * <p>RootPaneUI实现类， 使用完全不透明面板解决字体反走样问题。</p>
@@ -79,7 +80,7 @@ public class LuckRootPaneUI extends BasicRootPaneUI
      * <code>MouseInputListener</code> that is added to the parent
      * <code>Window</code> the <code>JRootPane</code> is contained in.
      */
-    private MouseInputListener mouseInputListener;
+    private WindowMouseHandler mouseInputListener;
 
     /**
      * The <code>LayoutManager</code> that is set on the <code>JRootPane</code>.
@@ -131,8 +132,10 @@ public class LuckRootPaneUI extends BasicRootPaneUI
         }
 
         JRootPane root = (JRootPane) e.getSource();
+        
+        Container parent = root.getParent();
 
-        if (!(root.getParent() instanceof Window))
+        if (!(parent instanceof Window))
         {
             return;
         }
@@ -169,6 +172,30 @@ public class LuckRootPaneUI extends BasicRootPaneUI
         // 使用自定义布局器
         return new LuckRootPaneLayout();
     }
+    
+    /**
+     * 设置面板可拖动区域
+     * 
+     * @param dragArea
+     */
+    public void setDragArea(LuckRectangle dragArea)
+    {
+        mouseInputListener.setDragArea(dragArea);
+    }
+    
+    /**
+     * 创建标题面板
+     * 
+     * @param isResizeableOnInit
+     * @param initStyle
+     * @return
+     */
+    protected LuckTitlePanel createTitlePanel(int initStyle,
+                                              boolean isResizeableOnInit)
+    {
+        return new LuckTitlePanel(isResizeableOnInit, initStyle);
+    }
+
 
     /**
      * 创建JRootPane内容面板
@@ -177,8 +204,8 @@ public class LuckRootPaneUI extends BasicRootPaneUI
      * @param oldContent 默认内容面板
      * @return <code>LuckBackgroundPanel</code>新的内容面板
      */
-    public LuckBackgroundPanel createContentPane(LuckTitlePanel titlePanel,
-                                                 Container oldContent)
+    protected LuckBackgroundPanel createContentPane(LuckTitlePanel titlePanel,
+                                                    Container oldContent)
     {
         return new LuckBackgroundPanel(oldContent, titlePanel);
     }
@@ -312,6 +339,8 @@ public class LuckRootPaneUI extends BasicRootPaneUI
             root.setContentPane(bgPanel.getContentPane());
             
             root.setJMenuBar(bgPanel.getJMenuBar());
+            
+            bgPanel.uninstallMenubar(true);
         }
         
         int style = root.getWindowDecorationStyle();

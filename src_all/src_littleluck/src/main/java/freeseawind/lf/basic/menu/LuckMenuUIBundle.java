@@ -106,7 +106,7 @@ public class LuckMenuUIBundle extends LuckResourceBundle
     @Override
     protected void installBorder()
     {
-        UIManager.put(MENUBAR_BORDER, BorderFactory.createEmptyBorder());
+        UIManager.put(MENUBAR_BORDER, BorderFactory.createEmptyBorder(3, 0, 3, 0));
 
         UIManager.put(MENU_BORDER, BorderFactory.createEmptyBorder());
     }

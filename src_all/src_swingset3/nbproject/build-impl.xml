@@ -226,7 +226,8 @@ is divided into following sections:
                 <zipfileset excludes="META-INF/*.SF" src="lib/swingx.jar" />
             	<zipfileset excludes="META-INF/*.SF" src="lib/TimingFramework.jar" />
             	<zipfileset excludes="META-INF/*.SF" src="lib/ninepatch.jar" />
-            	<zipfileset excludes="META-INF/*.SF" src="E:/03_Program/Jdk8/jdk1.8.0_73/jre/lib/javaws.jar" />
+            	<zipfileset excludes="META-INF/*.SF" src="E:/03_Program/Jdk7/jre7/lib/javaws.jar" />
+            	<!--<zipfileset excludes="META-INF/*.SF" src="E:/03_Program/Jdk8/jdk1.8.0_73/jre/lib/javaws.jar" /> -->
             </jar>
         </presetdef>
     </target>

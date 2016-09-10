@@ -43,7 +43,7 @@ public class LuckRootPaneLayout extends AbstractLayout
             root.getLayeredPane().setBounds(inset.left, inset.top, w, h);
         }
 
-        // 玻璃窗格是在层级面板中,所以坐标从(0,0)开始
+        // 玻璃窗格是在层级面板中,所以坐标从(0, 0)开始
         if(root.getGlassPane() != null)
         {
             root.getGlassPane().setBounds(inset.left, inset.top, w, h);
@@ -64,7 +64,8 @@ public class LuckRootPaneLayout extends AbstractLayout
 
             if(initStyle != JRootPane.NONE)
             {
-                LuckTitlePanel titlePanel = new LuckTitlePanel(isResizeableOnInit, initStyle);
+                //
+                LuckTitlePanel titlePanel = rootPaneUI.createTitlePanel(initStyle, isResizeableOnInit);
 
                 titlePanel.setTitle(LuckWindowUtil.getWindowTitle(window));
 

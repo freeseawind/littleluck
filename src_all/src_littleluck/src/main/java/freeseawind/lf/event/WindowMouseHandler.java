@@ -136,6 +136,9 @@ public class WindowMouseHandler implements MouseInputListener
         }
     }
 
+    /**
+     *  v1.0.1:修复自定义拖拽区域BUG, 增加边界判断
+     */
     public void mousePressed(MouseEvent e)
     {
         Window window = (Window) e.getSource();
@@ -148,8 +151,9 @@ public class WindowMouseHandler implements MouseInputListener
             return;
         }
 
-        // 如果是单击标题栏, 则标记接下来的拖动事件为移动窗口
-        if(dragArea.contains(e.getPoint()))
+        // 如果是单击标题栏, 则标记接下来的拖动事件为移动窗口, 判断当前鼠标是否超出边界
+        if (dragArea.contains(e.getPoint())
+                && dragCursor == Cursor.DEFAULT_CURSOR)
         {
             if(window instanceof JFrame)
             {
@@ -196,6 +200,9 @@ public class WindowMouseHandler implements MouseInputListener
         dragCursor = 0;
     }
 
+    /**
+     *  v1.0.1:修复自定义拖拽区域BUG, 保存游标状态
+     */
     public void mouseMoved(MouseEvent e)
     {
         Window window = (Window)e.getSource();
@@ -217,7 +224,7 @@ public class WindowMouseHandler implements MouseInputListener
             cursor = getCursor(w, h, point, rootPane.getInsets());
         }
 
-        if(cursor != 0)
+        if(cursor != Cursor.DEFAULT_CURSOR)
         {
             window.setCursor(Cursor.getPredefinedCursor(cursor));
         }
@@ -225,6 +232,8 @@ public class WindowMouseHandler implements MouseInputListener
         {
             window.setCursor(lastCursor);
         }
+        
+        dragCursor = cursor;
     }
 
     public void mouseEntered(MouseEvent e)

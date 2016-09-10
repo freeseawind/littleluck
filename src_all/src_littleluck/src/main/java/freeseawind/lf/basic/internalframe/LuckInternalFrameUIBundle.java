@@ -119,7 +119,7 @@ public class LuckInternalFrameUIBundle extends LuckResourceBundle
     /**
      *  [自定义属性]标题面板背景图片属性key
      */
-    public static final String TITLEPANEL_BG_IMG = "TitlePanel.bg.img";
+    public static final String TITLEPANEL_BG_IMG = "InternalFrame.titlePanel.bgImg";
 
     /**
      * [自定义属性] InternalFrame边标题面板高度属性key

@@ -3,6 +3,7 @@ package freeseawind.swing;
 import java.awt.Component;
 
 import javax.swing.JComponent;
+import javax.swing.JPopupMenu;
 import javax.swing.JWindow;
 import javax.swing.Popup;
 import javax.swing.PopupFactory;
@@ -23,19 +24,28 @@ public class LuckPopupFactory extends PopupFactory
     public Popup getPopup(Component owner, Component contents, int x, int y)
         throws IllegalArgumentException
     {
-        Popup popup = super.getPopup(owner, contents, x, y);
-
-        // 比较安全的hack方式
-        Object obj = SwingUtilities.getWindowAncestor(contents);
-
-        if (obj instanceof JWindow)
+        Popup popup = null;
+        
+        if(contents instanceof JPopupMenu)
         {
-            JWindow window = (JWindow) obj;
+            popup = new TranslucentPopup(owner, contents, x, y);
+        }
+        else
+        {
+            popup = super.getPopup(owner, contents, x, y);
             
-            // 承载内容的窗体透明
-            window.setBackground(UIManager.getColor(LuckGlobalBundle.TRANSLUCENT_COLOR));
+            // 比较安全的hack方式
+            Object obj = SwingUtilities.getWindowAncestor(contents);
 
-            ((JComponent) window.getContentPane()).setOpaque(false);
+            if (obj instanceof JWindow)
+            {
+                JWindow window = (JWindow) obj;
+
+                // 承载内容的窗体透明
+                window.setBackground(UIManager.getColor(LuckGlobalBundle.TRANSLUCENT_COLOR));
+
+                ((JComponent) window.getContentPane()).setOpaque(false);
+            }
         }
 
         return popup;

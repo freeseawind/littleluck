@@ -12,7 +12,7 @@ littleuck是Java Swing跨平台外观(LookAndFeel)实现。 它的名字的灵�
 * 更多...
 
 ## 运行依赖
-* JDK 8+ for littleluck
+* JDK 7+ for littleluck
 * [NinePatch](https://github.com/freeseawind/NinePatch) for littleluck
 
 ## 快速入门

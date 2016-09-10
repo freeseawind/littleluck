@@ -88,7 +88,7 @@ public class LuckTabbedPaneUIBundle extends LuckResourceBundle
     {
         UIManager.put(CONTENTOPAQUE, false);
 
-        UIManager.put(OPAQUE, false);
+        UIManager.put(OPAQUE, true);
 
         UIManager.put(TABSOVERLAPBORDER, false);
 

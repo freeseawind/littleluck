@@ -18,7 +18,7 @@ public class LuckButtonColorFactory
      */
     public static LuckButtonColorInfo getBlueBtnInfo()
     {
-        Color normal = new Color(6, 157, 213);
+        Color normal = new Color(9, 163, 200);
 
         Color pressed = new Color(5, 141, 192);
 
