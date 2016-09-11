@@ -63,7 +63,7 @@ public class Startup
 
 :point_right: [more](https://github.com/freeseawind/littleluck/wiki/%E6%9B%B4%E5%A4%9A%E6%88%AA%E5%9B%BE)
 
-## [Wiki](https://github.com/freeseawind/littleluck/wiki)
+## [User Manual](https://github.com/freeseawind/littleluck/wiki/User-Manual)
 
 ## Contact
 * Issues mail to :love_letter: `iphonewang@foxmail.com`
