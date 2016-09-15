@@ -79,7 +79,7 @@ public class LuckTitlePanel extends JPanel
 
         if(np != null)
         {
-            np.drawNinePatch((Graphics2D) g, 0, 0, getWidth(), getHeight() - 2);
+            np.drawNinePatch((Graphics2D) g, 0, 0, getWidth(), getHeight());
         }
 
         if(painter != null)
