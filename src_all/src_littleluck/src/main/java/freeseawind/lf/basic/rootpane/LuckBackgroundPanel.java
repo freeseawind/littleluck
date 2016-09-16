@@ -50,19 +50,19 @@ public class LuckBackgroundPanel extends JPanel
 
     private static final long serialVersionUID = 5279628284333016497L;
 
-	public LuckBackgroundPanel(Container content, LuckTitlePanel titlePanel)
-	{
+    public LuckBackgroundPanel(Container content, LuckTitlePanel titlePanel)
+    {
         setBorder(null);
 
-        setLayout(createLayout());
+        super.setLayout(createLayout());
 
         setBackground(Color.WHITE);
 
         this.contentPane = content;
-        
+
         setTitlePanel(titlePanel);
 
-        add(contentPane);
+        super.add(contentPane);
     }
 
     @Override
@@ -76,14 +76,15 @@ public class LuckBackgroundPanel extends JPanel
         int height = getHeight() - insets.top - insets.bottom;
 
         // 设置画布背景
-        BufferedImage contentImage = new BufferedImage(width, height, Transparency.OPAQUE);
+        BufferedImage contentImage = new BufferedImage(width, height,
+                Transparency.OPAQUE);
 
         Graphics2D contentG2d = contentImage.createGraphics();
 
         // 绘制边框和其它
         super.paint(contentG2d);
 
-        Graphics2D g2d = (Graphics2D)g;
+        Graphics2D g2d = (Graphics2D) g;
 
         g2d.drawImage(contentImage, x, y, width, height, null);
 
@@ -100,9 +101,9 @@ public class LuckBackgroundPanel extends JPanel
 
         window = getWindow();
 
-        if(window != null && window instanceof JFrame)
+        if (window != null && window instanceof JFrame)
         {
-            if(windowAdapter == null)
+            if (windowAdapter == null)
             {
                 windowAdapter = new LuckWindowAdapter();
             }
@@ -115,7 +116,7 @@ public class LuckBackgroundPanel extends JPanel
     {
         super.removeNotify();
 
-        if(window != null && windowAdapter != null && window instanceof JFrame)
+        if (window != null && windowAdapter != null && window instanceof JFrame)
         {
             window.removeWindowStateListener(windowAdapter);
         }
@@ -124,38 +125,38 @@ public class LuckBackgroundPanel extends JPanel
 
         windowAdapter = null;
 
-        if(menuBar != null)
+        if (menuBar != null)
         {
-        	remove(menuBar);
+            remove(menuBar);
         }
     }
 
     public void installJMenubar(JMenuBar menuBar)
     {
-    	if(menuBar != null && !menuBar.equals(this.menuBar))
-    	{
-    		this.menuBar = menuBar;
+        if (menuBar != null && !menuBar.equals(this.menuBar))
+        {
+            this.menuBar = menuBar;
 
-    		add(menuBar);
-    	}
+            add(menuBar);
+        }
     }
 
     public void uninstallMenubar(boolean isRemove)
     {
-    	if(menuBar == null)
-    	{
-    		return;
-    	}
+        if (menuBar == null)
+        {
+            return;
+        }
 
-    	if(isRemove)
-    	{
-    		remove(menuBar);
+        if (isRemove)
+        {
+            remove(menuBar);
 
-    		menuBar = null;
-    	}
+            menuBar = null;
+        }
     }
 
-	public LayoutManager createLayout()
+    public LayoutManager createLayout()
     {
         return new LuckBgPanelLayout();
     }
@@ -165,12 +166,12 @@ public class LuckBackgroundPanel extends JPanel
     {
         super.paintComponent(g);
 
-        if(painter != null)
+        if (painter != null)
         {
-        	painter.drawComponent(g, this);
+            painter.drawComponent(g, this);
         }
     }
-    
+
     /**
      * 
      * @return 返回标题面板
@@ -194,32 +195,32 @@ public class LuckBackgroundPanel extends JPanel
      * 
      * @param painter 绘图回调接口
      */
-	public void setPainter(LuckCanvas painter)
-	{
-		this.painter = painter;
-	}
+    public void setPainter(LuckCanvas painter)
+    {
+        this.painter = painter;
+    }
 
     /**
      * 重新设置标题面板，覆盖原有面板
      * 
      * @param titlePanel 标题面板
      */
-	public void setTitlePanel(LuckTitlePanel titlePanel)
-	{
-		if(this.titlePanel != null && this.titlePanel.equals(titlePanel))
-		{
-			return;
-		}
+    public void setTitlePanel(LuckTitlePanel titlePanel)
+    {
+        if (this.titlePanel != null && this.titlePanel.equals(titlePanel))
+        {
+            return;
+        }
 
-		this.titlePanel = titlePanel;
+        this.titlePanel = titlePanel;
 
-		add(titlePanel);
-	}
-	
-	protected JMenuBar getJMenuBar()
-	{
-	    return menuBar;
-	}
+        super.add(titlePanel);
+    }
+
+    protected JMenuBar getJMenuBar()
+    {
+        return menuBar;
+    }
 
     private Window getWindow()
     {

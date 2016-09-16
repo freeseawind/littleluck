@@ -20,6 +20,11 @@ public class LuckMetalLookAndFeel extends MetalLookAndFeel
     {
         super();
     }
+    
+    public void uninitialize()
+    {
+        super.uninitialize();
+    }
 
     /**
      * {@inheritDoc}
@@ -55,12 +60,12 @@ public class LuckMetalLookAndFeel extends MetalLookAndFeel
     
     public String getName()
     {
-        return "LittleLuckMetalLookAndFeel";
+        return "LuckMetalLookAndFeel";
     }
 
     public String getDescription()
     {
-        return "The littleluck cross platform Look and Feel";
+        return "The littleluck cross platform LookAndFeel";
     }
 
     public String getID()

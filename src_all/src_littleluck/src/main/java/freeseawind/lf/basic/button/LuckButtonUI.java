@@ -62,6 +62,8 @@ public class LuckButtonUI extends BasicButtonUI
         super.uninstallUI(c);
 
         btnColorInfo = null;
+        
+        oldFontColor = null;
     }
 
     public void paint(Graphics g, JComponent c)

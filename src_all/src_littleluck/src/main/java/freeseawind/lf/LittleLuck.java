@@ -11,9 +11,7 @@ import freeseawind.lf.cfg.LuckResConfig;
 import freeseawind.lf.cfg.LuckResConfigImpl;
 import freeseawind.lf.cfg.LuckUIConfig;
 import freeseawind.lf.cfg.LuckUIConfigImpl;
-import freeseawind.lf.constant.LuckSystemConstant;
 import freeseawind.lf.utils.LuckPlatformUtils;
-import freeseawind.lf.utils.LuckRes;
 
 /**
  * littleluck主题帮助类，建议使用该类来加载littleluck
@@ -108,7 +106,7 @@ public class LittleLuck
     {
         if(LuckPlatformUtils.isWindows())
         {
-            String fontName = LuckRes.getString(LuckSystemConstant.DEF_WINDOWS_FONT);
+            String fontName = "Microsoft YaHei";
 
             setApplicationFont(new Font(fontName, Font.PLAIN, 12));
         }
