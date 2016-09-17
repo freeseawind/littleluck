@@ -9,8 +9,9 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.UIManager;
 
-import freeseawind.lf.LittleLuck;
+import freeseawind.lf.LittleLuckLookAndFeel;
 import freeseawind.lf.border.LuckNinePatchBorder;
 import freeseawind.lf.utils.LuckRes;
 import util.DemoUtil;
@@ -35,7 +36,7 @@ public class PopupMenuDemo
             {
                 try
                 {
-                    LittleLuck.getSingleton().luanchLookAndFeel();
+                    UIManager.setLookAndFeel(LittleLuckLookAndFeel.class.getName());
                 }
                 catch (Exception e)
                 {

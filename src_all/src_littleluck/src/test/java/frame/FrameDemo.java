@@ -11,10 +11,11 @@ import java.awt.image.BufferedImage;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JRootPane;
+import javax.swing.UIManager;
 import javax.swing.event.MouseInputListener;
 import javax.swing.plaf.ComponentUI;
 
-import freeseawind.lf.LittleLuck;
+import freeseawind.lf.LittleLuckLookAndFeel;
 import freeseawind.lf.basic.rootpane.LuckBackgroundPanel;
 import freeseawind.lf.basic.rootpane.LuckRootPaneUI;
 import freeseawind.lf.basic.rootpane.LuckTitlePanel;
@@ -46,7 +47,7 @@ public class FrameDemo
             {
                 try
                 {
-                    LittleLuck.getSingleton().luanchLookAndFeel();
+                    UIManager.setLookAndFeel(LittleLuckLookAndFeel.class.getName());
                 }
                 catch (Exception e)
                 {

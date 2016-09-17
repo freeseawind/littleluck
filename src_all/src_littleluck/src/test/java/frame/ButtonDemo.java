@@ -1,18 +1,22 @@
 package frame;
 
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.GridBagLayout;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
 
-import freeseawind.lf.LittleLuck;
+import freeseawind.lf.LittleLuckLookAndFeel;
 import freeseawind.lf.basic.button.LuckButtonColorFactory;
 import freeseawind.lf.basic.button.LuckButtonColorInfo;
 import freeseawind.lf.basic.button.LuckButtonUI;
+import freeseawind.lf.basic.rootpane.LuckBackgroundPanel;
 import freeseawind.lf.layout.GBC;
 import util.DemoUtil;
 
@@ -38,7 +42,7 @@ public class ButtonDemo
             {
                 try
                 {
-                    LittleLuck.getSingleton().luanchLookAndFeel();
+                    UIManager.setLookAndFeel(LittleLuckLookAndFeel.class.getName());
                 }
                 catch (Exception e)
                 {
@@ -74,6 +78,18 @@ public class ButtonDemo
                 DemoUtil.centerWindowOnScreen(frame);
 
                 frame.setVisible(true);
+                
+                Container cc = frame.getContentPane();
+                
+                if(cc instanceof LuckBackgroundPanel)
+                {
+                    LuckBackgroundPanel bg = (LuckBackgroundPanel) cc;
+                    
+                    if(bg.getContentPane() != null)
+                    {
+                        bg.getContentPane().add(new JLabel("hello"));
+                    }
+                }
             }
         });
     }

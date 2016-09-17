@@ -22,7 +22,7 @@ public interface LuckBorderField
      *
      * @return 有焦点则返回true，否则返回false
      */
-    public boolean isFoucusGaind();
+    public boolean isFocusGaind();
 
     /**
      * 获取边框形状

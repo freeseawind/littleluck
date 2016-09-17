@@ -10,7 +10,12 @@ import freeseawind.lf.cfg.LuckResourceBundle;
 import freeseawind.lf.utils.LuckRes;
 
 /**
- * TreeUI资源绑定类
+ * <p>
+ * TreeUI 资源绑定类。
+ * </p>
+ * <p>
+ * A TreeUI Resource bundle class.
+ * </p>
  *
  * @author freeseawind@github
  * @version 1.0
@@ -18,51 +23,58 @@ import freeseawind.lf.utils.LuckRes;
 public class LuckTreeUIBundle extends LuckResourceBundle
 {
     /**
-     * TreeUI展开子菜单时父节点图标属性key
+     * <p>TreeUI展开子菜单时父节点图标属性key。</p>
+     * <p>expand the sub-menu icon properties.</p>
      */
     public static final String OPENICON = "Tree.openIcon";
 
     /**
-     * TreeUI收起子菜单时父节点图标属性key
+     * <p>TreeUI收起子菜单时父节点图标属性key。</p>
+     * <p>Collapse the sub-menu icon properties.</p>
      */
     public static final String CLOSEDICON = "Tree.closedIcon";
 
     /**
-     * TreeUI收起子菜单时箭头图标属性key
+     * <p>TreeUI收起子菜单时箭头图标属性key。</p>
+     * <p>Collapse the sub-menu arrow icon properties.</p>
      */
     public static final String COLLAPSEDICON = "Tree.collapsedIcon";
 
     /**
-     * TreeUI展开子菜单时箭头图标属性key
+     * <p>TreeUI展开子菜单时箭头图标属性key。</p>
+     * <p>expand the sub-menu arrow icon properties.</p>
      */
     public static final String EXPANDEDICON = "Tree.expandedIcon";
 
     /**
-     * TreeUI叶子节点头图标属性key
+     * <p>TreeUI叶子节点头图标属性key。</p>
+     * <p>leaf node icon properties.</p>
      */
     public static final String LEAFICON = "Tree.leafIcon";
 
     /**
-     * TreeUI层次线绘制属性key(true:绘制层次线)
+     * <p>[LittleLuck属性]TreeUI层次线绘制属性key(true:绘制层次线)，布尔类型， 默认false。</p>
+     * <p>[LittLeLuck Attributes]Level line drawing attributes(true is drawn), Defaults false.</p>
      */
     public static final String PAINTLINES = "Tree.paintLines";
 
     /**
-     * TreeUI选中时背景颜色属性key
+     * <p>TreeUI选中时背景颜色属性key。</p>
+     * <p>Select the Background Color property.</p>
      */
     public static final String SELECTIONBACKGROUND = "Tree.selectionBackground";
     
     /**
-     * TreeUI选中时前景颜色属性key
+     * <p>TreeUI选中时前景颜色属性key。</p>
+     * <p>Select the Foreground Color property.</p>
      */
     public static final String SELECTIONFOREGROUND = "Tree.selectionForeground";
 
     /**
-     * TreeUI编辑时边框属性key
+     * <p>TreeUI编辑时边框属性key。</p>
+     * <p>Edit border properties.</p>
      */
     public static final String EDITORBORDER = "Tree.editorBorder";
-    
-    
 
     @Override
     protected void installColor()

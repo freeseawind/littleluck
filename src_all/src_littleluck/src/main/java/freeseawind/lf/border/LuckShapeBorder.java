@@ -138,7 +138,7 @@ public abstract class LuckShapeBorder extends AbstractBorder
     {
         if(field != null)
         {
-            return field.isFoucusGaind();
+            return field.isFocusGaind();
         }
 
         return false;

@@ -96,7 +96,7 @@ import com.sun.swingset3.utilities.RoundedBorder;
 import com.sun.swingset3.utilities.RoundedPanel;
 import com.sun.swingset3.utilities.Utilities;
 
-import freeseawind.lf.LittleLuck;
+import freeseawind.lf.LittleLuckLookAndFeel;
 import freeseawind.swing.LuckCheckBoxMenuItem;
 import freeseawind.swing.LuckMenu;
 import freeseawind.swing.LuckMenuItem;
@@ -212,13 +212,13 @@ public class SwingSet3 extends SingleFrameApplication  {
     
     @Override
     protected void initialize(String args[]) {        
-        try {
-            
-            LittleLuck.getSingleton().luanchLookAndFeel();
-            
-        } catch (Exception ex) {
-            // not catestrophic
-            ex.printStackTrace();
+        try
+        {
+            UIManager.setLookAndFeel(LittleLuckLookAndFeel.class.getName());
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
         }
         resourceMap = getContext().getResourceMap();
         
