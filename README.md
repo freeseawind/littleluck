@@ -36,7 +36,7 @@ public class Startup
             {
                 try
                 {
-                    LittleLuck.getSingleton().luanchLookAndFeel();
+                     UIManager.setLookAndFeel(LittleLuckLookAndFeel.class.getName());
                 }
                 catch (Exception e)
                 {
@@ -63,6 +63,16 @@ public class Startup
 ![JToolip](https://raw.githubusercontent.com/freeseawind/littleluck/master/screenshots/8.png)
 
 :point_right: [更多截图](https://github.com/freeseawind/littleluck/wiki/%E6%9B%B4%E5%A4%9A%E6%88%AA%E5%9B%BE)
+
+## Maven
+
+```xml
+<dependency>
+  <groupId>com.github.freeseawind</groupId>
+  <artifactId>littleluck</artifactId>
+  <version>1.0.2</version>
+</dependency>
+```
 
 ## [帮助手册](https://github.com/freeseawind/littleluck/wiki/%E4%B8%AD%E6%96%87%E5%B8%AE%E5%8A%A9%E6%89%8B%E5%86%8C)
 
