@@ -64,6 +64,9 @@ public class Startup
 
 :point_right: [更多截图](https://github.com/freeseawind/littleluck/wiki/%E6%9B%B4%E5%A4%9A%E6%88%AA%E5%9B%BE)
 
+
+## [帮助手册](https://github.com/freeseawind/littleluck/wiki/%E4%B8%AD%E6%96%87%E5%B8%AE%E5%8A%A9%E6%89%8B%E5%86%8C)
+
 ## Maven
 
 ```xml
@@ -73,8 +76,6 @@ public class Startup
   <version>1.0.2</version>
 </dependency>
 ```
-
-## [帮助手册](https://github.com/freeseawind/littleluck/wiki/%E4%B8%AD%E6%96%87%E5%B8%AE%E5%8A%A9%E6%89%8B%E5%86%8C)
 
 ## 联系作者
 * 如有Bug和建议邮箱至 :love_letter:  `iphonewang@foxmail.com`
