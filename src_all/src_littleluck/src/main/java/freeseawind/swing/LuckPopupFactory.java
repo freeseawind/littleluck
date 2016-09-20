@@ -1,8 +1,9 @@
 package freeseawind.swing;
 
 import java.awt.Component;
-import java.awt.Window;
-import java.lang.reflect.Method;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
 
 import javax.swing.JComponent;
 import javax.swing.JPopupMenu;
@@ -22,56 +23,16 @@ import freeseawind.lf.cfg.LuckGlobalBundle;
  */
 public class LuckPopupFactory extends PopupFactory
 {
-    private Method method;
-    private PopupFactory oldFactory;
-    
     public LuckPopupFactory()
     {
-        try
-        {
-            Class<?> cls =  PopupFactory.class;
-            
-            Class<?>[] types = new Class[]{Component.class, Component.class, int.class, int.class, int.class};
-            
-            method = cls.getDeclaredMethod("getPopup", types);
-            
-            method.setAccessible(true);
-            
-            oldFactory = new PopupFactory();
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
+        
     }
     
     @Override
     public Popup getPopup(Component owner, Component contents, int x, int y)
         throws IllegalArgumentException
     {
-        Popup popup = null;
-        
-        if(contents instanceof JPopupMenu && isHeavyWeight(owner))
-        {
-            try
-            {
-                Object obj = method.invoke(oldFactory, new Object[]{owner, contents, x, y, 0});
-                
-                if(obj instanceof Popup)
-                {
-                    popup = (Popup)obj;
-                }
-            }
-            catch(Exception e)
-            {
-                e.printStackTrace();
-            }
-        }
-        
-        if(popup == null)
-        {
-            popup = super.getPopup(owner, contents, x, y);
-        }
+        Popup popup = super.getPopup(owner, contents, x, y);
         
         // 比较安全的hack方式
         Object obj = SwingUtilities.getWindowAncestor(contents);
@@ -84,30 +45,48 @@ public class LuckPopupFactory extends PopupFactory
             window.setBackground(UIManager.getColor(LuckGlobalBundle.TRANSLUCENT_COLOR));
 
             ((JComponent) window.getContentPane()).setOpaque(false);
+            
+            JdkVersion version = JdkVersion.getSingleton();
+            
+            boolean isCompatible = (version.getMajor() <= 1 && version.getMinor() < 8);
+            
+            if (contents instanceof JPopupMenu && isCompatible)
+            {
+                boolean isFound = false;
+                
+                for (ComponentListener listener : window.getComponentListeners())
+                {
+                    if(listener instanceof LuckPopupComponentListener)
+                    {
+                        isFound = true;
+                        
+                        break;
+                    }
+                }
+                
+                if(!isFound)
+                {
+                    window.addComponentListener(new LuckPopupComponentListener());
+                }
+            }
         }
 
         return popup;
     }
     
-    public boolean isHeavyWeight(Component owner)
+    class LuckPopupComponentListener extends ComponentAdapter
     {
-        Component c = owner;
-
-        while (c != null)
+        @Override
+        public void componentShown(ComponentEvent e)
         {
-            if (c instanceof Window)
-            {
-                Window w = (Window) c;
-
-                if (!w.isOpaque() || w.getOpacity() < 1 || w.getShape() != null)
-                {
-                    return true;
-                }
-            }
+            Object obj = e.getSource();
             
-            c = c.getParent();
+            if(obj instanceof JWindow)
+            {
+                JWindow window = (JWindow) obj;
+                
+                window.repaint();
+            }
         }
-
-        return false;
     }
 }
