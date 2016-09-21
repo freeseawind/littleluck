@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 
 import javax.swing.BorderFactory;
-import javax.swing.UIManager;
+import javax.swing.UIDefaults;
 import javax.swing.border.LineBorder;
 
 import freeseawind.lf.cfg.LuckResourceBundle;
@@ -51,26 +51,26 @@ public class LuckScrollUIBundle extends LuckResourceBundle
 
 
     @Override
-    protected void installBorder()
+    protected void installBorder(UIDefaults table)
     {
-        UIManager.put(SCROLLBAR_BORDER, BorderFactory.createEmptyBorder());
+        table.put(SCROLLBAR_BORDER, BorderFactory.createEmptyBorder());
 
-        UIManager.put(SCROLLPANE_BORDER, new LineBorder(new Color(200, 200, 200)));
+        table.put(SCROLLPANE_BORDER, new LineBorder(new Color(200, 200, 200)));
     }
 
     @Override
-    protected void loadImages()
+    protected void loadImages(UIDefaults table)
     {
-        UIManager.put(SCROLLBAR_THUMBICON, LuckRes.getImage("scroll/thumb.png"));
+        table.put(SCROLLBAR_THUMBICON, LuckRes.getImage("scroll/thumb.png"));
     }
 
     @Override
-    protected void installOther()
+    protected void installOther(UIDefaults table)
     {
-        UIManager.put(SCROLLBAR_WIDTH, 9);
+        table.put(SCROLLBAR_WIDTH, 9);
 
-        UIManager.put(SCROLLBAR_BACKGROUND, Color.WHITE);
+        table.put(SCROLLBAR_BACKGROUND, Color.WHITE);
 
-        UIManager.put(MINIMUMTHUMBSIZE, new Dimension(48, 48));
+        table.put(MINIMUMTHUMBSIZE, new Dimension(48, 48));
     }
 }

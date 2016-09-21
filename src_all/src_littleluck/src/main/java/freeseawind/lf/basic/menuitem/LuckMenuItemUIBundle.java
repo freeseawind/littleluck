@@ -3,6 +3,7 @@ package freeseawind.lf.basic.menuitem;
 import java.awt.Color;
 
 import javax.swing.BorderFactory;
+import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 import javax.swing.plaf.IconUIResource;
 
@@ -64,31 +65,31 @@ public class LuckMenuItemUIBundle extends LuckResourceBundle
     
 
     @Override
-    protected void installColor()
+    protected void installColor(UIDefaults table)
     {
-        UIManager.put(SELECTIONBG, getColorRes(60, 175, 210));
+        table.put(SELECTIONBG, getColorRes(60, 175, 210));
 
-        UIManager.put(SELECTIONFG, Color.WHITE);
+        table.put(SELECTIONFG, Color.WHITE);
         
-        UIManager.put(BACKGROUND, Color.WHITE);
+        table.put(BACKGROUND, Color.WHITE);
     }
 
     @Override
-    protected void installBorder()
+    protected void installBorder(UIDefaults table)
     {
-        UIManager.put(BORDER, BorderFactory.createEmptyBorder());
+        table.put(BORDER, BorderFactory.createEmptyBorder());
     }
 
     @Override
-    protected void loadImages()
+    protected void loadImages(UIDefaults table)
     {
-        UIManager.put(CHECK_ICON, new IconUIResource(new LuckIcon(0, 0)));
+        table.put(CHECK_ICON, new IconUIResource(new LuckIcon(0, 0)));
         
-        UIManager.put(ARROW_ICON, new IconUIResource(new LuckIcon(0, 0)));
+        table.put(ARROW_ICON, new IconUIResource(new LuckIcon(0, 0)));
     }
 
     @Override
-    protected void installOther()
+    protected void installOther(UIDefaults table)
     {
         UIManager.put(AFTERCHECKICONGAP, 4);
         UIManager.put(MINIMUMTEXTOFFSET, 0);

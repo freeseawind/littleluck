@@ -150,6 +150,11 @@ public class WindowMouseHandler implements MouseInputListener
         {
             return;
         }
+        
+        if (window != null)
+        {
+            window.toFront();
+        }
 
         // 如果是单击标题栏, 则标记接下来的拖动事件为移动窗口, 判断当前鼠标是否超出边界
         if (dragArea.contains(e.getPoint())
@@ -194,6 +199,20 @@ public class WindowMouseHandler implements MouseInputListener
 
     public void mouseReleased(MouseEvent e)
     {
+        Window window = (Window) e.getSource();
+        
+        if (dragCursor != 0 && window != null && !window.isValid())
+        {
+            // Some Window systems validate as you resize, others won't,
+            // thus the check for validity before repainting.
+            window.validate();
+            
+            if(window instanceof JFrame)
+            {
+                ((JFrame)window).getRootPane().repaint();
+            }
+        }
+        
         // 松开鼠标时重置状态
         isMovingWindow = false;
 

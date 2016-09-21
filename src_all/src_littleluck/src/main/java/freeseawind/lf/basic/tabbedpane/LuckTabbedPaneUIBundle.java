@@ -2,6 +2,7 @@ package freeseawind.lf.basic.tabbedpane;
 
 import java.awt.Color;
 
+import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 import javax.swing.plaf.InsetsUIResource;
 
@@ -82,7 +83,7 @@ public class LuckTabbedPaneUIBundle extends LuckResourceBundle
     public static final String TABINSETS = "TabbedPane.tabInsets";
 
     @Override
-    protected void installColor()
+    protected void installColor(UIDefaults table)
     {
         UIManager.put(BACKGROUNDCOLOR, Color.WHITE);
 
@@ -99,7 +100,7 @@ public class LuckTabbedPaneUIBundle extends LuckResourceBundle
     }
 
     @Override
-    protected void installOther()
+    protected void installOther(UIDefaults table)
     {
         UIManager.put(CONTENTOPAQUE, false);
 

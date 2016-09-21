@@ -11,7 +11,9 @@ import javax.swing.Icon;
 import javax.swing.UIManager;
 
 /**
- * 复选框图标实现类, 此类参考Beautyeye的实现
+ * <p>复选框图标实现类, 此类参考Beautyeye的实现。</p>
+ * 
+ * <p>CheckBoxIcon implement class.</p>
  * 
  * @author freeseawind@github
  * @version 1.0
@@ -42,22 +44,22 @@ public class LuckCheckBoxIcon implements Icon, Serializable
             }
             else
             {
-                image = (Image) UIManager.get(LuckToggleButtonUIBundle.CHECKBOX_PRESSED_ICON);
+                image = (Image) UIManager.get(LuckToggleButtonUIBundle.CHECKBOX_PRESSED_IMG);
             }
         }
         else
         {
             if(isRollver && !isPressed)
             {
-                image = (Image) UIManager.get(LuckToggleButtonUIBundle.CHECKBOX_ROLLVER_ICON);
+                image = (Image) UIManager.get(LuckToggleButtonUIBundle.CHECKBOX_ROLLVER_IMG);
             }
             else if(isRollver && isPressed)
             {
-                image = (Image) UIManager.get(LuckToggleButtonUIBundle.CHECKBOX_UNROLLVER_ICON);
+                image = (Image) UIManager.get(LuckToggleButtonUIBundle.CHECKBOX_UNROLLVER_IMG);
             }
             else
             {
-                image = (Image) UIManager.get(LuckToggleButtonUIBundle.CHECKBOX_NORMAL_ICON);
+                image = (Image) UIManager.get(LuckToggleButtonUIBundle.CHECKBOX_NORMAL_IMG);
             }
         }
 

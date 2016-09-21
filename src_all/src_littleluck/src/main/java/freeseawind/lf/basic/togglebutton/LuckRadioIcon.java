@@ -12,8 +12,12 @@ import javax.swing.Icon;
 import javax.swing.UIManager;
 
 /**
- * 单选框图标实现类
+ * <p>单选框图标实现类。</p>
+ * 
+ * <p>RadioIcon implement class.</p>
+ * 
  * @author freeseawind@github
+ * @version 1.0
  *
  */
 public class LuckRadioIcon implements Icon, Serializable

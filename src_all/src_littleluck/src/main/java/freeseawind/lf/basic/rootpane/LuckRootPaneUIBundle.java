@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Insets;
 import java.awt.image.BufferedImage;
 
-import javax.swing.UIManager;
+import javax.swing.UIDefaults;
 import javax.swing.border.Border;
 import javax.swing.plaf.ColorUIResource;
 import javax.swing.plaf.InsetsUIResource;
@@ -156,14 +156,14 @@ public class LuckRootPaneUIBundle extends LuckResourceBundle
 
 
     @Override
-    protected void installColor()
+    protected void installColor(UIDefaults table)
     {
-        UIManager.put(ROOTPANE_BACKGROUND_COLOR, new ColorUIResource(new Color(0, 0, 0, 0)));
-        UIManager.put(TITLE_FONT_COLOR, new ColorUIResource(Color.BLACK));
+        table.put(ROOTPANE_BACKGROUND_COLOR, getColorRes(new Color(0, 0, 0, 0)));
+        table.put(TITLE_FONT_COLOR, new ColorUIResource(Color.BLACK));
     }
 
     @Override
-    protected void installBorder()
+    protected void installBorder(UIDefaults table)
     {
         // 初始化阴影边框
         Insets insets = new Insets(5, 5, 5, 5);
@@ -171,43 +171,43 @@ public class LuckRootPaneUIBundle extends LuckResourceBundle
         Border shadowBorder = new LuckNinePatchBorder(insets, shadowImg);
 
         // 设置窗体、弹窗边框配置
-        UIManager.put(FRAME_BORDER, shadowBorder);
-        UIManager.put(PLAINDIALOG_BORDER, shadowBorder);
-        UIManager.put(INFORMATIONDIALOG_BORDER, shadowBorder);
-        UIManager.put(ERRORDIALOG_BORDER, shadowBorder);
-        UIManager.put(COLORCHOOSERDIALOG_BORDER, shadowBorder);
-        UIManager.put(FILECHOOSERDIALOG_BORDER, shadowBorder);
-        UIManager.put(QUESTIONDIALOG_BORDER, shadowBorder);
-        UIManager.put(WARNINGDIALOG_BORDER, shadowBorder);
+        table.put(FRAME_BORDER, shadowBorder);
+        table.put(PLAINDIALOG_BORDER, shadowBorder);
+        table.put(INFORMATIONDIALOG_BORDER, shadowBorder);
+        table.put(ERRORDIALOG_BORDER, shadowBorder);
+        table.put(COLORCHOOSERDIALOG_BORDER, shadowBorder);
+        table.put(FILECHOOSERDIALOG_BORDER, shadowBorder);
+        table.put(QUESTIONDIALOG_BORDER, shadowBorder);
+        table.put(WARNINGDIALOG_BORDER, shadowBorder);
     }
 
     @Override
-    protected void loadImages()
+    protected void loadImages(UIDefaults table)
     {
-        UIManager.put(CLOSE_NORMAL_ICON, getIconRes("frame/frame_close_normal.png"));
-        UIManager.put(CLOSE_ROVER_ICON, getIconRes("frame/frame_close_rover.png"));
-        UIManager.put(CLOSE_PRESSED_ICON, getIconRes("frame/frame_close_pressed.png"));
+        table.put(CLOSE_NORMAL_ICON, getIconRes("frame/frame_close_normal.png"));
+        table.put(CLOSE_ROVER_ICON, getIconRes("frame/frame_close_rover.png"));
+        table.put(CLOSE_PRESSED_ICON, getIconRes("frame/frame_close_pressed.png"));
 
-        UIManager.put(MIN_NORMAL_ICON, getIconRes("frame/frame_min_normal.png"));
-        UIManager.put(MIN_ROVER_ICON, getIconRes("frame/frame_min_rover.png"));
-        UIManager.put(MIN_PRESSED_ICON, getIconRes("frame/frame_min_pressed.png"));
+        table.put(MIN_NORMAL_ICON, getIconRes("frame/frame_min_normal.png"));
+        table.put(MIN_ROVER_ICON, getIconRes("frame/frame_min_rover.png"));
+        table.put(MIN_PRESSED_ICON, getIconRes("frame/frame_min_pressed.png"));
 
-        UIManager.put(MAX_NORMAL_ICON, getIconRes("frame/frame_max_normal.png"));
-        UIManager.put(MAX_ROVER_ICON, getIconRes("frame/frame_max_rover.png"));
-        UIManager.put(MAX_PRESSED_ICON, getIconRes("frame/frame_max_pressed.png"));
+        table.put(MAX_NORMAL_ICON, getIconRes("frame/frame_max_normal.png"));
+        table.put(MAX_ROVER_ICON, getIconRes("frame/frame_max_rover.png"));
+        table.put(MAX_PRESSED_ICON, getIconRes("frame/frame_max_pressed.png"));
 
-        UIManager.put(MAXIMIZE_NORMAL_ICON, getIconRes("frame/frame_maxwin_normal.png"));
-        UIManager.put(MAXIMIZE_ROVER_ICON, getIconRes("frame/frame_maxwin_rover.png"));
-        UIManager.put(MAXIMIZE_PRESSED_ICON, getIconRes("frame/frame_maxwin_pressed.png"));
+        table.put(MAXIMIZE_NORMAL_ICON, getIconRes("frame/frame_maxwin_normal.png"));
+        table.put(MAXIMIZE_ROVER_ICON, getIconRes("frame/frame_maxwin_rover.png"));
+        table.put(MAXIMIZE_PRESSED_ICON, getIconRes("frame/frame_maxwin_pressed.png"));
         
-        UIManager.put(TITLEPANEL_BG_IMG, LuckRes.getImage("frame/title_bg.9.png"));
+        table.put(TITLEPANEL_BG_IMG, LuckRes.getImage("frame/title_bg.9.png"));
     }
 
     @Override
-    protected void installOther()
+    protected void installOther(UIDefaults table)
     {
-        UIManager.put(TITLEPANEL_HEIGHT, 26);
-        UIManager.put(APPLICATION_TITLE_TEXTGAP, 5);
-        UIManager.put(APPLICATION_TITLE_INSETS, new InsetsUIResource(4, 6, 0, 0));
+        table.put(TITLEPANEL_HEIGHT, 26);
+        table.put(APPLICATION_TITLE_TEXTGAP, 5);
+        table.put(APPLICATION_TITLE_INSETS, new InsetsUIResource(4, 6, 0, 0));
     }
 }

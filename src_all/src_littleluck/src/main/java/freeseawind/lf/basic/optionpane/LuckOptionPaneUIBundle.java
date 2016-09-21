@@ -1,5 +1,6 @@
 package freeseawind.lf.basic.optionpane;
 
+import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 
 import freeseawind.lf.cfg.LuckResourceBundle;
@@ -34,7 +35,7 @@ public class LuckOptionPaneUIBundle extends LuckResourceBundle
     public static final String ERROR_ICON = "OptionPane.errorIcon";
 
     @Override
-    protected void loadImages()
+    protected void loadImages(UIDefaults table)
     {
         UIManager.put(QUESTION_ICON, getIconRes("optionpane/question.png"));
         UIManager.put(WARNING_ICON, getIconRes("optionpane/warn.png"));

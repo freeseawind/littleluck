@@ -2,8 +2,7 @@ package freeseawind.lf.basic.slider;
 
 import java.awt.Color;
 
-import javax.swing.UIManager;
-
+import javax.swing.UIDefaults;
 
 import freeseawind.lf.cfg.LuckResourceBundle;
 import freeseawind.lf.utils.LuckRes;
@@ -56,34 +55,32 @@ public class LuckSliderUIBundle extends LuckResourceBundle
     public static final String TRACK_SIZE = "Slider.trackSize";
     
     @Override
-    protected void installColor()
+    protected void installColor(UIDefaults table)
     {
-        UIManager.put(TICKCOLOR, getColorRes(131, 131, 131));
+        table.put(TICKCOLOR, getColorRes(131, 131, 131));
         
-        UIManager.put(BACKGROUND, Color.WHITE);
+        table.put(BACKGROUND, Color.WHITE);
     }
 
     @Override
-    protected void loadImages()
+    protected void loadImages(UIDefaults table)
     {
-        UIManager.put(THUMB_HORIZONTAL, LuckRes.getImage("slider/thumb_h.png"));
+        table.put(THUMB_HORIZONTAL, LuckRes.getImage("slider/thumb_h.png"));
 
-        UIManager.put(THUMB_VERTICAL, LuckRes.getImage("slider/thumb_v.png"));
+        table.put(THUMB_VERTICAL, LuckRes.getImage("slider/thumb_v.png"));
 
-        UIManager.put(TRACK_HORIZONTAL, LuckRes.getImage("slider/track_horizontal.9.png"));
+        table.put(TRACK_HORIZONTAL, LuckRes.getImage("slider/track_horizontal.9.png"));
 
-        UIManager.put(TRACK_HORIZONTAL_H, LuckRes.getImage("slider/track_horizontal_h.9.png"));
+        table.put(TRACK_HORIZONTAL_H, LuckRes.getImage("slider/track_horizontal_h.9.png"));
 
-        UIManager.put(TRACK_VERTICAL, LuckRes.getImage("slider/track_vertical.9.png"));
+        table.put(TRACK_VERTICAL, LuckRes.getImage("slider/track_vertical.9.png"));
 
-        UIManager.put(TRACK_VERTICAL_H, LuckRes.getImage("slider/track_vertical_h.9.png"));
+        table.put(TRACK_VERTICAL_H, LuckRes.getImage("slider/track_vertical_h.9.png"));
     }
 
     @Override
-    protected void installOther()
+    protected void installOther(UIDefaults table)
     {
-        UIManager.put(TRACK_SIZE, 8);
+        table.put(TRACK_SIZE, 8);
     }
-    
-    
 }

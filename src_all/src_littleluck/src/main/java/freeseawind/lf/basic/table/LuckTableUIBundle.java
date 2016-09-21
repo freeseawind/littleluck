@@ -3,7 +3,7 @@ package freeseawind.lf.basic.table;
 import java.awt.Color;
 
 import javax.swing.ImageIcon;
-import javax.swing.UIManager;
+import javax.swing.UIDefaults;
 import javax.swing.plaf.IconUIResource;
 
 import freeseawind.lf.cfg.LuckResourceBundle;
@@ -26,22 +26,22 @@ public class LuckTableUIBundle extends LuckResourceBundle
     public static final String DESC_ICON = "Table.descendingSortIcon";
 
     @Override
-    protected void installColor()
+    protected void installColor(UIDefaults table)
     {
-        UIManager.put(SELECTIONBACKGROUND, new Color(60, 175, 210));
+        table.put(SELECTIONBACKGROUND, new Color(60, 175, 210));
 
-        UIManager.put(SELECTIONFOREGROUND, Color.white);
+        table.put(SELECTIONFOREGROUND, Color.white);
     }
 
     @Override
-    protected void loadImages()
+    protected void loadImages(UIDefaults table)
     {
         ImageIcon ascIcon = new ImageIcon(LuckRes.getImage("table/asc.png"));
 
-        UIManager.put(ASC_ICON, new IconUIResource(ascIcon));
+        table.put(ASC_ICON, new IconUIResource(ascIcon));
 
         ImageIcon descIcon = new ImageIcon(LuckRes.getImage("table/desc.png"));
 
-        UIManager.put(DESC_ICON, new IconUIResource(descIcon));
+        table.put(DESC_ICON, new IconUIResource(descIcon));
     }
 }

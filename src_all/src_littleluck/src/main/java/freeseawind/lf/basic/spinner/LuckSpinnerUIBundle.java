@@ -3,7 +3,7 @@ package freeseawind.lf.basic.spinner;
 import java.awt.Color;
 import java.awt.Insets;
 
-import javax.swing.UIManager;
+import javax.swing.UIDefaults;
 
 import freeseawind.lf.border.LuckLineBorder;
 import freeseawind.lf.cfg.LuckResourceBundle;
@@ -38,22 +38,22 @@ public class LuckSpinnerUIBundle extends LuckResourceBundle
     public static final String ARROWBUTTONINSETS = "Spinner.arrowButtonInsets";
 
     @Override
-    protected void installBorder()
+    protected void installBorder(UIDefaults table)
     {
-        UIManager.put(BORDER, new LuckLineBorder(new Insets(4, 5, 4, 5)));
+        table.put(BORDER, new LuckLineBorder(new Insets(4, 5, 4, 5)));
 
-        UIManager.put(ARROWBUTTONBORDER, new LuckLineBorder(new Insets(1, 1, 1, 1), 6));
+        table.put(ARROWBUTTONBORDER, new LuckLineBorder(new Insets(1, 1, 1, 1), 6));
     }
 
     @Override
-    protected void installColor()
+    protected void installColor(UIDefaults table)
     {
-        UIManager.put(BACKGROUND, getColorRes(Color.white));
+        table.put(BACKGROUND, getColorRes(Color.white));
     }
 
     @Override
-    protected void installOther()
+    protected void installOther(UIDefaults table)
     {
-        UIManager.put(ARROWBUTTONINSETS, new Insets(1, 0, 0, 0));
+        table.put(ARROWBUTTONINSETS, new Insets(1, 0, 0, 0));
     }
 }

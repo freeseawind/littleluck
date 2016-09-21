@@ -4,6 +4,7 @@ import java.awt.Color;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.UIDefaults;
 import javax.swing.border.Border;
 import javax.swing.plaf.BorderUIResource;
 import javax.swing.plaf.ColorUIResource;
@@ -20,25 +21,34 @@ import freeseawind.lf.utils.LuckRes;
  */
 public abstract class LuckResourceBundle
 {
-    public final void installDefaults()
+    public final void installDefaults(UIDefaults table)
     {
-        installColor();
+        installColor(table);
 
-        installFont();
+        installFont(table);
 
-        installBorder();
+        installBorder(table);
 
-        installListener();
+        installListener(table);
 
-        loadImages();
+        loadImages(table);
 
-        installOther();
+        installOther(table);
+    }
+    
+    /**
+     * <p>卸载观感时移除资源。</p>
+     * <p>when uninstall LookAndFeel remove resource. </p>
+     */
+    public void uninitialize()
+    {
+        
     }
 
     /**
      * 初始化颜色配置
      */
-    protected void installColor()
+    protected void installColor(UIDefaults table)
     {
 
     }
@@ -46,7 +56,7 @@ public abstract class LuckResourceBundle
     /**
      * 初始化字体配置
      */
-    protected void installFont()
+    protected void installFont(UIDefaults table)
     {
 
     }
@@ -54,7 +64,7 @@ public abstract class LuckResourceBundle
     /**
      * 初始化边框配置
      */
-    protected void installBorder()
+    protected void installBorder(UIDefaults table)
     {
 
     }
@@ -62,7 +72,7 @@ public abstract class LuckResourceBundle
     /**
      * 初始化监听器
      */
-    protected void installListener()
+    protected void installListener(UIDefaults table)
     {
 
     }
@@ -70,7 +80,7 @@ public abstract class LuckResourceBundle
     /**
      * 初始化图片资源
      */
-    protected void loadImages()
+    protected void loadImages(UIDefaults table)
     {
 
     }
@@ -78,7 +88,7 @@ public abstract class LuckResourceBundle
     /**
      * 初始化其它
      */
-    protected void installOther()
+    protected void installOther(UIDefaults table)
     {
 
     }

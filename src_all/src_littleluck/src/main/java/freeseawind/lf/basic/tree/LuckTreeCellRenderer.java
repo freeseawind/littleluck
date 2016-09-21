@@ -5,12 +5,10 @@ import java.awt.Graphics;
 import javax.swing.tree.DefaultTreeCellRenderer;
 
 /**
- * <p>
- * Tree单元处理渲染器，去除焦点边框处理。
- * </p>
- * <p>
- * Tree Renderer processing unit, removing the focus frame processing.
- * </p>
+ * 
+ * <p>Tree单元处理渲染器，去除焦点边框处理。</p>
+ * 
+ * <p>Tree Renderer processing unit, removing the focus frame processing.</p>
  * 
  * @author freeseawind@github
  * @version 1.0

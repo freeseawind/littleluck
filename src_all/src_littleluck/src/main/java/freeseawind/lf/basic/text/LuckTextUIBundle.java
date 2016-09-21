@@ -2,6 +2,7 @@ package freeseawind.lf.basic.text;
 
 import java.awt.Insets;
 
+import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 
 import freeseawind.lf.cfg.LuckResourceBundle;
@@ -34,7 +35,7 @@ public class LuckTextUIBundle extends LuckResourceBundle
     //TextPane
 
     @Override
-    protected void installBorder()
+    protected void installBorder(UIDefaults table)
     {
         Insets insets = new Insets(4, 5, 4, 5);
         

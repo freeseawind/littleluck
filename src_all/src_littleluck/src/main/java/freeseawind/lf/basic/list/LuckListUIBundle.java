@@ -3,7 +3,7 @@ package freeseawind.lf.basic.list;
 import java.awt.Color;
 
 import javax.swing.BorderFactory;
-import javax.swing.UIManager;
+import javax.swing.UIDefaults;
 import javax.swing.plaf.BorderUIResource;
 
 import freeseawind.lf.cfg.LuckResourceBundle;
@@ -43,21 +43,21 @@ public class LuckListUIBundle extends LuckResourceBundle
     public static final String BACKGROUND = "List.background";
 
     @Override
-    protected void installBorder()
+    protected void installBorder(UIDefaults table)
     {
-        UIManager.put(CELL_BORDER, BorderFactory.createEmptyBorder(5, 5, 5, 0));
+        table.put(CELL_BORDER, BorderFactory.createEmptyBorder(5, 5, 5, 0));
 
-        UIManager.put(CELL_NOFOCUSBORDER, new BorderUIResource(
+        table.put(CELL_NOFOCUSBORDER, new BorderUIResource(
                 BorderFactory.createEmptyBorder(5, 5, 5, 0)));
     }
 
     @Override
-    protected void installColor()
+    protected void installColor(UIDefaults table)
     {
-        UIManager.put(SELECTIONBACKGROUND, new Color(60, 175, 210));
+        table.put(SELECTIONBACKGROUND, new Color(60, 175, 210));
 
-        UIManager.put(SELECTIONFOREGROUND, Color.WHITE);
+        table.put(SELECTIONFOREGROUND, Color.WHITE);
 
-        UIManager.put(BACKGROUND, Color.white);
+        table.put(BACKGROUND, Color.white);
     }
 }

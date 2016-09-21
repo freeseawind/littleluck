@@ -3,7 +3,7 @@ package freeseawind.lf.basic.checkboxmenuitem;
 import java.awt.Color;
 
 import javax.swing.BorderFactory;
-import javax.swing.UIManager;
+import javax.swing.UIDefaults;
 import javax.swing.plaf.IconUIResource;
 
 import freeseawind.lf.cfg.LuckResourceBundle;
@@ -74,40 +74,40 @@ public class LuckCheckboxMenuItemUIBundle extends LuckResourceBundle
     public static final String CHECKICONOFFSET = "CheckBoxMenuItem.checkIconOffset";
 
     @Override
-    protected void installColor()
+    protected void installColor(UIDefaults table)
     {
-        UIManager.put(SELECTIONBG, getColorRes(60, 175, 210));
+        table.put(SELECTIONBG, getColorRes(60, 175, 210));
 
-        UIManager.put(SELECTIONFG, Color.WHITE);
+        table.put(SELECTIONFG, Color.WHITE);
 
-        UIManager.put(BACKGROUND, Color.WHITE);
+        table.put(BACKGROUND, Color.WHITE);
     }
 
     @Override
-    protected void installBorder()
+    protected void installBorder(UIDefaults table)
     {
-        UIManager.put(BORDER, BorderFactory.createEmptyBorder());
+        table.put(BORDER, BorderFactory.createEmptyBorder());
     }
 
     @Override
-    protected void loadImages()
+    protected void loadImages(UIDefaults table)
     {
-        UIManager.put(CHECK_ICON, new LuckCheckboxIcon());
+        table.put(CHECK_ICON, new LuckCheckboxIcon());
 
-        UIManager.put(ARROW_ICON, new IconUIResource(new LuckIcon(0, 0)));
+        table.put(ARROW_ICON, new IconUIResource(new LuckIcon(0, 0)));
 
-        UIManager.put(NORMAL_ICON, LuckRes.getImage("menu/checkbox_normal.png"));
+        table.put(NORMAL_ICON, LuckRes.getImage("menu/checkbox_normal.png"));
 
-        UIManager.put(ROLLVER_ICON, LuckRes.getImage("menu/checkbox_rollver.png"));
+        table.put(ROLLVER_ICON, LuckRes.getImage("menu/checkbox_rollver.png"));
     }
 
     @Override
-    protected void installOther()
+    protected void installOther(UIDefaults table)
     {
-        UIManager.put(AFTERCHECKICONGAP, 4);
+        table.put(AFTERCHECKICONGAP, 4);
 
-        UIManager.put(MINIMUMTEXTOFFSET, 0);
+        table.put(MINIMUMTEXTOFFSET, 0);
 
-        UIManager.put(CHECKICONOFFSET, 4);
+        table.put(CHECKICONOFFSET, 4);
     }
 }

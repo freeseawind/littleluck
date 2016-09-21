@@ -12,9 +12,16 @@ import javax.swing.plaf.basic.BasicToolTipUI;
 import freeseawind.ninepatch.swing.SwingNinePatch;
 
 /**
- * ToolTipUI实现类, 设置UI组件为不完全透明, 使用点九图作为背景和边框
  * <p>
- * 另请参见 {@link LuckToolipUIBundle}
+ * ToolTipUI实现类，设置UI组件为不完全透明，使用点九图作为背景和边框。
+ * </p>
+ * <p>
+ * A ToolTipUI implementation class, set UI components are not fully transparent,
+ * to use as a background in ninepatch image, using an empty border to keep the
+ * content of the pitch.
+ * </p>
+ * <p>
+ * See Also:{@link LuckToolipUIBundle}
  * </p>
  * 
  * @author freeseawind@github
@@ -25,9 +32,7 @@ public class LuckToolTipUI extends BasicToolTipUI
 {
     private static LuckToolTipUI sharedInstance = new LuckToolTipUI();
 
-    // 由于JToolip是共享的, 所以这里这里只需要初始化一次
-    private static SwingNinePatch np = new SwingNinePatch(
-            (BufferedImage) UIManager.get(LuckToolipUIBundle.BGIMG));
+    private SwingNinePatch np;
 
     public static ComponentUI createUI(JComponent c)
     {
@@ -37,6 +42,11 @@ public class LuckToolTipUI extends BasicToolTipUI
     public void installUI(JComponent c)
     {
         super.installUI(c);
+        
+        if(np == null)
+        {
+            np = new SwingNinePatch((BufferedImage) UIManager.get(LuckToolipUIBundle.BGIMG));
+        }
     }
 
     public void installDefaults(JComponent c)
@@ -48,8 +58,13 @@ public class LuckToolTipUI extends BasicToolTipUI
 
     public void paint(Graphics g, JComponent c)
     {
-        np.drawNinePatch((Graphics2D) g, 0, 0, c.getWidth(), c.getHeight());
+        
+        if(np != null)
+        {
+            np.drawNinePatch((Graphics2D) g, 0, 0, c.getWidth(), c.getHeight());
 
+        }
+        
         super.paint(g, c);
     }
 }

@@ -25,7 +25,7 @@ import freeseawind.lf.utils.LuckPlatformUtils;
 public class LittleLuckLookAndFeel extends MetalLookAndFeel
 {
     private static final long serialVersionUID = -7537863322955102478L;
-
+    private static final String BUNDLENAME = "com.github.freeseawind.littleluck";
     private LuckUIConfig uiConfig;
     private LuckResConfig resConfig;
     
@@ -44,6 +44,15 @@ public class LittleLuckLookAndFeel extends MetalLookAndFeel
         
         setPlatformFont();
     }
+    
+    public void uninitialize()
+    {
+        super.uninitialize();
+        
+        UIManager.getDefaults().removeResourceBundle(BUNDLENAME);
+        
+        resConfig.removeResource();
+    }
 
     /**
      * {@inheritDoc}
@@ -51,11 +60,13 @@ public class LittleLuckLookAndFeel extends MetalLookAndFeel
     protected void initComponentDefaults(UIDefaults table)
     {
         super.initComponentDefaults(table);
+        
+        initResourceBundle(table);
 
         if (resConfig != null)
         {
             // load UI resource
-            resConfig.loadResources();
+            resConfig.loadResources(table);
         }
     }
 
@@ -68,6 +79,15 @@ public class LittleLuckLookAndFeel extends MetalLookAndFeel
             // set LookAndFeel UI
             uiConfig.initClassDefaults(table);
         }
+    }
+    
+    /**
+     * Initialize the defaults table with the name of the other ResourceBundle
+     * used for getting localized defaults.
+     */
+    protected void initResourceBundle(UIDefaults table)
+    {
+        table.addResourceBundle(BUNDLENAME);
     }
     
     /**

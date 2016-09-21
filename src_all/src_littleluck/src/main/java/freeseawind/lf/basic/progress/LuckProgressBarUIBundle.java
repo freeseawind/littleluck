@@ -1,6 +1,7 @@
 package freeseawind.lf.basic.progress;
 
 import javax.swing.BorderFactory;
+import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 import javax.swing.plaf.InsetsUIResource;
 
@@ -61,13 +62,13 @@ public class LuckProgressBarUIBundle extends LuckResourceBundle
     public static final String ISREPEAT = "ProgressBar.repeatNp";
 
     @Override
-    protected void installBorder()
+    protected void installBorder(UIDefaults table)
     {
         UIManager.put(BORDER, getBorderRes(BorderFactory.createEmptyBorder(0, 0, 0, 0)));
     }
 
     @Override
-    protected void loadImages()
+    protected void loadImages(UIDefaults table)
     {
         UIManager.put(HORIZONTALICON, LuckRes.getImage("progress/progressbar.9.png"));
 
@@ -79,7 +80,7 @@ public class LuckProgressBarUIBundle extends LuckResourceBundle
     }
 
     @Override
-    protected void installOther()
+    protected void installOther(UIDefaults table)
     {
         UIManager.put(HORIZONTALSIZE, getDimensionRes(160, 10));
 

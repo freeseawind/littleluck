@@ -5,6 +5,7 @@ import java.awt.Insets;
 import java.awt.image.BufferedImage;
 
 import javax.swing.PopupFactory;
+import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 
 import freeseawind.lf.border.LuckNinePatchBorder;
@@ -32,21 +33,21 @@ public class LuckPopupMenuUIBundle extends LuckResourceBundle
     public static final String SEPEREATOR_COLOR = "PopupSeparator.bgcolor";
 
     @Override
-    protected void installColor()
+    protected void installColor(UIDefaults table)
     {
         UIManager.put(SEPEREATOR_COLOR, new Color(215, 220, 222));
     }
 
     @Override
-    protected void installBorder()
+    protected void installBorder(UIDefaults table)
     {
         BufferedImage img = LuckRes.getImage("popupmenu/shadow_border.9.png");
 
-        UIManager.put(BORDER, new LuckNinePatchBorder(new Insets(5, 3, 6, 3), img));
+        table.put(BORDER, new LuckNinePatchBorder(new Insets(5, 3, 6, 3), img));
     }
 
     @Override
-    protected void installOther()
+    protected void installOther(UIDefaults table)
     {
         //使用自定义工厂, 设置Popup为透明, 否则无法使用阴影边框
         PopupFactory.setSharedInstance(new LuckPopupFactory());

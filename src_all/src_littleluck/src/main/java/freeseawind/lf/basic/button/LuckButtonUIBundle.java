@@ -1,6 +1,6 @@
 package freeseawind.lf.basic.button;
 
-import javax.swing.UIManager;
+import javax.swing.UIDefaults;
 import javax.swing.border.EmptyBorder;
 
 import freeseawind.lf.cfg.LuckResourceBundle;
@@ -30,14 +30,14 @@ public class LuckButtonUIBundle extends LuckResourceBundle
     
 
     @Override
-    protected void installBorder()
+    protected void installBorder(UIDefaults table)
     {
-        UIManager.put(BORDER, new EmptyBorder(3, 14, 3, 15));
+        table.put(BORDER, new EmptyBorder(3, 14, 3, 15));
     }
 
     @Override
-    protected void installColor()
+    protected void installColor(UIDefaults table)
     {
-        UIManager.put(COLOR_INFO, LuckButtonColorFactory.getBlueBtnInfo());
+        table.put(COLOR_INFO, LuckButtonColorFactory.getBlueBtnInfo());
     }
 }

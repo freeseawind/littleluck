@@ -33,6 +33,7 @@ public class LuckTreeUI extends BasicTreeUI
     
     /**
      * <P>使用自定义TreeCellRenderer， 去除焦点边框绘制。</p>
+     * 
      * <P>Use custom TreeCellRenderer, the removal of the border to draw focus.</P>
      */
     protected TreeCellRenderer createDefaultCellRenderer()

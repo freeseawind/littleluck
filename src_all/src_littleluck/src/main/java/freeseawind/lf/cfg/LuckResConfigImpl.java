@@ -1,5 +1,7 @@
 package freeseawind.lf.cfg;
 
+import javax.swing.UIDefaults;
+
 import freeseawind.lf.basic.button.LuckButtonUIBundle;
 import freeseawind.lf.basic.checkboxmenuitem.LuckCheckboxMenuItemUIBundle;
 import freeseawind.lf.basic.combobox.LuckComboBoxUIBundle;
@@ -32,55 +34,106 @@ import freeseawind.lf.basic.tree.LuckTreeUIBundle;
  */
 public class LuckResConfigImpl implements LuckResConfig
 {
-    public void loadResources()
+    public void loadResources(UIDefaults table)
     {
-        getGlobalBundl().installDefaults();
+        getGlobalBundl().installDefaults(table);
 
-        getRootPanelUIBundle().installDefaults();
+        getRootPanelUIBundle().installDefaults(table);
 
-        getInternalFrameUIBundle().installDefaults();
+        getInternalFrameUIBundle().installDefaults(table);
 
-        getOptionPanelUIBundle().installDefaults();
+        getOptionPanelUIBundle().installDefaults(table);
 
-        getButtonUIBundle().installDefaults();
+        getButtonUIBundle().installDefaults(table);
 
-        getToggleButtonUIBundle().installDefaults();
+        getToggleButtonUIBundle().installDefaults(table);
 
-        getTextUIBundle().installDefaults();
+        getTextUIBundle().installDefaults(table);
 
-        getComboboxUIBundle().installDefaults();
+        getComboboxUIBundle().installDefaults(table);
 
-        getMenuUIBundle().installDefaults();
+        getMenuUIBundle().installDefaults(table);
 
-        getMenItemUIBundle().installDefaults();
+        getMenItemUIBundle().installDefaults(table);
 
-        getCheckboxMenItemUIBundle().installDefaults();
+        getCheckboxMenItemUIBundle().installDefaults(table);
 
-        getRadioBtnMenItemUIBundle().installDefaults();
+        getRadioBtnMenItemUIBundle().installDefaults(table);
 
-        getPopupMenuUIBundle().installDefaults();
+        getPopupMenuUIBundle().installDefaults(table);
 
-        getTabbedPaneUIBundle().installDefaults();
+        getTabbedPaneUIBundle().installDefaults(table);
 
-        getScrollUIBundle().installDefaults();
+        getScrollUIBundle().installDefaults(table);
 
-        getTreeUIBundle().installDefaults();
+        getTreeUIBundle().installDefaults(table);
 
-        getListUIBundle().installDefaults();
+        getListUIBundle().installDefaults(table);
 
-        getToolipUIBundle().installDefaults();
+        getToolipUIBundle().installDefaults(table);
 
-        getSpinnerUIBundle().installDefaults();
+        getSpinnerUIBundle().installDefaults(table);
 
-        getSliderUIBundle().installDefaults();
+        getSliderUIBundle().installDefaults(table);
 
-        getTableUIBundle().installDefaults();
+        getTableUIBundle().installDefaults(table);
 
-        getProgressBarUIBundle().installDefaults();
+        getProgressBarUIBundle().installDefaults(table);
 
-        getFileChooserUIBundle().installDefaults();
+        getFileChooserUIBundle().installDefaults(table);
         
-        getSplitPaneUIBundle().installDefaults();
+        getSplitPaneUIBundle().installDefaults(table);
+    }
+    
+    public void removeResource()
+    {
+        getGlobalBundl().uninitialize();
+
+        getRootPanelUIBundle().uninitialize();
+
+        getInternalFrameUIBundle().uninitialize();
+
+        getOptionPanelUIBundle().uninitialize();
+
+        getButtonUIBundle().uninitialize();
+
+        getToggleButtonUIBundle().uninitialize();
+
+        getTextUIBundle().uninitialize();
+
+        getComboboxUIBundle().uninitialize();
+
+        getMenuUIBundle().uninitialize();
+
+        getMenItemUIBundle().uninitialize();
+
+        getCheckboxMenItemUIBundle().uninitialize();
+
+        getRadioBtnMenItemUIBundle().uninitialize();
+
+        getPopupMenuUIBundle().uninitialize();
+
+        getTabbedPaneUIBundle().uninitialize();
+
+        getScrollUIBundle().uninitialize();
+
+        getTreeUIBundle().uninitialize();
+
+        getListUIBundle().uninitialize();
+
+        getToolipUIBundle().uninitialize();
+
+        getSpinnerUIBundle().uninitialize();
+
+        getSliderUIBundle().uninitialize();
+
+        getTableUIBundle().uninitialize();
+
+        getProgressBarUIBundle().uninitialize();
+
+        getFileChooserUIBundle().uninitialize();
+        
+        getSplitPaneUIBundle().uninitialize();
     }
 
     /**

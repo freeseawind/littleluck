@@ -1,5 +1,6 @@
 package freeseawind.lf.basic.filechooser;
 
+import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 
 import freeseawind.lf.cfg.LuckResourceBundle;
@@ -44,21 +45,21 @@ public class LuckFileChooserUIBundle extends LuckResourceBundle
     public static final String LISTVIEWWINDOWSSTYLE = "FileChooser.listViewWindowsStyle";
 
     @Override
-    protected void loadImages()
+    protected void loadImages(UIDefaults table)
     {
-        UIManager.put(UPFOLDERICON, getIconRes("filechooser/up_folder.png"));
+        table.put(UPFOLDERICON, getIconRes("filechooser/up_folder.png"));
 
-        UIManager.put(NEWFOLDERICON, getIconRes("filechooser/new_folder.png"));
+        table.put(NEWFOLDERICON, getIconRes("filechooser/new_folder.png"));
 
-        UIManager.put(HOMEFOLDERICON, getIconRes("filechooser/home.png"));
+        table.put(HOMEFOLDERICON, getIconRes("filechooser/home.png"));
 
-        UIManager.put(LISTVIEWICON, getIconRes("filechooser/list.png"));
+        table.put(LISTVIEWICON, getIconRes("filechooser/list.png"));
 
-        UIManager.put(DETAILSVIEWICON, getIconRes("filechooser/details.png"));
+        table.put(DETAILSVIEWICON, getIconRes("filechooser/details.png"));
     }
 
     @Override
-    protected void installOther()
+    protected void installOther(UIDefaults table)
     {
         UIManager.put(LISTVIEWWINDOWSSTYLE, Boolean.TRUE);
     }

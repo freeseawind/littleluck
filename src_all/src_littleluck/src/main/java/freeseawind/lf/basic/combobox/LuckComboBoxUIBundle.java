@@ -7,7 +7,7 @@ import java.awt.Point;
 import java.awt.image.BufferedImage;
 
 import javax.swing.JComboBox;
-import javax.swing.UIManager;
+import javax.swing.UIDefaults;
 import javax.swing.border.EmptyBorder;
 
 import freeseawind.lf.border.LuckBorderField;
@@ -76,25 +76,25 @@ public class LuckComboBoxUIBundle extends LuckResourceBundle
     public static final String POPUPLOCATION = "ComboBox.popLocation";
 
     @Override
-    protected void installColor()
+    protected void installColor(UIDefaults table)
     {
-        UIManager.put(BACKGROUND, Color.WHITE);
+        table.put(BACKGROUND, Color.WHITE);
 
-        UIManager.put(SELECTIONBACKGROUND, new Color(0, 150, 201, 200));
+        table.put(SELECTIONBACKGROUND, new Color(0, 150, 201, 200));
 
-        UIManager.put(BUTTONBACKGROUND, Color.WHITE);
+        table.put(BUTTONBACKGROUND, Color.WHITE);
 
-        UIManager.put(BUTTONFOCUS, new Color(0, 150, 201, 200));
+        table.put(BUTTONFOCUS, new Color(0, 150, 201, 200));
 
-        UIManager.put(SELECTIONFOREGROUND, Color.WHITE);
+        table.put(SELECTIONFOREGROUND, Color.WHITE);
     }
 
     @Override
-    protected void installBorder()
+    protected void installBorder(UIDefaults table)
     {
         Insets insets = new Insets(3, 4, 3, 4);
 
-        UIManager.put(BORDER, new LuckShapeBorder(insets)
+        table.put(BORDER, new LuckShapeBorder(insets)
         {
             private static final long serialVersionUID = 8164006958194911458L;
 
@@ -114,16 +114,16 @@ public class LuckComboBoxUIBundle extends LuckResourceBundle
 
         BufferedImage img = LuckRes.getImage("popupmenu/shadow_border.9.png");
 
-        UIManager.put(POPUPBORDER, new LuckNinePatchBorder(new Insets(5, 3, 6, 3), img));
+        table.put(POPUPBORDER, new LuckNinePatchBorder(new Insets(5, 3, 6, 3), img));
 
-        UIManager.put(RENDERERBORDER, new EmptyBorder(new Insets(0, 4, 0, 0)));
+        table.put(RENDERERBORDER, new EmptyBorder(new Insets(0, 4, 0, 0)));
     }
 
     @Override
-    protected void installOther()
+    protected void installOther(UIDefaults table)
     {
-        UIManager.put(POPUPLOCATION, new Point(0, 1));
+        table.put(POPUPLOCATION, new Point(0, 1));
 
-        UIManager.put(ISFOCUSBORDER, Boolean.TRUE);
+        table.put(ISFOCUSBORDER, Boolean.TRUE);
     }
 }

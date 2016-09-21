@@ -3,6 +3,7 @@ package freeseawind.lf.basic.menu;
 import java.awt.Color;
 
 import javax.swing.BorderFactory;
+import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 
 import freeseawind.lf.cfg.LuckResourceBundle;
@@ -104,39 +105,39 @@ public class LuckMenuUIBundle extends LuckResourceBundle
     public static final String CHECKICONOFFSET = "Menu.checkIconOffset";
 
     @Override
-    protected void installBorder()
+    protected void installBorder(UIDefaults table)
     {
-        UIManager.put(MENUBAR_BORDER, BorderFactory.createEmptyBorder(3, 0, 3, 0));
+        table.put(MENUBAR_BORDER, BorderFactory.createEmptyBorder(3, 0, 3, 0));
 
-        UIManager.put(MENU_BORDER, BorderFactory.createEmptyBorder());
+        table.put(MENU_BORDER, BorderFactory.createEmptyBorder());
     }
 
     @Override
-    protected void installColor()
+    protected void installColor(UIDefaults table)
     {
-        UIManager.put(MENU_SELECTIONBG, getColorRes(60, 175, 210));
+        table.put(MENU_SELECTIONBG, getColorRes(60, 175, 210));
 
-        UIManager.put(MENU_SELECTIONFG, Color.WHITE);
+        table.put(MENU_SELECTIONFG, Color.WHITE);
 
-        UIManager.put(MENU_BACKGROUND, Color.WHITE);
+        table.put(MENU_BACKGROUND, Color.WHITE);
         
-        UIManager.put(MENUBAR_BACKGROUND, Color.WHITE);
+        table.put(MENUBAR_BACKGROUND, Color.WHITE);
     }
 
     @Override
-    protected void loadImages()
+    protected void loadImages(UIDefaults table)
     {
-        UIManager.put(ARROW_NORMAL_ICON, LuckRes.getImage("menu/arrow_normal.png"));
+        table.put(ARROW_NORMAL_ICON, LuckRes.getImage("menu/arrow_normal.png"));
 
-        UIManager.put(ARROW_ROLLVER_ICON, LuckRes.getImage("menu/arrow_rollver.png"));
+        table.put(ARROW_ROLLVER_ICON, LuckRes.getImage("menu/arrow_rollver.png"));
 
-        UIManager.put(ARROW_ICON, new LuckArrowIcon());
+        table.put(ARROW_ICON, new LuckArrowIcon());
 
-        UIManager.put(CHECK_ICON, getIconRes(new LuckIcon(16, 0)));
+        table.put(CHECK_ICON, getIconRes(new LuckIcon(16, 0)));
     }
 
     @Override
-    protected void installOther()
+    protected void installOther(UIDefaults table)
     {
         // 注： 下列三个属性决定JMenu在弹出菜单中的布局
         UIManager.put(AFTERCHECKICONGAP, 4);

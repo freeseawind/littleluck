@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Insets;
 import java.awt.image.BufferedImage;
 
+import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 import javax.swing.plaf.BorderUIResource;
@@ -132,7 +133,7 @@ public class LuckInternalFrameUIBundle extends LuckResourceBundle
     public static final String LAYOUTTITLEPANEATORIGIN = "InternalFrame.layoutTitlePaneAtOrigin";
 
     @Override
-    protected void installBorder()
+    protected void installBorder(UIDefaults table)
     {
         // 初始化阴影边框
         Insets insets = new Insets(5, 5, 5, 5);
@@ -146,7 +147,7 @@ public class LuckInternalFrameUIBundle extends LuckResourceBundle
     }
 
     @Override
-    protected void installColor()
+    protected void installColor(UIDefaults table)
     {
         UIManager.put(ACTIVETITLEBACKGROUND, new ColorUIResource(Color.WHITE));
 
@@ -156,7 +157,7 @@ public class LuckInternalFrameUIBundle extends LuckResourceBundle
     }
 
     @Override
-    protected void loadImages()
+    protected void loadImages(UIDefaults table)
     {
         UIManager.put(INTERNALFRAME_ICON, getIconRes("frame/default_frame_icon.png"));
 
@@ -185,7 +186,7 @@ public class LuckInternalFrameUIBundle extends LuckResourceBundle
     }
 
     @Override
-    protected void installOther()
+    protected void installOther(UIDefaults table)
     {
         UIManager.put(TITLEPANE_HEIGHT, 26);
 

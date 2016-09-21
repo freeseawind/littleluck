@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Insets;
 
 import javax.swing.BorderFactory;
-import javax.swing.UIManager;
+import javax.swing.UIDefaults;
 
 import freeseawind.lf.border.LuckLineBorder;
 import freeseawind.lf.cfg.LuckResourceBundle;
@@ -27,14 +27,14 @@ public class LuckSplitPaneUIBundle extends LuckResourceBundle
     public static final String DIVIDERSIZE = "SplitPane.dividerSize";
 
     @Override
-    protected void installBorder()
+    protected void installBorder(UIDefaults table)
     {
-        UIManager.put(BORDER, BorderFactory.createEmptyBorder());
+        table.put(BORDER, BorderFactory.createEmptyBorder());
 
-        UIManager.put(DIVIDERBORDER, new LuckLineBorder(new Insets(1, 1, 1, 1), 2));
+        table.put(DIVIDERBORDER, new LuckLineBorder(new Insets(1, 1, 1, 1), 2));
 
-        UIManager.put(BACKGROUND, Color.white);
+        table.put(BACKGROUND, Color.white);
 
-        UIManager.put(DIVIDERSIZE, 5);
+        table.put(DIVIDERSIZE, 5);
     }
 }

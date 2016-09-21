@@ -3,6 +3,7 @@ package freeseawind.lf.basic.radiomenuitem;
 import java.awt.Color;
 
 import javax.swing.BorderFactory;
+import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 import javax.swing.plaf.IconUIResource;
 
@@ -65,7 +66,7 @@ public class LuckRadioBtnMenuItemUIBundle extends LuckResourceBundle
 
 
     @Override
-    protected void installColor()
+    protected void installColor(UIDefaults table)
     {
         UIManager.put(BACKGROUND, Color.WHITE);
 
@@ -75,13 +76,13 @@ public class LuckRadioBtnMenuItemUIBundle extends LuckResourceBundle
     }
 
     @Override
-    protected void installBorder()
+    protected void installBorder(UIDefaults table)
     {
         UIManager.put(BORDER, BorderFactory.createEmptyBorder());
     }
 
     @Override
-    protected void loadImages()
+    protected void loadImages(UIDefaults table)
     {
         UIManager.put(CHECK_ICON, new LuckRadioIcon());
 
@@ -89,7 +90,7 @@ public class LuckRadioBtnMenuItemUIBundle extends LuckResourceBundle
     }
 
     @Override
-    protected void installOther()
+    protected void installOther(UIDefaults table)
     {
         UIManager.put(AFTERCHECKICONGAP, 4);
 

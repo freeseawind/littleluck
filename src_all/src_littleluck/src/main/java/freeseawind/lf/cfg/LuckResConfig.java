@@ -1,5 +1,7 @@
 package freeseawind.lf.cfg;
 
+import javax.swing.UIDefaults;
+
 /**
  * UI资源初始化接口
  * @author freeseawind@github
@@ -7,5 +9,7 @@ package freeseawind.lf.cfg;
  */
 public interface LuckResConfig
 {
-    public void loadResources();
+    public void loadResources(UIDefaults table);
+    
+    public void removeResource();
 }
