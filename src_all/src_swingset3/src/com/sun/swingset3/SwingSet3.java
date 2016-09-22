@@ -79,6 +79,7 @@ import javax.swing.JTextArea;
 import javax.swing.LookAndFeel;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
@@ -155,6 +156,8 @@ public class SwingSet3 extends SingleFrameApplication  {
             }
         }
         UIManager.setInstalledLookAndFeels(lafInfo);
+        
+        UIManager.installLookAndFeel(new LookAndFeelInfo("LittleLuck", LittleLuckLookAndFeel.class.getName()));
         UIManager.put("swing.boldMetal", Boolean.FALSE);
     }
     

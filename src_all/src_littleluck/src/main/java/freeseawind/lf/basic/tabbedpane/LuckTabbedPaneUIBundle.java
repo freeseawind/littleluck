@@ -109,6 +109,35 @@ public class LuckTabbedPaneUIBundle extends LuckResourceBundle
      * <p>Tab spacing attribute key, you can control the Tab width and height by this property.</p>
      */
     public static final String TABINSETS = "TabbedPane.tabInsets";
+    
+    public void uninitialize()
+    {
+        UIManager.put(BACKGROUNDCOLOR, null);
+
+        UIManager.put(CONTENTAREACOLOR, null);
+
+        UIManager.put(SELECTEDFOREGROUND, null);
+
+        UIManager.put(SELECTEDCOLOR, null);
+
+        UIManager.put(SHADOW, null);
+
+        UIManager.put(SELECTEDSHADOW, null);
+        
+        UIManager.put(CONTENTOPAQUE, null);
+
+        UIManager.put(OPAQUE, null);
+
+        UIManager.put(TABSOVERLAPBORDER, null);
+        
+        UIManager.put(SELECTEDTABPADINSETS, null);
+
+        UIManager.put(TABAREAINSETS, null);
+
+        UIManager.put(CONTENTBORDERINSETS, null);
+
+        UIManager.put(TABINSETS, null);
+    }
 
     @Override
     protected void installColor(UIDefaults table)

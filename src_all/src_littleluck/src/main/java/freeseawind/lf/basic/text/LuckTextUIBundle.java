@@ -3,6 +3,7 @@ package freeseawind.lf.basic.text;
 import java.awt.Insets;
 
 import javax.swing.UIDefaults;
+import javax.swing.UIManager;
 
 import freeseawind.lf.cfg.LuckResourceBundle;
 
@@ -79,6 +80,15 @@ public class LuckTextUIBundle extends LuckResourceBundle
      * <p>EditorPane border properties.</p>
      */
     public static final String EDITORPANE_BORDER = "EditorPane.border";
+    
+    public void uninitialize()
+    {
+        UIManager.put(TEXTFIELD_FOCUSBORDER, null);
+        
+        UIManager.put(PASSWORDFIELD_FOCUSBORDER, null);
+        
+        UIManager.put(FORMATTEDTEXTFIELD_FOCUSBORDER, null);
+    }
 
     @Override
     protected void installBorder(UIDefaults table)

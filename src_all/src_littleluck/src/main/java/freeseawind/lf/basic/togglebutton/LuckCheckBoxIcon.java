@@ -40,7 +40,7 @@ public class LuckCheckBoxIcon implements Icon, Serializable
         {
             if(isPressed)
             {
-                image = (Image) UIManager.get(LuckToggleButtonUIBundle.CHECKBOX_UNPRESSED_ICON);
+                image = (Image) UIManager.get(LuckToggleButtonUIBundle.CHECKBOX_UNPRESSED_IMG);
             }
             else
             {

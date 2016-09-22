@@ -4,6 +4,7 @@ import java.awt.Color;
 
 import javax.swing.BorderFactory;
 import javax.swing.UIDefaults;
+import javax.swing.UIManager;
 
 import freeseawind.lf.cfg.LuckResourceBundle;
 import freeseawind.lf.utils.LuckRes;
@@ -101,7 +102,7 @@ public class LuckToggleButtonUIBundle extends LuckResourceBundle
      *
      * <p>[LittLeLuck Attributes]  image attributes when Click on checked state ChecBoxButton.</p>
      */
-    public static final String CHECKBOX_UNPRESSED_ICON = "CheckBox.unpressed";
+    public static final String CHECKBOX_UNPRESSED_IMG = "CheckBox.unpressed";
 
     /**
      * <p>ToggleButton边框属性key。</p>
@@ -117,6 +118,22 @@ public class LuckToggleButtonUIBundle extends LuckResourceBundle
      * <p>RadioButton icon properties.</p>
      */
     public static final String RADIO_ICON = "RadioButton.icon";
+    
+    public void uninitialize()
+    {
+        UIManager.put(RADIO_NORMAL_COLOR, null);
+        UIManager.put(RADIO_FOCUS_COLOR, null);
+        UIManager.put(RADIO_SHADOW_COLOR, null);
+        UIManager.put(RADIO_CHECK_COLOR, null);
+        
+        UIManager.put(CHECKBOX_NORMAL_IMG, null);
+        UIManager.put(CHECKBOX_ROLLVER_IMG, null);
+        UIManager.put(CHECKBOX_UNROLLVER_IMG, null);
+        
+        UIManager.put(CHECKBOX_PRESSED_IMG, null);
+        UIManager.put(CHECKBOX_UNROLLVER_IMG, null);
+        UIManager.put(CHECKBOX_UNPRESSED_IMG, null);
+    }
 
     @Override
     protected void installColor(UIDefaults table)
@@ -144,7 +161,7 @@ public class LuckToggleButtonUIBundle extends LuckResourceBundle
         table.put(CHECKBOX_ROLLVER_IMG, LuckRes.getImage("checkbox/cb_rollver.png"));
         table.put(CHECKBOX_UNROLLVER_IMG, LuckRes.getImage("checkbox/cb_un_rollver.png"));
         table.put(CHECKBOX_PRESSED_IMG, LuckRes.getImage("checkbox/cb_pressed.png"));
-        table.put(CHECKBOX_UNPRESSED_ICON, LuckRes.getImage("checkbox/cb_un_pressed.png"));
+        table.put(CHECKBOX_UNPRESSED_IMG, LuckRes.getImage("checkbox/cb_un_pressed.png"));
 
         //
         table.put(RADIO_ICON, new LuckRadioIcon());

@@ -3,56 +3,102 @@ package freeseawind.lf.basic.slider;
 import java.awt.Color;
 
 import javax.swing.UIDefaults;
+import javax.swing.UIManager;
 
 import freeseawind.lf.cfg.LuckResourceBundle;
 import freeseawind.lf.utils.LuckRes;
 
+/**
+ * <p>SliderUI资源绑定类。</p>
+ * 
+ * <p>SliderUI resource bundle class.</p>
+ * 
+ * @author freeseawind@github
+ * @version 1.0
+ */
 public class LuckSliderUIBundle extends LuckResourceBundle
 {
     /**
-     * 标尺颜色属性key
+     * <p>标尺颜色属性key。</p>
+     * 
+     * <p>Slider tick color properties.</p>
      */
     public static final String TICKCOLOR = "Slider.tickColor";
 
     /**
-     * 背景颜色属性key
+     * <p>背景颜色属性key。</p>
+     * 
+     * <p>Slider background color properties.</p>
      */
     public static final String BACKGROUND = "Slider.background";
     
     /**
-     * [自定义属性] 水平滑块图片属性key
+     * <p>[LittleLuck属性] 水平滑块图片属性key。</p>
+     * 
+     * <p>[LittLeLuck Attributes] Slider horizontal thumb image properties.</p>
      */
     public static final String THUMB_HORIZONTAL = "Slider.thumbHorizontalImg";
 
     /**
-     * [自定义属性] 垂直滑块图片属性key
+     * <p>[LittleLuck属性] 垂直滑块图片属性key。</p>
+     * 
+     * <p>[LittLeLuck Attributes] Slider vertical thumb image properties.</p>
      */
     public static final String THUMB_VERTICAL = "Slider.thumbVerticalImg";
 
     /**
-     * [自定义属性] 水平滑道背景图片属性key
+     * <p>[LittleLuck属性] 水平滑道背景图片属性key。</p>
+     * 
+     * <p>[LittLeLuck Attributes] Slider horizontal track image properties.</p>
      */
     public static final String TRACK_HORIZONTAL = "Slider.trackHorizontal";
 
     /**
-     * [自定义属性] 水平滑道高亮背景图片属性key
+     * <p>[LittleLuck属性] 水平滑道高亮背景图片属性key。</p>
+     * 
+     * <p>[LittLeLuck Attributes] Slider horizontal track progress image properties.</p>
      */
     public static final String TRACK_HORIZONTAL_H = "Slider.trackHorizontalHighlight";
 
     /**
-     * [自定义属性] 垂直滑道高亮背景图片属性key
+     * <p>[LittleLuck属性] 垂直滑道背景图片属性key。 </p>
+     * 
+     * <p>[LittLeLuck Attributes] Slider vertical track image properties.</p>
      */
     public static final String TRACK_VERTICAL = "Slider.trackVertical";
 
     /**
-     * [自定义属性] 垂直滑道高亮背景图片属性key
+     * <p>[LittleLuck属性] 垂直滑道高亮背景图片属性key </p>
+     * 
+     * <p>[LittLeLuck Attributes] Slider vertical track progress image properties.</p>
      */
     public static final String TRACK_VERTICAL_H = "Slider.trackVerticalHighlight";
 
     /**
-     * [自定义属性]滑道大小
+     * <p>[LittleLuck属性]滑道大小, 默认值为8。</p>
+     * 
+     * <p>[LittLeLuck Attributes] Slider track size properties, default size 8.</p>
      */
     public static final String TRACK_SIZE = "Slider.trackSize";
+    
+    public void uninitialize()
+    {
+        UIManager.put(THUMB_HORIZONTAL, null);
+        
+        UIManager.put(THUMB_VERTICAL, null);
+        
+        UIManager.put(TRACK_HORIZONTAL, null);
+        
+        UIManager.put(TRACK_HORIZONTAL, null);
+        
+        UIManager.put(TRACK_HORIZONTAL_H, null);
+        
+        UIManager.put(TRACK_VERTICAL, null);
+        
+        UIManager.put(TRACK_VERTICAL_H, null);
+        
+        UIManager.put(TRACK_SIZE, null);
+    }
     
     @Override
     protected void installColor(UIDefaults table)
