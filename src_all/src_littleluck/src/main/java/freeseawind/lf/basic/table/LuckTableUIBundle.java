@@ -10,19 +10,41 @@ import freeseawind.lf.cfg.LuckResourceBundle;
 import freeseawind.lf.utils.LuckRes;
 
 /**
- * TableUI and TableHeaderUI 资源绑定类
+ * <p>TableUI and TableHeaderUI 资源绑定类。</p>
+ *
+ * <p>TableUI and TableHeaderUI resource bundle class.</p>
  *
  * @author freeseawind@github
  * @version 1.0
  */
 public class LuckTableUIBundle extends LuckResourceBundle
 {
+    /**
+     * <p>Table选中时背景颜色属性。</p>
+     *
+     * <p>Table background color properties when selected.</p>
+     */
     public static final String SELECTIONBACKGROUND = "Table.selectionBackground";
 
+    /**
+     * <p>Table选中时字体颜色属性。</p>
+     *
+     * <p>Table font color properties when selected.</p>
+     */
     public static final String SELECTIONFOREGROUND = "Table.selectionForeground";
 
+    /**
+     * <p>Table升序箭头图标属性。</p>
+     *
+     * <p>Table ascending arrow icon property.</p>
+     */
     public static final String ASC_ICON = "Table.ascendingSortIcon";
 
+    /**
+     * <p>Table降序箭头图标属性。</p>
+     *
+     * <p>Table descending arrow icon property.</p>
+     */
     public static final String DESC_ICON = "Table.descendingSortIcon";
 
     @Override

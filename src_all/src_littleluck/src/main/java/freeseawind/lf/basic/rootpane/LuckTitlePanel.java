@@ -127,7 +127,7 @@ public class LuckTitlePanel extends JPanel
 
     /**
      * 设置窗体拉伸状体,根据状态隐藏或显示放大按钮
-     * 
+     *
      * @param isResizeable 当前窗体是否可以缩放，可以返回true，否则false
      */
     public void setResizeable(boolean isResizeable)
@@ -144,7 +144,7 @@ public class LuckTitlePanel extends JPanel
 
     /**
      * 创建标题面板布局
-     * 
+     *
      * @return 标题面板布局对象
      */
     public LayoutManager createLayout()
@@ -246,7 +246,7 @@ public class LuckTitlePanel extends JPanel
 
     /**
      * 获取面板所在的窗体
-     * 
+     *
      * @return 面板所在的窗体
      */
     private Window getWindow()

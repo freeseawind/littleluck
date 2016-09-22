@@ -9,7 +9,9 @@ import freeseawind.lf.border.LuckLineBorder;
 import freeseawind.lf.cfg.LuckResourceBundle;
 
 /**
- * SpinnerUI资源绑定类
+ * <p>SpinnerUI资源绑定类。</p>
+ *
+ * <p>SpinnerUI resource bundle class.</p>
  *
  * @author freeseawind@github
  * @version 1.0
@@ -18,22 +20,30 @@ import freeseawind.lf.cfg.LuckResourceBundle;
 public class LuckSpinnerUIBundle extends LuckResourceBundle
 {
     /**
-     * Spinner边框属性key
+     * <p>Spinner边框属性key。</p>
+     *
+     * <p>Spinner border properties.</p>
      */
     public static final String BORDER = "Spinner.border";
 
     /**
-     * Spinner箭头按钮边框属性key
+     * <p>Spinner箭头按钮边框属性key。</p>
+     *
+     * <p>Spinner arrow button border properties.</p>
      */
     public static final String ARROWBUTTONBORDER = "Spinner.arrowButtonBorder";
 
     /**
-     * Spinner背景颜色属性key
+     * <p>Spinner背景颜色属性key。</p>
+     *
+     * <p>Spinner background color properties.</p>
      */
     public static final String BACKGROUND = "Spinner.background";
 
     /**
-     * Spinner箭头按钮间距属性key
+     * <p>Spinner箭头按钮间距属性key。</p>
+     *
+     * <p>Spinner arrow button insets properties.</p>
      */
     public static final String ARROWBUTTONINSETS = "Spinner.arrowButtonInsets";
 

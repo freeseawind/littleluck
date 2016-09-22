@@ -22,7 +22,9 @@ import javax.swing.table.TableCellRenderer;
 import freeseawind.lf.border.LuckLineBorder;
 
 /**
- * TableHeader单元渲染处理实现类
+ * <p>TableHeader单元渲染处理实现类。</p>
+ *
+ * <p>Table Header unit rendering implementation class.</p>
  *
  * @author freeseawind@github
  * @version 1.0

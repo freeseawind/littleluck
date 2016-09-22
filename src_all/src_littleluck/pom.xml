@@ -8,7 +8,7 @@
 
 	<name>LittleLuck</name>
 	<description>Java Swing cross platform LookAndFeel</description>
-	<url>https://github.com/freeseawind/NinePatch</url>
+	<url>https://github.com/freeseawind/littleluck</url>
 
 	<licenses>
 		<license>
@@ -83,6 +83,7 @@
 				</configuration>
 			</plugin>
 
+            <!--  
 			<plugin>
 				<groupId>org.sonatype.plugins</groupId>
 				<artifactId>nexus-staging-maven-plugin</artifactId>
@@ -151,6 +152,7 @@
 					</execution>
 				</executions>
 			</plugin>
+			-->
 		</plugins>
 	</build>
 

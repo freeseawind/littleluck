@@ -9,7 +9,7 @@ import javax.swing.JComponent;
 import javax.swing.JSlider;
 import javax.swing.UIManager;
 import javax.swing.plaf.ComponentUI;
-import javax.swing.plaf.basic.BasicSliderUI;
+import javax.swing.plaf.metal.MetalSliderUI;
 
 import freeseawind.ninepatch.swing.SwingNinePatch;
 
@@ -19,7 +19,7 @@ import freeseawind.ninepatch.swing.SwingNinePatch;
  * @author freeseawind@github
  * @version 1.0
  */
-public class LuckSliderUI extends BasicSliderUI
+public class LuckSliderUI extends MetalSliderUI
 {
     private SwingNinePatch horizontalNp;
     private SwingNinePatch horizontalHighlightNp;
@@ -32,7 +32,7 @@ public class LuckSliderUI extends BasicSliderUI
 
     public LuckSliderUI(JSlider b)
     {
-        super(b);
+        super();
     }
 
     public static ComponentUI createUI(JComponent b)
@@ -44,30 +44,14 @@ public class LuckSliderUI extends BasicSliderUI
     {
         super.installUI(c);
 
-        horizontalNp = new SwingNinePatch((BufferedImage) UIManager
-                .get(LuckSliderUIBundle.TRACK_HORIZONTAL));
-
-        horizontalHighlightNp = new SwingNinePatch((BufferedImage) UIManager
-                .get(LuckSliderUIBundle.TRACK_HORIZONTAL_H));
-
-        verticalNp = new SwingNinePatch((BufferedImage) UIManager
-                .get(LuckSliderUIBundle.TRACK_VERTICAL));
-
-        verticalHighlightNp = new SwingNinePatch((BufferedImage) UIManager
-                .get(LuckSliderUIBundle.TRACK_VERTICAL_H));
-
-        horizontaltThumbImg = (BufferedImage) UIManager
-                .get(LuckSliderUIBundle.THUMB_HORIZONTAL);
-
-        verticalThumbImg = (BufferedImage) UIManager
-                .get(LuckSliderUIBundle.THUMB_VERTICAL);
-
         size = UIManager.getInt(LuckSliderUIBundle.TRACK_SIZE);
     }
 
     public void paintTrack(Graphics g)
     {
         Rectangle trackBounds = trackRect;
+
+        initRes(slider.getOrientation());
 
         if (slider.getOrientation() == JSlider.HORIZONTAL)
         {
@@ -101,6 +85,8 @@ public class LuckSliderUI extends BasicSliderUI
 
         g.translate(knobBounds.x, knobBounds.y);
 
+        initRes(slider.getOrientation());
+
         if (slider.getOrientation() == JSlider.HORIZONTAL)
         {
             g.drawImage(horizontaltThumbImg, 0, 0, null);
@@ -111,5 +97,59 @@ public class LuckSliderUI extends BasicSliderUI
         }
 
         g.translate(-knobBounds.x, -knobBounds.y);
+    }
+
+    protected void initRes(int orientation)
+    {
+        if (orientation == JSlider.HORIZONTAL)
+        {
+            initHorizontalRes();
+        }
+        else
+        {
+            initVerticalRes();
+        }
+    }
+
+    protected void initHorizontalRes()
+    {
+        if(horizontalNp == null)
+        {
+            horizontalNp = new SwingNinePatch((BufferedImage) UIManager
+                    .get(LuckSliderUIBundle.TRACK_HORIZONTAL));
+        }
+
+        if(horizontalHighlightNp == null)
+        {
+            horizontalHighlightNp = new SwingNinePatch((BufferedImage) UIManager
+                    .get(LuckSliderUIBundle.TRACK_HORIZONTAL_H));
+        }
+
+        if(horizontaltThumbImg == null)
+        {
+            horizontaltThumbImg = (BufferedImage) UIManager
+                    .get(LuckSliderUIBundle.THUMB_HORIZONTAL);
+        }
+    }
+
+    protected void initVerticalRes()
+    {
+        if(verticalNp == null)
+        {
+            verticalNp = new SwingNinePatch((BufferedImage) UIManager
+                    .get(LuckSliderUIBundle.TRACK_VERTICAL));
+        }
+
+        if(verticalHighlightNp == null)
+        {
+            verticalHighlightNp = new SwingNinePatch((BufferedImage) UIManager
+                    .get(LuckSliderUIBundle.TRACK_VERTICAL_H));
+        }
+
+        if(verticalThumbImg == null)
+        {
+            verticalThumbImg = (BufferedImage) UIManager
+                    .get(LuckSliderUIBundle.THUMB_VERTICAL);
+        }
     }
 }

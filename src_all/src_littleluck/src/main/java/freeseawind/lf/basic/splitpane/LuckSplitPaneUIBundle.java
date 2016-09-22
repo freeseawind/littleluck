@@ -10,7 +10,9 @@ import freeseawind.lf.border.LuckLineBorder;
 import freeseawind.lf.cfg.LuckResourceBundle;
 
 /**
- * SplitPaneUI资源绑定类
+ * <p>SplitPaneUI资源绑定类</p>
+ *
+ * <p>SplitPaneUI resource bundle class.</p>
  *
  * @author freeseawind@github
  * @version 1.0
@@ -18,12 +20,32 @@ import freeseawind.lf.cfg.LuckResourceBundle;
  */
 public class LuckSplitPaneUIBundle extends LuckResourceBundle
 {
+    /**
+     * <p>SplitPane边框属性key。</p>
+     *
+     * <p>SplitPane border properties.</p>
+     */
     public static final String BORDER = "SplitPane.border";
 
+    /**
+     * <p>SplitPaneDivider边框属性key。</p>
+     *
+     * <p>SplitPaneDivider border properties.</p>
+     */
     public static final String DIVIDERBORDER = "SplitPaneDivider.border";
 
+    /**
+     * <p>SplitPane背景颜色属性key。</p>
+     *
+     * <p>SplitPane background color properties.</p>
+     */
     public static final String BACKGROUND = "SplitPane.background";
 
+    /**
+     * <p>SplitPane分隔区域大小属性key, 当前默认值5。</p>
+     *
+     * <p>SplitPane divider size properties, default size 5.</p>
+     */
     public static final String DIVIDERSIZE = "SplitPane.dividerSize";
 
     @Override

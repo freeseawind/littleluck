@@ -23,7 +23,7 @@ import freeseawind.ninepatch.swing.SwingNinePatch;
  * <p>
  * See Also:{@link LuckToolipUIBundle}
  * </p>
- * 
+ *
  * @author freeseawind@github
  * @version 1.0
  *
@@ -42,11 +42,19 @@ public class LuckToolTipUI extends BasicToolTipUI
     public void installUI(JComponent c)
     {
         super.installUI(c);
-        
+
         if(np == null)
         {
             np = new SwingNinePatch((BufferedImage) UIManager.get(LuckToolipUIBundle.BGIMG));
         }
+    }
+
+    @Override
+    public void uninstallUI(JComponent c)
+    {
+        super.uninstallUI(c);
+
+        np = null;
     }
 
     public void installDefaults(JComponent c)
@@ -58,13 +66,13 @@ public class LuckToolTipUI extends BasicToolTipUI
 
     public void paint(Graphics g, JComponent c)
     {
-        
+
         if(np != null)
         {
             np.drawNinePatch((Graphics2D) g, 0, 0, c.getWidth(), c.getHeight());
 
         }
-        
+
         super.paint(g, c);
     }
 }

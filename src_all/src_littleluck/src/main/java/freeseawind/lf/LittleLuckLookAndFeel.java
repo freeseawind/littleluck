@@ -168,7 +168,7 @@ public class LittleLuckLookAndFeel extends MetalLookAndFeel
 
     public String getDescription()
     {
-        return "The littleluck cross platform Look and Feel";
+        return "The LittleLuck cross platform Look and Feel";
     }
 
     public String getID()

@@ -14,9 +14,9 @@ import freeseawind.lf.utils.LuckRes;
  * LuckToolipUI资源绑定类。
  * </p>
  * <p>
- * A LuckToolipUI Resource bundle class.
+ * A LuckToolipUI resource bundle class.
  * </p>
- * 
+ *
  * @author freeseawind@github
  * @version 1.0
  *
@@ -28,17 +28,17 @@ public class LuckToolipUIBundle extends LuckResourceBundle
      * <p>JToolip border properties.</p>
      */
     public static final String BORDER = "ToolTip.border";
-    
+
     /**
      * <p>[LittleLuck属性]JToolip背景图片属性key。<p>
      * <p>[LittLeLuck Attributes] JToolip background image properties.</p>
      */
     public static final String BGIMG = "ToolTip.bgImg";
-    
+
     public void uninitialize()
     {
         UIManager.put(BORDER, null);
-        
+
         UIManager.put(BGIMG, null);
     }
 
@@ -46,7 +46,7 @@ public class LuckToolipUIBundle extends LuckResourceBundle
     protected void installBorder(UIDefaults table)
     {
         // 由于不能直接在JToolip上加半透明阴影边框, 这里的边框只作为内边框使用,间距根据背景图片阴影来设置。
-        
+
         // Because it is not applied directly on JToolip translucent shadow
         // border, where border use only as an internal border, spacing,
         // according to the background image to set the shadow.
