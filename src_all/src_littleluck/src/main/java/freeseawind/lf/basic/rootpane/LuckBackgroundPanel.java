@@ -7,17 +7,12 @@ import java.awt.Graphics2D;
 import java.awt.Insets;
 import java.awt.LayoutManager;
 import java.awt.Transparency;
-import java.awt.Window;
-import java.awt.event.WindowAdapter;
 import java.awt.image.BufferedImage;
 
-import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
 
 import freeseawind.lf.canvas.LuckCanvas;
-import freeseawind.lf.event.LuckWindowAdapter;
 
 /**
  * <p>
@@ -35,12 +30,6 @@ public class LuckBackgroundPanel extends JPanel
 
     // 标题面板
     private LuckTitlePanel titlePanel;
-
-    // 窗体变化状态监听器
-    private WindowAdapter windowAdapter;
-
-    // 当前容器所属的窗体
-    private Window window;
 
     // 系统菜单
     private JMenuBar menuBar;
@@ -98,32 +87,11 @@ public class LuckBackgroundPanel extends JPanel
     public void addNotify()
     {
         super.addNotify();
-
-        window = getWindow();
-
-        if (window != null && window instanceof JFrame)
-        {
-            if (windowAdapter == null)
-            {
-                windowAdapter = new LuckWindowAdapter();
-            }
-
-            window.addWindowStateListener(windowAdapter);
-        }
     }
 
     public void removeNotify()
     {
         super.removeNotify();
-
-        if (window != null && windowAdapter != null && window instanceof JFrame)
-        {
-            window.removeWindowStateListener(windowAdapter);
-        }
-
-        window = null;
-
-        windowAdapter = null;
 
         if (menuBar != null)
         {
@@ -173,7 +141,7 @@ public class LuckBackgroundPanel extends JPanel
     }
 
     /**
-     * 
+     *
      * @return 返回标题面板
      */
     public LuckTitlePanel getTitlePanel()
@@ -182,7 +150,7 @@ public class LuckBackgroundPanel extends JPanel
     }
 
     /**
-     * 
+     *
      * @return 返回当前内容面板
      */
     public Container getContentPane()
@@ -192,7 +160,7 @@ public class LuckBackgroundPanel extends JPanel
 
     /**
      * 设置绘图回调接口
-     * 
+     *
      * @param painter 绘图回调接口
      */
     public void setPainter(LuckCanvas painter)
@@ -202,7 +170,7 @@ public class LuckBackgroundPanel extends JPanel
 
     /**
      * 重新设置标题面板，覆盖原有面板
-     * 
+     *
      * @param titlePanel 标题面板
      */
     public void setTitlePanel(LuckTitlePanel titlePanel)
@@ -220,10 +188,5 @@ public class LuckBackgroundPanel extends JPanel
     protected JMenuBar getJMenuBar()
     {
         return menuBar;
-    }
-
-    private Window getWindow()
-    {
-        return SwingUtilities.getWindowAncestor(this);
     }
 }

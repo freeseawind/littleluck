@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JRootPane;
 import javax.swing.UIManager;
 
-import freeseawind.lf.basic.rootpane.LuckBackgroundPanel;
+import freeseawind.lf.basic.rootpane.LuckRootPaneUI;
 import freeseawind.lf.basic.rootpane.LuckRootPaneUIBundle;
 
 /**
@@ -34,9 +34,12 @@ public class LuckWindowAdapter extends WindowAdapter
 
             JRootPane rootPane = frame.getRootPane();
 
-            LuckBackgroundPanel bgPanel = (LuckBackgroundPanel) rootPane.getContentPane();
+            if(rootPane.getUI() instanceof LuckRootPaneUI)
+            {
+                LuckRootPaneUI rootPaneUI = (LuckRootPaneUI) rootPane.getUI();
 
-            bgPanel.getTitlePanel().setState(e.getNewState());
+                rootPaneUI.getTitlePane().setState(e.getNewState());
+            }
 
             if (e.getNewState() == JFrame.MAXIMIZED_BOTH)
             {

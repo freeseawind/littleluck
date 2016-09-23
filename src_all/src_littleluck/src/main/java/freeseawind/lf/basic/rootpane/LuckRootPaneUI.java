@@ -1,6 +1,7 @@
 package freeseawind.lf.basic.rootpane;
 
 import java.awt.Container;
+import java.awt.Cursor;
 import java.awt.LayoutManager;
 import java.awt.Window;
 import java.beans.PropertyChangeEvent;
@@ -66,15 +67,7 @@ public class LuckRootPaneUI extends BasicRootPaneUI
 
     public static final String ANCESTOR_EVENT = "ancestor";
 
-    private static final String[] borderKeys = new String[] { null,
-            LuckRootPaneUIBundle.FRAME_BORDER,
-            LuckRootPaneUIBundle.PLAINDIALOG_BORDER,
-            LuckRootPaneUIBundle.INFORMATIONDIALOG_BORDER,
-            LuckRootPaneUIBundle.ERRORDIALOG_BORDER,
-            LuckRootPaneUIBundle.COLORCHOOSERDIALOG_BORDER,
-            LuckRootPaneUIBundle.FILECHOOSERDIALOG_BORDER,
-            LuckRootPaneUIBundle.QUESTIONDIALOG_BORDER,
-            LuckRootPaneUIBundle.WARNINGDIALOG_BORDER };
+    protected LuckTitlePanel titlePane;
 
     /**
      * <code>MouseInputListener</code> that is added to the parent
@@ -92,6 +85,16 @@ public class LuckRootPaneUI extends BasicRootPaneUI
      * replaced it.
      */
     private LayoutManager savedOldLayout;
+
+    private static final String[] borderKeys = new String[] { null,
+            LuckRootPaneUIBundle.FRAME_BORDER,
+            LuckRootPaneUIBundle.PLAINDIALOG_BORDER,
+            LuckRootPaneUIBundle.INFORMATIONDIALOG_BORDER,
+            LuckRootPaneUIBundle.ERRORDIALOG_BORDER,
+            LuckRootPaneUIBundle.COLORCHOOSERDIALOG_BORDER,
+            LuckRootPaneUIBundle.FILECHOOSERDIALOG_BORDER,
+            LuckRootPaneUIBundle.QUESTIONDIALOG_BORDER,
+            LuckRootPaneUIBundle.WARNINGDIALOG_BORDER };
 
     public static ComponentUI createUI(JComponent c)
     {
@@ -132,7 +135,7 @@ public class LuckRootPaneUI extends BasicRootPaneUI
         }
 
         JRootPane root = (JRootPane) e.getSource();
-        
+
         Container parent = root.getParent();
 
         if (!(parent instanceof Window))
@@ -172,34 +175,35 @@ public class LuckRootPaneUI extends BasicRootPaneUI
         // 使用自定义布局器
         return new LuckRootPaneLayout();
     }
-    
+
     /**
      * 设置面板可拖动区域
-     * 
+     *
      * @param dragArea
      */
     public void setDragArea(LuckRectangle dragArea)
     {
         mouseInputListener.setDragArea(dragArea);
     }
-    
+
     /**
      * 创建标题面板
-     * 
+     *
      * @param isResizeableOnInit
      * @param initStyle
      * @return
      */
-    protected LuckTitlePanel createTitlePanel(int initStyle,
-                                              boolean isResizeableOnInit)
+    protected LuckTitlePanel createTitlePanel(int style, boolean isResize)
     {
-        return new LuckTitlePanel(isResizeableOnInit, initStyle);
+        titlePane = new LuckTitlePanel(isResize, style);
+
+        return titlePane;
     }
 
 
     /**
      * 创建JRootPane内容面板
-     * 
+     *
      * @param titlePanel 标题面板
      * @param oldContent 默认内容面板
      * @return <code>LuckBackgroundPanel</code>新的内容面板
@@ -212,7 +216,7 @@ public class LuckRootPaneUI extends BasicRootPaneUI
 
     /**
      * 创建窗体鼠标监听器
-     * 
+     *
      * @param root 窗体所包含的根窗格
      * @return <code>MouseInputListener</code>窗体移动、缩放、和点击放大缩小鼠标监听器
      */
@@ -237,7 +241,7 @@ public class LuckRootPaneUI extends BasicRootPaneUI
 
     /**
      * 移除窗体鼠标监听器
-     * 
+     *
      * @param root 根窗格
      */
     protected void uninstallWindowListener(JRootPane root)
@@ -252,7 +256,7 @@ public class LuckRootPaneUI extends BasicRootPaneUI
         }
     }
 
-    private void installClientDecorations(JRootPane root)
+    protected void installClientDecorations(JRootPane root)
     {
         installBorder(root);
 
@@ -260,19 +264,18 @@ public class LuckRootPaneUI extends BasicRootPaneUI
 
         installLayout(root);
 
-        // 设置窗体为完全透明
-        Window window = (Window) root.getParent();
-
-        window.setBackground(UIManager.getColor(LuckRootPaneUIBundle.ROOTPANE_BACKGROUND_COLOR));
+        installOther(root);
     }
 
-    private void uninstallClientDecorations(JRootPane root)
+    protected void uninstallClientDecorations(JRootPane root)
     {
         uninstallBorder(root);
 
         uninstallWindowListener(root);
 
         uninstallLayout(root);
+
+        uninstallOther(root);
     }
 
     /**
@@ -280,7 +283,7 @@ public class LuckRootPaneUI extends BasicRootPaneUI
      *
      * @param root
      */
-    private void installBorder(JRootPane root)
+    protected void installBorder(JRootPane root)
     {
         int style = root.getWindowDecorationStyle();
 
@@ -291,23 +294,11 @@ public class LuckRootPaneUI extends BasicRootPaneUI
     }
 
     /**
-     * 去除窗格边框
-     *
-     * @param root
-     */
-    private void uninstallBorder(JRootPane root)
-    {
-        LookAndFeel.uninstallBorder(root);
-
-        root.setBorder(null);
-    }
-
-    /**
      * 安装布局
      *
      * @param root
      */
-    private void installLayout(JRootPane root)
+    protected void installLayout(JRootPane root)
     {
         if (layoutManager == null)
         {
@@ -319,37 +310,72 @@ public class LuckRootPaneUI extends BasicRootPaneUI
         root.setLayout(layoutManager);
     }
 
-    private void uninstallLayout(JRootPane root)
+    protected void installOther(JRootPane root)
+    {
+        // 设置窗体为完全透明
+        Window window = (Window) root.getParent();
+
+        window.setBackground(UIManager.getColor(LuckRootPaneUIBundle.ROOTPANE_BACKGROUND_COLOR));
+    }
+
+    /**
+     * 去除窗格边框
+     *
+     * @param root
+     */
+    protected void uninstallBorder(JRootPane root)
+    {
+        LookAndFeel.uninstallBorder(root);
+
+        root.setBorder(null);
+    }
+
+    protected void uninstallLayout(JRootPane root)
     {
         if (savedOldLayout != null)
         {
             root.setLayout(savedOldLayout);
-            
+
             savedOldLayout = null;
         }
 
         layoutManager = null;
+    }
 
+    protected void uninstallOther(JRootPane root)
+    {
         Container content = root.getContentPane();
 
         if (content != null && content instanceof LuckBackgroundPanel)
         {
             LuckBackgroundPanel bgPanel = (LuckBackgroundPanel) content;
-            
+
             root.setContentPane(bgPanel.getContentPane());
-            
+
             root.setJMenuBar(bgPanel.getJMenuBar());
-            
+
             bgPanel.uninstallMenubar(true);
         }
-        
+
         int style = root.getWindowDecorationStyle();
-        
-        if (style == JRootPane.NONE) 
+
+        if (style == JRootPane.NONE)
         {
             root.repaint();
-            
+
             root.revalidate();
         }
+
+        Window window = SwingUtilities.getWindowAncestor(root);
+
+        if (window != null)
+        {
+            window.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+        }
+    }
+
+    public LuckTitlePanel getTitlePane()
+    {
+        return titlePane;
     }
 }

@@ -8,6 +8,7 @@ import java.awt.Image;
 import java.awt.LayoutManager;
 import java.awt.Window;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 
@@ -22,8 +23,10 @@ import javax.swing.UIManager;
 
 import freeseawind.lf.canvas.LuckCanvas;
 import freeseawind.lf.cfg.LuckGlobalBundle;
+import freeseawind.lf.event.LuckWindowAdapter;
 import freeseawind.lf.event.WindowBtnMouseAdapter;
 import freeseawind.lf.event.WindowPropertyListener;
+import freeseawind.lf.utils.LuckWindowUtil;
 import freeseawind.ninepatch.swing.SwingNinePatch;
 
 /**
@@ -41,8 +44,9 @@ public class LuckTitlePanel extends JPanel
     protected JButton closeBtn;
     protected JLabel label;
     protected WindowPropertyListener listener;
+    protected WindowAdapter windowAdapter;
+    protected Window window;
     private SwingNinePatch np;
-    private Window window;
     private LuckCanvas painter;
     private int initStyle;
     private boolean isResizeableOnInit;
@@ -103,11 +107,32 @@ public class LuckTitlePanel extends JPanel
 
         window = getWindow();
 
-        if(window != null && listener == null)
+        if(window != null)
         {
-            listener = new WindowPropertyListener(this);
+            String title = LuckWindowUtil.getWindowTitle(window);
 
-            window.addPropertyChangeListener(listener);
+            setTitle(title);
+
+            Image image = LuckWindowUtil.getWindowImage(window);
+
+            if(image != null)
+            {
+                setIcon(new ImageIcon(image));
+            }
+
+            if(listener == null)
+            {
+                listener = new WindowPropertyListener(this);
+
+                window.addPropertyChangeListener(listener);
+            }
+
+            if(windowAdapter == null && window instanceof JFrame)
+            {
+                windowAdapter = new LuckWindowAdapter();
+
+                window.addWindowStateListener(windowAdapter);
+            }
         }
     }
 
@@ -115,9 +140,17 @@ public class LuckTitlePanel extends JPanel
     {
         super.removeNotify();
 
-        if(window != null && listener != null)
+        if(window != null)
         {
-            window.removePropertyChangeListener(listener);
+            if(listener != null)
+            {
+                window.removePropertyChangeListener(listener);
+            }
+
+            if(windowAdapter != null && window instanceof JFrame)
+            {
+                window.removeWindowStateListener(windowAdapter);
+            }
 
             window = null;
 

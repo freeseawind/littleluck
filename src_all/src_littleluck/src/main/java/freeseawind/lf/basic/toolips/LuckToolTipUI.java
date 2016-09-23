@@ -2,13 +2,12 @@ package freeseawind.lf.basic.toolips;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
 
 import javax.swing.JComponent;
-import javax.swing.UIManager;
 import javax.swing.plaf.ComponentUI;
 import javax.swing.plaf.basic.BasicToolTipUI;
 
+import freeseawind.lf.utils.LuckUtils;
 import freeseawind.ninepatch.swing.SwingNinePatch;
 
 /**
@@ -45,7 +44,7 @@ public class LuckToolTipUI extends BasicToolTipUI
 
         if(np == null)
         {
-            np = new SwingNinePatch((BufferedImage) UIManager.get(LuckToolipUIBundle.BGIMG));
+            np = LuckUtils.createNinePatch(LuckToolipUIBundle.BGIMG);
         }
     }
 

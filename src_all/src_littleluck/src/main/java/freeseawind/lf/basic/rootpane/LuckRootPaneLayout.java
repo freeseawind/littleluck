@@ -12,7 +12,6 @@ import javax.swing.JRootPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
-import freeseawind.lf.event.WindowPropertyListener;
 import freeseawind.lf.layout.AbstractLayout;
 import freeseawind.lf.utils.LuckWindowUtil;
 
@@ -77,10 +76,6 @@ public class LuckRootPaneLayout extends AbstractLayout
                 }
 
                 LuckBackgroundPanel background = rootPaneUI.createContentPane(titlePanel, content);
-
-                window.addPropertyChangeListener(new WindowPropertyListener(background.getTitlePanel()));
-                
-                root.remove(content);
 
                 root.setContentPane(background);
             }
