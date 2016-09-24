@@ -16,14 +16,18 @@ import javax.swing.plaf.ComponentUI;
 import javax.swing.plaf.basic.BasicRootPaneUI;
 
 import freeseawind.lf.canvas.LuckCanvas;
+import freeseawind.lf.cfg.LuckGlobalBundle;
 import freeseawind.lf.event.WindowMouseHandler;
 import freeseawind.lf.geom.LuckRectangle;
 
 /**
  * <p>RootPaneUI实现类， 使用完全不透明面板解决字体反走样问题。</p>
- *
- *
- * 以下代码片段演示了如何使用图片作为窗体背景：
+ * 
+ * <p>RootPaneUI implement class, use {@link LuckBackgroundPanel} to replace default content.
+ *    solve the problem of translucent window font.
+ * </p>
+ * 
+ * The following code fragment demonstrates how to use the picture as a background form:
  *
  * <pre>
  * <code>
@@ -52,8 +56,8 @@ import freeseawind.lf.geom.LuckRectangle;
  * </pre>
  *
  * <p>
- * 另请参见 {@link LuckBackgroundPanel}，{@link LuckBackgroundPanel}，
- * {@link LuckRootPaneUIBundle}
+ * See Also: {@link LuckBackgroundPanel},{@link LuckBackgroundPanel},
+ * {@link LuckRootPaneUIBundle}.
  * </p>
  *
  * @author freeseawind@github
@@ -62,7 +66,6 @@ import freeseawind.lf.geom.LuckRectangle;
  */
 public class LuckRootPaneUI extends BasicRootPaneUI
 {
-    // 改变窗体装饰事件
     public static final String WINDOWDECORATIONSTYLE_EVENT = "windowDecorationStyle";
 
     public static final String ANCESTOR_EVENT = "ancestor";
@@ -166,18 +169,23 @@ public class LuckRootPaneUI extends BasicRootPaneUI
     }
 
     /**
-     * 创建JRootPane布局
+     * <p>创建JRootPane布局。</p>
+     * 
+     * <p>create JRootPane layout manager.</p>
      *
-     * @return <code>LayoutManager</code>自定义布局管理器
+     * @return <code>LayoutManager</code> layout manager.
      */
     public LayoutManager createLayout()
     {
         // 使用自定义布局器
+        // use custom layout manager.
         return new LuckRootPaneLayout();
     }
 
     /**
-     * 设置面板可拖动区域
+     * <p>设置窗体可拖动区域。</p>
+     * 
+     * <p>Set the form draggable area.</p>
      *
      * @param dragArea
      */
@@ -187,7 +195,9 @@ public class LuckRootPaneUI extends BasicRootPaneUI
     }
 
     /**
-     * 创建标题面板
+     * <p>创建标题面板</p>
+     * 
+     * <p>create TitlePane</p>
      *
      * @param isResizeableOnInit
      * @param initStyle
@@ -202,11 +212,13 @@ public class LuckRootPaneUI extends BasicRootPaneUI
 
 
     /**
-     * 创建JRootPane内容面板
+     * <p>创建JRootPane内容面板</p>
+     * 
+     * <p>Create JRootPane ContentPane to replace default ContentPane</p>
      *
-     * @param titlePanel 标题面板
-     * @param oldContent 默认内容面板
-     * @return <code>LuckBackgroundPanel</code>新的内容面板
+     * @param titlePanel 
+     * @param oldContent 
+     * @return <code>LuckBackgroundPanel</code> new ContentPane
      */
     protected LuckBackgroundPanel createContentPane(LuckTitlePanel titlePanel,
                                                     Container oldContent)
@@ -215,10 +227,12 @@ public class LuckRootPaneUI extends BasicRootPaneUI
     }
 
     /**
-     * 创建窗体鼠标监听器
+     * <p>创建窗体鼠标监听器, 处理窗体的移动和拖拽事件</p>
+     * 
+     * <p>Create Window mouse listener, handle window move and drag event.</p>
      *
-     * @param root 窗体所包含的根窗格
-     * @return <code>MouseInputListener</code>窗体移动、缩放、和点击放大缩小鼠标监听器
+     * @param root <code>JRootPane</code>
+     * @return <code>MouseInputListener</code> window move and drag event listener.
      */
     protected MouseInputListener installWindowListeners(JRootPane root)
     {
@@ -240,9 +254,11 @@ public class LuckRootPaneUI extends BasicRootPaneUI
     }
 
     /**
-     * 移除窗体鼠标监听器
+     * <p>移除窗体鼠标监听器</p>
+     * 
+     * <p>Remove Window move and drag event listener.</p>
      *
-     * @param root 根窗格
+     * @param root <code>JRootPane</code>
      */
     protected void uninstallWindowListener(JRootPane root)
     {
@@ -279,22 +295,27 @@ public class LuckRootPaneUI extends BasicRootPaneUI
     }
 
     /**
-     * 给根窗格安装边框
+     * <p>给根窗格安装边框</p>
+     * 
+     * <p>To install JRootPane border</p>
      *
-     * @param root
+     * @param root <code>JRootPane</code>
      */
     protected void installBorder(JRootPane root)
     {
         int style = root.getWindowDecorationStyle();
 
         // 这句必须，否则会出现无法安装边框的情况
+        // Sentence must, otherwise there will not be installed border situation
         root.setBorder(null);
 
         root.setBorder(UIManager.getBorder(borderKeys[style]));
     }
 
     /**
-     * 安装布局
+     * <p>安装布局</p>
+     * 
+     * <p>set JRootPane layout</p>
      *
      * @param root
      */
@@ -312,14 +333,17 @@ public class LuckRootPaneUI extends BasicRootPaneUI
 
     protected void installOther(JRootPane root)
     {
-        // 设置窗体为完全透明
         Window window = (Window) root.getParent();
 
-        window.setBackground(UIManager.getColor(LuckRootPaneUIBundle.ROOTPANE_BACKGROUND_COLOR));
+        // 设置窗体为完全透明
+        // set window translucent
+        window.setBackground(UIManager.getColor(LuckGlobalBundle.TRANSLUCENT_COLOR));
     }
 
     /**
-     * 去除窗格边框
+     * <p>去除窗格边框</p>
+     * 
+     * <p>remove JRootPane border.</p>
      *
      * @param root
      */

@@ -47,15 +47,15 @@ public class LuckFileChooserUIBundle extends LuckResourceBundle
     @Override
     protected void loadImages(UIDefaults table)
     {
-        table.put(UPFOLDERICON, getIconRes("filechooser/up_folder.png"));
+        UIManager.put(UPFOLDERICON, getIconRes("filechooser/up_folder.png"));
 
-        table.put(NEWFOLDERICON, getIconRes("filechooser/new_folder.png"));
+        UIManager.put(NEWFOLDERICON, getIconRes("filechooser/new_folder.png"));
 
-        table.put(HOMEFOLDERICON, getIconRes("filechooser/home.png"));
+        UIManager.put(HOMEFOLDERICON, getIconRes("filechooser/home.png"));
 
-        table.put(LISTVIEWICON, getIconRes("filechooser/list.png"));
+        UIManager.put(LISTVIEWICON, getIconRes("filechooser/list.png"));
 
-        table.put(DETAILSVIEWICON, getIconRes("filechooser/details.png"));
+        UIManager.put(DETAILSVIEWICON, getIconRes("filechooser/details.png"));
     }
 
     @Override

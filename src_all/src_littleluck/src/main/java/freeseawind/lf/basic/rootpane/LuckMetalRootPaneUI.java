@@ -9,9 +9,18 @@ import javax.swing.JLayeredPane;
 import javax.swing.JRootPane;
 import javax.swing.SwingUtilities;
 import javax.swing.plaf.ComponentUI;
+import javax.swing.plaf.metal.MetalRootPaneUI;
 
 import freeseawind.lf.utils.LuckWindowUtil;
 
+/**
+ * <p>RootPaneUI实现类，此类参考{@link MetalRootPaneUI}实现。</p>
+ * 
+ * <p>RootPaneUI implement class, Such reference MetalRootPaneL achieve.</p>
+ * 
+ * @author freeseawind@github
+ * @version 1.0
+ */
 public class LuckMetalRootPaneUI extends LuckRootPaneUI
 {
     public static ComponentUI createUI(JComponent c)
