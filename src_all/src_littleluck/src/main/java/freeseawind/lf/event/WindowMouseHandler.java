@@ -226,8 +226,6 @@ public class WindowMouseHandler implements MouseInputListener
     {
         Window window = (Window)e.getSource();
 
-        window.toFront();
-
         int w = window.getWidth();
 
         int h = window.getHeight();
