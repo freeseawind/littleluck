@@ -1,7 +1,6 @@
 package freeseawind.lf.basic.list;
 
 import javax.swing.JComponent;
-import javax.swing.LookAndFeel;
 import javax.swing.plaf.ComponentUI;
 import javax.swing.plaf.basic.BasicListUI;
 
@@ -28,7 +27,5 @@ public class LuckListUI extends BasicListUI
     public void installUI(JComponent c)
     {
         super.installUI(c);
-
-        LookAndFeel.installProperty(c, "opaque", Boolean.FALSE);
     }
 }

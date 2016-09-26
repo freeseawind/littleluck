@@ -1,16 +1,11 @@
 package freeseawind.lf.basic.text;
 
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
 import java.awt.geom.RectangularShape;
 import java.awt.geom.RoundRectangle2D;
 
 import javax.swing.JComponent;
-import javax.swing.LookAndFeel;
 import javax.swing.plaf.ComponentUI;
 import javax.swing.plaf.basic.BasicPasswordFieldUI;
-import javax.swing.text.JTextComponent;
 
 import freeseawind.lf.border.LuckBorderField;
 import freeseawind.lf.event.LuckBorderFocusHandle;
@@ -33,7 +28,6 @@ public class LuckPasswordFieldUI extends BasicPasswordFieldUI
         implements LuckBorderField
 {
     protected LuckBorderFocusHandle handle;
-    private RectangularShape contentShape;
     private RectangularShape borderShape;
     private boolean isFocusGained;
 
@@ -45,10 +39,6 @@ public class LuckPasswordFieldUI extends BasicPasswordFieldUI
     public void installUI(JComponent c)
     {
         super.installUI(c);
-
-        LookAndFeel.installProperty(c, "opaque", Boolean.FALSE);
-
-        contentShape = new RoundRectangle2D.Float(0, 0, 0, 0, 8, 8);
 
         borderShape = new RoundRectangle2D.Float(0, 0, 0, 0, 8, 8);
 
@@ -83,26 +73,6 @@ public class LuckPasswordFieldUI extends BasicPasswordFieldUI
         return new LuckFocusHandler();
     }
 
-    @Override
-    protected void paintBackground(Graphics g)
-    {
-        // 绘制和边框形状一致的背景。
-        // Draw border and conform to the shape of the background.
-        JTextComponent editor = this.getComponent();
-
-        Graphics2D g2d = (Graphics2D) g;
-
-        g.setColor(editor.getBackground());
-
-        contentShape.setFrame(10, 10, editor.getWidth() - 1, editor.getHeight() - 1);
-
-        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
-
-        g2d.fill(contentShape);
-
-        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_OFF);
-    }
-
     public void setFocusGained(boolean isFoucusGaind)
     {
         this.isFocusGained = isFoucusGaind;
@@ -121,16 +91,6 @@ public class LuckPasswordFieldUI extends BasicPasswordFieldUI
     public void setBorderShape(RectangularShape shape)
     {
         this.borderShape = shape;
-    }
-
-    public RectangularShape getContentShape()
-    {
-        return contentShape;
-    }
-
-    public void setContentShape(RectangularShape contentShape)
-    {
-        this.contentShape = contentShape;
     }
 
     public class LuckFocusHandler extends LuckBorderFocusHandle
