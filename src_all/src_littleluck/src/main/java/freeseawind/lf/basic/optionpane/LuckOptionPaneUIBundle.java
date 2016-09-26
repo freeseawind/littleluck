@@ -6,31 +6,41 @@ import javax.swing.UIManager;
 import freeseawind.lf.cfg.LuckResourceBundle;
 
 /**
- * OptionPaneUI资源绑定类
- * 
+ * <p>OptionPaneUI资源绑定类。</p>
+ *
+ * <p>A OptionPaneUI resource bundle class.</p>
+ *
  * @author freeseawind@github
  * @version 1.0
- * 
+ *
  */
 public class LuckOptionPaneUIBundle extends LuckResourceBundle
 {
     /**
-     * 问题图标属性key
+     * <p>问题图标属性key</p>
+     *
+     * <p>OptionPane question Icon properties.</p>
      */
     public static final String QUESTION_ICON = "OptionPane.questionIcon";
-    
+
     /**
-     * 警告图标属性key
+     * <p>警告图标属性key</p>
+     *
+     * <p>OptionPane warning Icon properties.</p>
      */
     public static final String WARNING_ICON = "OptionPane.warningIcon";
-    
+
     /**
-     * 信息图标属性key
+     * <p>信息图标属性key</p>
+     *
+     * <p>OptionPane information Icon properties.</p>
      */
     public static final String INFORMATION_ICON = "OptionPane.informationIcon";
-    
+
     /**
-     * 错误图标属性key
+     * <p>错误图标属性key</p>
+     *
+     * <p>OptionPane error Icon properties.</p>
      */
     public static final String ERROR_ICON = "OptionPane.errorIcon";
 

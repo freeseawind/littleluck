@@ -20,7 +20,7 @@ public class LuckTextBorder extends LuckShapeBorder
 {
     private static final long serialVersionUID = 152864944146484889L;
 
-    public LuckTextBorder(Insets i, boolean isFocusBorder)
+    public LuckTextBorder(Insets i)
     {
         super(i);
     }

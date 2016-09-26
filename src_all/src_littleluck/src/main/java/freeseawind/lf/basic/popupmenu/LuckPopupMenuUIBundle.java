@@ -14,7 +14,9 @@ import freeseawind.lf.utils.LuckRes;
 import freeseawind.swing.LuckPopupFactory;
 
 /**
- * PopupMenuUI资源绑定类。
+ * <p>PopupMenuUI资源绑定类。</p>
+ *
+ * <p>A PopupMenuUI resource bundle class.</p>
  *
  * @author freeseawind@github
  * @version 1.0
@@ -23,14 +25,23 @@ import freeseawind.swing.LuckPopupFactory;
 public class LuckPopupMenuUIBundle extends LuckResourceBundle
 {
     /**
-     * PopupMenu边框属性key
+     * <p>PopupMenu边框属性key</p>
+     *
+     * <p>PopupMenu border properties.</p>
      */
     public static final String BORDER = "PopupMenu.border";
 
     /**
-     * PopupMenu分割线颜色属性key
+     * <p>PopupMenu分割线颜色属性key</p>
+     *
+     * <p>PopupMenu Separator color properties.</p>
      */
     public static final String SEPEREATOR_COLOR = "PopupSeparator.bgcolor";
+
+    public void uninitialize()
+    {
+        PopupFactory.setSharedInstance(new PopupFactory());
+    }
 
     @Override
     protected void installColor(UIDefaults table)
@@ -49,7 +60,9 @@ public class LuckPopupMenuUIBundle extends LuckResourceBundle
     @Override
     protected void installOther(UIDefaults table)
     {
-        //使用自定义工厂, 设置Popup为透明, 否则无法使用阴影边框
+        // 使用自定义工厂, 设置Popup为透明, 否则无法使用阴影边框
+        // Use a custom factory, set the Popup to be transparent.
+        // otherwise you can not use the shadow border.
         PopupFactory.setSharedInstance(new LuckPopupFactory());
     }
 }

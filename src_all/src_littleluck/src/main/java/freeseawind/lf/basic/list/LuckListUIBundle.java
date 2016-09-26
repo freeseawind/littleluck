@@ -9,7 +9,9 @@ import javax.swing.plaf.BorderUIResource;
 import freeseawind.lf.cfg.LuckResourceBundle;
 
 /**
- * ListUI 资源绑定类
+ * <p>ListUI 资源绑定类。</p>
+ *
+ * <p>A ListUI resource bundle class.</p>
  *
  * @author freeseawind@github
  * @version 1.0
@@ -18,27 +20,37 @@ import freeseawind.lf.cfg.LuckResourceBundle;
 public class LuckListUIBundle extends LuckResourceBundle
 {
     /**
-     * List单元格边框属性key
+     * <p>List单元格边框属性key</p>
+     *
+     * <p>List border properties.</p>
      */
     public static final String CELL_BORDER = "List.focusSelectedCellHighlightBorder";
 
     /**
-     * List单元格无焦点边框属性key
+     * <p>List单元格无焦点边框属性key</p>
+     *
+     * <p>List cell no focus border properties.</p>
      */
     public static final String CELL_NOFOCUSBORDER = "List.cellNoFocusBorder";
 
     /**
-     * List选中背景颜色key
+     * <p>List选中背景颜色key</p>
+     *
+     * <p>List background color properties when selected.</p>
      */
     public static final String SELECTIONBACKGROUND = "List.selectionBackground";
 
     /**
-     * List选中字体颜色key
+     * <p>List选中字体颜色key</p>
+     *
+     * <p>List font color properties when selected.</p>
      */
     public static final String SELECTIONFOREGROUND = "List.selectionForeground";
 
     /**
-     * List背景颜色key
+     * <p>List背景颜色key</p>
+     *
+     * <p>List background color properties.</p>
      */
     public static final String BACKGROUND = "List.background";
 

@@ -11,7 +11,9 @@ import freeseawind.lf.img.LuckIcon;
 import freeseawind.lf.utils.LuckRes;
 
 /**
- * JMenubar and JMenu 资源绑定类
+ * <p>JMenubar and JMenu 资源绑定类</p>
+ *
+ * <p>JMenubar and JMenu resource bundle class.</p>
  *
  * @author freeseawind@github
  * @version 1.0
@@ -20,89 +22,130 @@ import freeseawind.lf.utils.LuckRes;
 public class LuckMenuUIBundle extends LuckResourceBundle
 {
     /**
-     * JMenubar边框属性key
+     * <p>JMenubar边框属性key</p>
+     *
+     * <p>JMenubar border properties.</p>
      */
     public static final String MENUBAR_BORDER = "MenuBar.border";
 
     /**
-     * JMenu边框属性key
+     * <p>JMenu边框属性key<p>
+     *
+     * <p>JMenu border properties.</p>
      */
     public static final String MENU_BORDER = "Menu.border";
 
     /**
-     * JMenu选中时背景颜色属性key
+     * <p>JMenu选中时背景颜色属性key<p>
+     *
+     * <p>JMenu background color properties when selected.</p>
      */
     public static final String MENU_SELECTIONBG = "Menu.selectionBackground";
 
     /**
-     * JMenu选中时字体颜色属性key
+     * <p>JMenu选中时字体颜色属性key<p>
+     *
+     * <p>JMenu font color properties when selected.</p>
      */
     public static final String MENU_SELECTIONFG = "Menu.selectionForeground";
 
     /**
-     * JMenuBar背景颜色属性key
+     * <p>JMenuBar背景颜色属性key<p>
+     *
+     * <p>JMenuBar background color properties</p>
      */
     public static final String MENUBAR_BACKGROUND = "MenuBar.background";
 
     /**
-     * JMenu背景颜色属性key
+     * <p>JMenu背景颜色属性key<p>
+     *
+     * <p>JMenu background color properties.</p>
      */
     public static final String MENU_BACKGROUND = "Menu.background";
 
     /**
-     * [自定义属性] JCheckBoxMenuItem箭头图标
+     * <p>[LittleLuck属性] JMenu箭头图标<p>
+     *
+     * <p>[LittLeLuck Attributes] JMenu arrow image properties.</p>
      */
-    public static final String ARROW_NORMAL_ICON = "Menu.arrowNormalIcon";
+    public static final String ARROW_NORMAL_IMG = "Menu.arrowNormalIcon";
 
     /**
-     * [自定义属性] JCheckBoxMenuItem鼠标经过时箭头图标
+     * <p>[自定义属性] JMenu鼠标经过时箭头图标<p>
+     *
+     * <p>[LittLeLuck Attributes] JMenu arrow image properties when selected.</p>
      */
-    public static final String ARROW_ROLLVER_ICON = "Menu.arrowRollverIcon";
+    public static final String ARROW_ROLLVER_IMG = "Menu.arrowRollverIcon";
 
     /**
-     * MenuItem子菜单图标属性key
+     * <p>JMenu子菜单图标属性key<p>
+     *
+     * <p>JMenu arrow Icon properties.</p>
      */
     public static final String ARROW_ICON = "Menu.arrowIcon";
 
     /**
-     * JMenu复选框图标属性key
+     * <p>JMenu复选框图标属性key<p>
+     *
+     * <p>JMenu check Icon properties.</p>
      */
     public static final String CHECK_ICON = "Menu.checkIcon";
 
     /**
-     * JMenu弹出菜单沿x轴偏移量(littleluck暂时没有使用该属性)
+     * <p>JMenu弹出菜单沿x轴偏移量(LittleLuck暂时没有使用该属性)<p>
+     *
+     * <p>JMenu popup menu along the x-axis offset (LittleLuck temporarily not use this property)</p>
      */
     public static final String MENUPOPUPOFFSETX = "Menu.menuPopupOffsetX";
 
     /**
-     * JMenu弹出菜单沿y轴偏移量(littleluck暂时没有使用该属性)
+     * <p>JMenu弹出菜单沿y轴偏移量(LittleLuck暂时没有使用该属性)<p>
+     *
+     * <p>JMenu popup menu along the y-axis offset (LittleLuck temporarily not use this property)</p>
      */
     public static final String MENUPOPUPOFFSETY = "Menu.menuPopupOffsetY";
 
     /**
-     * JMenu弹出子菜单沿x轴偏移量(littleluck暂时没有使用该属性)
+     * <p>JMenu弹出子菜单沿x轴偏移量(LittleLuck暂时没有使用该属性)<p>
+     *
+     * <p>JMenu pop-up sub-menu along the x-axis offset (LittleLuck temporarily not use this property)</p>
      */
     public static final String SUBMENUPOPUPOFFSETX = "Menu.submenuPopupOffsetX";
 
     /**
-     * JMenu弹出子菜单沿y轴偏移量(littleluck暂时没有使用该属性)
+     * <p>JMenu弹出子菜单沿y轴偏移量(LittleLuck暂时没有使用该属性)<p>
+     *
+     * <p>JMenu pop-up sub-menu along the y-axis offset (LittleLuck temporarily not use this property)</p>
      */
     public static final String SUBMENUPOPUPOFFSETY = "Menu.submenuPopupOffsetY";
 
     /**
-     * JMenu文本和复选框图标间距属性key，默认值4
+     * <p>Menu文本和复选框图标间距属性key。</p>
+     *
+     * <p>Menu after check icon gap properties.</p>
      */
     public static final String AFTERCHECKICONGAP = "Menu.afterCheckIconGap";
 
     /**
-     * JMenu最小文本偏移宽度属性key，默认值0
+     * <p>Menu最小文本偏移宽度属性key。</p>
+     *
+     * <p>Menu minimum text offset properties.</p>
      */
     public static final String MINIMUMTEXTOFFSET = "Menu.minimumTextOffset";
 
     /**
-     * JMenu复选框图标偏移x轴距离属性key，默认值4
+     * <p>Menu复选框图标偏移x轴距离属性key, 默认值4。</p>
+     *
+     * <p>Menu check icon offset properties.</p>
      */
     public static final String CHECKICONOFFSET = "Menu.checkIconOffset";
+
+    public void uninitialize()
+    {
+        UIManager.put(ARROW_NORMAL_IMG, null);
+
+        UIManager.put(ARROW_ROLLVER_IMG, null);
+    }
 
     @Override
     protected void installBorder(UIDefaults table)
@@ -127,9 +170,9 @@ public class LuckMenuUIBundle extends LuckResourceBundle
     @Override
     protected void loadImages(UIDefaults table)
     {
-        table.put(ARROW_NORMAL_ICON, LuckRes.getImage("menu/arrow_normal.png"));
+        table.put(ARROW_NORMAL_IMG, LuckRes.getImage("menu/arrow_normal.png"));
 
-        table.put(ARROW_ROLLVER_ICON, LuckRes.getImage("menu/arrow_rollver.png"));
+        table.put(ARROW_ROLLVER_IMG, LuckRes.getImage("menu/arrow_rollver.png"));
 
         table.put(ARROW_ICON, new LuckArrowIcon());
 

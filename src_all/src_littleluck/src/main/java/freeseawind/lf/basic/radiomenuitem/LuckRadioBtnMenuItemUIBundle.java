@@ -11,7 +11,9 @@ import freeseawind.lf.cfg.LuckResourceBundle;
 import freeseawind.lf.img.LuckIcon;
 
 /**
- * RadioBtnMenuItemUI资源绑定类
+ * <p>RadioBtnMenuItemUI资源绑定类。<p>
+ *
+ * <p>A RadioBtnMenuItemUI resource bundle class.</p>
  *
  * @author freeseawind@github
  * @version 1.0
@@ -20,47 +22,65 @@ import freeseawind.lf.img.LuckIcon;
 public class LuckRadioBtnMenuItemUIBundle extends LuckResourceBundle
 {
     /**
-     * JRadioButtonMenuItem背景颜色属性key
+     * <p>JRadioButtonMenuItem背景颜色属性key。</p>
+     *
+     * <p>JRadioButtonMenuItem background color properties.</p>
      */
     public static final String BACKGROUND = "RadioButtonMenuItem.background";
 
     /**
-     * JRadioButtonMenuItem选中时背景颜色属性key
+     * <p>JRadioButtonMenuItem选中时背景颜色属性key。</p>
+     *
+     * <p>JRadioButtonMenuItem background color properties when selected.</p>
      */
     public static final String SELECTIONBG = "RadioButtonMenuItem.selectionBackground";
 
     /**
-     * JRadioButtonMenuItem选中时字体颜色属性key
+     * <p>JRadioButtonMenuItem选中时字体颜色属性key。</p>
+     *
+     * <p>RadioButtonMenuItem font color properties when selected.</p>
      */
     public static final String SELECTIONFG = "RadioButtonMenuItem.selectionForeground";
 
     /**
-     * RadioButtonMenuItem边框属性key
+     * <p>RadioButtonMenuItem边框属性key。</p>
+     *
+     * <p>RadioButtonMenuItem border properties.</p>
      */
     public static final String BORDER = "RadioButtonMenuItem.border";
 
     /**
-     * RadioButtonMenuItem单选框图标属性key
+     * <p>RadioButtonMenuItem单选框图标属性key。</p>
+     *
+     * <p>RadioButtonMenuItem check icon properties.</p>
      */
     public static final String CHECK_ICON = "RadioButtonMenuItem.checkIcon";
 
     /**
-     * RadioButtonMenuItem箭头图标属性key
+     * <p>RadioButtonMenuItem箭头图标属性key。</p>
+     *
+     * <p>RadioButtonMenuItem arrow icon properties.</p>
      */
     public static final String ARROW_ICON = "RadioButtonMenuItem.arrowIcon";
 
     /**
-     * RadioButtonMenuItem文本和复选框图标间距属性key
+     * <p>RadioButtonMenuItem文本和复选框图标间距属性key。</p>
+     *
+     * <p>RadioButtonMenuItem after check icon gap properties.</p>
      */
     public static final String AFTERCHECKICONGAP = "RadioButtonMenuItem.afterCheckIconGap";
 
     /**
-     * RadioButtonMenuItem最小文本偏移宽度属性key
+     * <p>RadioButtonMenuItem最小文本偏移宽度属性key。</p>
+     *
+     * <p>RadioButtonMenuItem minimum text offset properties.</p>
      */
     public static final String MINIMUMTEXTOFFSET = "RadioButtonMenuItem.minimumTextOffset";
 
     /**
-     * RadioButtonMenuItem复选框图标偏移x轴距离属性key
+     * <p>RadioButtonMenuItem复选框图标偏移x轴距离属性key。</p>
+     *
+     * <p>RadioButtonMenuItem check icon offset properties,</p>
      */
     public static final String CHECKICONOFFSET = "RadioButtonMenuItem.checkIconOffset";
 

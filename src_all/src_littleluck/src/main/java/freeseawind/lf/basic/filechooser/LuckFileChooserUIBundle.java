@@ -38,11 +38,15 @@ public class LuckFileChooserUIBundle extends LuckResourceBundle
      * 查看文件详情按钮图片属性key
      */
     public static final String DETAILSVIEWICON = "FileChooser.detailsViewIcon";
+    
+    
+    public static final String DIRECTORYICON = "FileView.directoryIcon";
 
     /**
      * FileChooser遍历文件视图风格属性key
      */
     public static final String LISTVIEWWINDOWSSTYLE = "FileChooser.listViewWindowsStyle";
+    
 
     @Override
     protected void loadImages(UIDefaults table)
@@ -56,6 +60,8 @@ public class LuckFileChooserUIBundle extends LuckResourceBundle
         UIManager.put(LISTVIEWICON, getIconRes("filechooser/list.png"));
 
         UIManager.put(DETAILSVIEWICON, getIconRes("filechooser/details.png"));
+        
+        UIManager.put(DIRECTORYICON, getIconRes("filechooser/directory.png"));
     }
 
     @Override

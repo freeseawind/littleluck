@@ -6,6 +6,7 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.UIManager;
 
+import freeseawind.ninepatch.common.RepeatType;
 import freeseawind.ninepatch.swing.SwingNinePatch;
 
 public class LuckUtils
@@ -24,5 +25,10 @@ public class LuckUtils
     public static SwingNinePatch createNinePatch(String imageKey)
     {
         return new SwingNinePatch(getUiImage(imageKey));
+    }
+    
+    public static SwingNinePatch createNinePatch(String imageKey, RepeatType type)
+    {
+        return new SwingNinePatch(getUiImage(imageKey), type);
     }
 }

@@ -7,7 +7,6 @@ import java.awt.geom.RectangularShape;
 import java.awt.geom.RoundRectangle2D;
 
 import javax.swing.JComponent;
-import javax.swing.LookAndFeel;
 import javax.swing.plaf.ComponentUI;
 import javax.swing.plaf.basic.BasicTextFieldUI;
 import javax.swing.text.JTextComponent;
@@ -44,8 +43,6 @@ public class LuckTexFieldUI extends BasicTextFieldUI implements LuckBorderField
     public void installUI(JComponent c)
     {
         super.installUI(c);
-
-        LookAndFeel.installProperty(c, "opaque", Boolean.FALSE);
 
         contentShape = new RoundRectangle2D.Float(0, 0, 0, 0, 8, 8);
 
