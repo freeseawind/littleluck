@@ -86,6 +86,6 @@ public class LuckMetalRootPaneLayout extends LuckRootPaneLayout
 
         // 布局内容面板
         // layout ContentPane
-        root.getContentPane().setBounds(0, nextY, w, h);
+        root.getContentPane().setBounds(0, nextY, w, h - nextY);
     }
 }

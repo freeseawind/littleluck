@@ -3,7 +3,11 @@ package freeseawind.lf.basic.button;
 import java.awt.Color;
 
 /**
- * 按钮颜色配置工厂类
+ * <pre>
+ * 按钮配置颜色工厂类。
+ *
+ * Button Color factory class.
+ * <pre>
  *
  * @author freeseawind@github
  * @version 1.0
@@ -12,7 +16,7 @@ import java.awt.Color;
 public class LuckButtonColorFactory
 {
     /**
-     * 蓝色按钮颜色配置信息
+     * Blue button color configuration information
      *
      * @return <code>LuckButtonColorInfo</code>
      */
@@ -30,7 +34,7 @@ public class LuckButtonColorFactory
     }
 
     /**
-     * 黄色按钮颜色配置信息
+     * Yellow button color configuration information
      *
      * @return <code>LuckButtonColorInfo</code>
      */
@@ -48,7 +52,7 @@ public class LuckButtonColorFactory
     }
 
     /**
-     * 紫色按钮颜色配置信息
+     * Purple button color configuration information
      *
      * @return <code>LuckButtonColorInfo</code>
      */
@@ -66,7 +70,7 @@ public class LuckButtonColorFactory
     }
 
     /**
-     * 绿色按钮颜色配置信息
+     * Green button color configuration information
      *
      * @return <code>LuckButtonColorInfo</code>
      */
