@@ -45,15 +45,17 @@ public class LuckFileChooserUI extends MetalFileChooserUI
     {
         public Icon getIcon(File f)
         {
-            Icon icon = getCachedIcon(f);
-
-            if (icon != null)
-            {
-                return icon;
-            }
+            Icon icon = null;
 
             if (f != null)
             {
+                icon = getCachedIcon(f);
+                
+                if (icon != null)
+                {
+                    return icon;
+                }
+                
                 icon = getFileChooser().getFileSystemView().getSystemIcon(f);
             }
 

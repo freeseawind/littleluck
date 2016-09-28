@@ -39,8 +39,30 @@ public class LuckFileChooserUIBundle extends LuckResourceBundle
      */
     public static final String DETAILSVIEWICON = "FileChooser.detailsViewIcon";
     
-    
+    /**
+     * 
+     */
     public static final String DIRECTORYICON = "FileView.directoryIcon";
+    
+    /**
+     * 
+     */
+    public static final String COMPUTERICON = "FileView.computerIcon";
+
+    /**
+     * 
+     */
+    public static final String FILEICON = "FileView.fileIcon";
+
+    /**
+     * 
+     */
+    public static final String HARDDRIVE = "FileView.hardDriveIcon";
+
+    /**
+     * 
+     */
+    public static final String FLOPPYDRIVE = "FileView.floppyDriveIcon";
 
     /**
      * FileChooser遍历文件视图风格属性key
@@ -62,6 +84,12 @@ public class LuckFileChooserUIBundle extends LuckResourceBundle
         UIManager.put(DETAILSVIEWICON, getIconRes("filechooser/details.png"));
         
         UIManager.put(DIRECTORYICON, getIconRes("filechooser/directory.png"));
+        
+        UIManager.put(FILEICON, getIconRes("filechooser/file.png"));
+        
+        UIManager.put(HARDDRIVE, getIconRes("filechooser/harddrive.png"));
+        
+        UIManager.put(FLOPPYDRIVE, getIconRes("filechooser/floppyDrive.png"));
     }
 
     @Override

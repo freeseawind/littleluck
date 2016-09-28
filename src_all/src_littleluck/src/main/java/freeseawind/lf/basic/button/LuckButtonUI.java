@@ -89,7 +89,7 @@ public class LuckButtonUI extends BasicButtonUI
 
         // 使用配置颜色替换默认字体颜色
         // Replace the default font color with the configured color
-        if(b.getForeground() instanceof ColorUIResource && !b.isContentAreaFilled())
+        if(b.getForeground() instanceof ColorUIResource || b.isContentAreaFilled())
         {
             b.setForeground(btnColorInfo.getFontColor());
         }
