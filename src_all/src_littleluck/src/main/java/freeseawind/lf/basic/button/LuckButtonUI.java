@@ -10,7 +10,6 @@ import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.LookAndFeel;
 import javax.swing.UIManager;
-import javax.swing.plaf.ColorUIResource;
 import javax.swing.plaf.ComponentUI;
 import javax.swing.plaf.basic.BasicButtonUI;
 
@@ -89,7 +88,7 @@ public class LuckButtonUI extends BasicButtonUI
 
         // 使用配置颜色替换默认字体颜色
         // Replace the default font color with the configured color
-        if(b.getForeground() instanceof ColorUIResource || b.isContentAreaFilled())
+        if(checkIsPaintBg(b))
         {
             b.setForeground(btnColorInfo.getFontColor());
         }
@@ -137,14 +136,11 @@ public class LuckButtonUI extends BasicButtonUI
      * @param b AbstractButton painting on
      * @return paint background return true, otherwise return false.
      */
-    protected boolean paintBg(Graphics g, AbstractButton b)
+    protected void paintBg(Graphics g, AbstractButton b)
     {
-        Object isPaintBg = b.getClientProperty(LuckButtonUIBundle.IS_PAINTBG);
-
-        if (!b.isContentAreaFilled()
-                || (b.getIcon() != null && isPaintBg == null))
+        if(!checkIsPaintBg(b))
         {
-            return false;
+            return;
         }
 
         int w = b.getWidth();
@@ -175,7 +171,24 @@ public class LuckButtonUI extends BasicButtonUI
         g2d.fillRoundRect(0, 0, w, h, 8, 8);
 
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_OFF);
+    }
 
+    /**
+     * check if use the default button style.
+     * 
+     * @param b
+     * @return default style return true, otherwise return false.
+     */
+    private boolean checkIsPaintBg(AbstractButton b)
+    {
+        Object isPaintBg = b.getClientProperty(LuckButtonUIBundle.IS_PAINTBG);
+
+        if (!b.isContentAreaFilled()
+                || (b.getIcon() != null && isPaintBg == null))
+        {
+            return false;
+        }
+        
         return true;
     }
 
