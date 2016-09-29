@@ -183,10 +183,10 @@ public class LuckMenuUIBundle extends LuckResourceBundle
     protected void installOther(UIDefaults table)
     {
         // 注： 下列三个属性决定JMenu在弹出菜单中的布局
-        UIManager.put(AFTERCHECKICONGAP, 4);
+        table.put(AFTERCHECKICONGAP, 4);
 
-        UIManager.put(MINIMUMTEXTOFFSET, 0);
+        table.put(MINIMUMTEXTOFFSET, 0);
 
-        UIManager.put(CHECKICONOFFSET, 4);
+        table.put(CHECKICONOFFSET, 4);
     }
 }

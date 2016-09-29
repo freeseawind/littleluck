@@ -4,7 +4,6 @@ import java.awt.Color;
 
 import javax.swing.BorderFactory;
 import javax.swing.UIDefaults;
-import javax.swing.UIManager;
 import javax.swing.plaf.IconUIResource;
 
 import freeseawind.lf.cfg.LuckResourceBundle;
@@ -88,34 +87,34 @@ public class LuckRadioBtnMenuItemUIBundle extends LuckResourceBundle
     @Override
     protected void installColor(UIDefaults table)
     {
-        UIManager.put(BACKGROUND, Color.WHITE);
+        table.put(BACKGROUND, Color.WHITE);
 
-        UIManager.put(SELECTIONBG, getColorRes(60, 175, 210));
+        table.put(SELECTIONBG, getColorRes(60, 175, 210));
 
-        UIManager.put(SELECTIONFG, Color.WHITE);
+        table.put(SELECTIONFG, Color.WHITE);
     }
 
     @Override
     protected void installBorder(UIDefaults table)
     {
-        UIManager.put(BORDER, BorderFactory.createEmptyBorder());
+        table.put(BORDER, BorderFactory.createEmptyBorder());
     }
 
     @Override
     protected void loadImages(UIDefaults table)
     {
-        UIManager.put(CHECK_ICON, new LuckRadioIcon());
+        table.put(CHECK_ICON, new LuckRadioIcon());
 
-        UIManager.put(ARROW_ICON, new IconUIResource(new LuckIcon(0, 0)));
+        table.put(ARROW_ICON, new IconUIResource(new LuckIcon(0, 0)));
     }
 
     @Override
     protected void installOther(UIDefaults table)
     {
-        UIManager.put(AFTERCHECKICONGAP, 4);
+        table.put(AFTERCHECKICONGAP, 4);
 
-        UIManager.put(MINIMUMTEXTOFFSET, 0);
+        table.put(MINIMUMTEXTOFFSET, 0);
 
-        UIManager.put(CHECKICONOFFSET, 4);
+        table.put(CHECKICONOFFSET, 4);
     }
 }

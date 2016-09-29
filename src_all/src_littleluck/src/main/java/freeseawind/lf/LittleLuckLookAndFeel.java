@@ -4,7 +4,6 @@ import java.awt.Font;
 
 import javax.swing.JDialog;
 import javax.swing.JFrame;
-import javax.swing.PopupFactory;
 import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 import javax.swing.plaf.metal.MetalLookAndFeel;
@@ -53,8 +52,6 @@ public class LittleLuckLookAndFeel extends MetalLookAndFeel
         UIManager.getDefaults().removeResourceBundle(BUNDLENAME);
         
         resConfig.removeResource();
-        
-        PopupFactory.setSharedInstance(new PopupFactory());
     }
 
     /**
