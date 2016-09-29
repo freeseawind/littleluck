@@ -8,9 +8,9 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /**
  * 内部窗体UI实现， 设置组件为不完全透明，使用自定义标题面板。
- * <p>
- * 另请参见: {@link LuckInternalFrameTitlePane}, {@link LuckInternalFrameUIBundle}
- * </p>
+ *
+ * @see LuckInternalFrameTitlePane
+ * @see LuckInternalFrameUIBundle
  *
  * @author freeseawind@github
  * @version 1.0

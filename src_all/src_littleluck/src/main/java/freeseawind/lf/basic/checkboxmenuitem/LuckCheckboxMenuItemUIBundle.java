@@ -4,6 +4,7 @@ import java.awt.Color;
 
 import javax.swing.BorderFactory;
 import javax.swing.UIDefaults;
+import javax.swing.UIManager;
 import javax.swing.plaf.IconUIResource;
 
 import freeseawind.lf.cfg.LuckResourceBundle;
@@ -11,7 +12,11 @@ import freeseawind.lf.img.LuckIcon;
 import freeseawind.lf.utils.LuckRes;
 
 /**
- * LuckCheckBoxMenuItemUI资源绑定类
+ * <pre>
+ * LuckCheckBoxMenuItemUI资源绑定类。
+ *
+ * LuckCheckBoxMenuItemUI resource bundle class.
+ * </pre>
  *
  * @author freeseawind@github
  * @version 1.0
@@ -19,59 +24,132 @@ import freeseawind.lf.utils.LuckRes;
 public class LuckCheckboxMenuItemUIBundle extends LuckResourceBundle
 {
     /**
+     * <p>
      * CheckBoxMenuItem选中时背景颜色属性key
+     * </p>
+     *
+     * <p>
+     * CheckBoxMenuItem background color properties when selected.
+     * </p>
      */
     public static final String SELECTIONBG = "CheckBoxMenuItem.selectionBackground";
 
     /**
+     * <p>
      * CheckBoxMenuItem选中时字体颜色属性key
+     * </p>
+     *
+     * <p>
+     * CheckBoxMenuItem font color properties when selected.
+     * </p>
      */
     public static final String SELECTIONFG = "CheckBoxMenuItem.selectionForeground";
 
     /**
-     * CheckBoxMenuItem背景颜色属性key
+     * <p>
+     * CheckBoxMenuItem选中时背景颜色属性key
+     * </p>
+     *
+     * <p>
+     * CheckBoxMenuItem background color properties when selected.
+     * </p>
      */
     public static final String BACKGROUND = "CheckBoxMenuItem.background";
 
     /**
-     * CheckBoxMenuItem边框属性key
+     * <p>
+     * CheckBoxMenuItem边框属性key>
+     * </p>
+     *
+     * <p>
+     * CheckBoxMenuItem border properties.
+     * </p>
      */
     public static final String BORDER = "CheckBoxMenuItem.border";
 
     /**
-     * CheckBoxMenuItem复选框属性key
+     * <p>
+     * CheckBoxMenuItem复选框图标属性key
+     * </p>
+     *
+     * <p>
+     * CheckBoxMenuItem check Icon properties.
+     * </p>
      */
     public static final String CHECK_ICON = "CheckBoxMenuItem.checkIcon";
 
     /**
-     * CheckBoxMenuItem箭头图标属性key
+     * <p>
+     * CheckBoxMenuItem箭头图标
+     * </p>
+     *
+     * <p>
+     * CheckBoxMenuItem arrow icon properties.
+     * </p>
      */
     public static final String ARROW_ICON = "CheckBoxMenuItem.arrowIcon";
 
     /**
-     * [自定义属性] JCheckBoxMenuItem选中时图标
+     * <p>
+     * [LittleLuck属性] JCheckBoxMenuItem选中时图片属性key
+     * </p>
+     *
+     * <p>
+     * [LittleLuck Attributes] JCheckBoxMenuItem image properties when is selected.
+     * </p>
      */
-    public static final String NORMAL_ICON = "CheckBoxMenuItem.checkNormlIcon";
+    public static final String NORMAL_IMG = "CheckBoxMenuItem.checkNormlIcon";
 
     /**
-     * [自定义属性] JCheckBoxMenuItem选中时鼠标经过图标
+     * <p>
+     * <strong>[LittleLuck属性]</strong> JCheckBoxMenuItem选中时鼠标经过图片属性key
+     * </p>
+     *
+     * <p>
+     * <strong>[LittleLuck Attributes]</strong> JCheckBoxMenuItem image properties when the mouse passes and is selected.
+     * </p>
      */
-    public static final String ROLLVER_ICON = "CheckBoxMenuItem.checkRollverIcon";
+    public static final String ROLLVER_IMG = "CheckBoxMenuItem.checkRollverIcon";
 
     /**
-     * CheckBoxMenuItem文本和复选框图标间距属性key, 当前默认为4
+     * <p>
+     * CheckBoxMenuItem文本和复选框图标间距属性key, 默认值4。
+     * </p>
+     *
+     * <p>
+     * CheckBoxMenuItem after check icon gap properties, the default value is 4.
+     * </p>
      */
     public static final String AFTERCHECKICONGAP = "CheckBoxMenuItem.afterCheckIconGap";
 
     /**
-     * CheckBoxMenuItem最小文本偏移宽度属性key, 当前默认为0
+     * <p>
+     * CheckBoxMenuItem最小文本偏移宽度属性key, 默认值0。
+     * </p>
+     *
+     * <p>
+     * CheckBoxMenuItem minimum text offset properties, the default value is 0.
+     * </p>
      */
     public static final String MINIMUMTEXTOFFSET = "CheckBoxMenuItem.minimumTextOffset";
 
     /**
-     * CheckBoxMenuItem复选框图标偏移x轴距离属性key, 当前默认为4
+     * <p>
+     * CheckBoxMenuItem复选框图标偏移x轴距离属性key, 默认值4。
+     * </p>
+     *
+     * <p>
+     * CheckBoxMenuItem check icon offset properties, the default value is 4.
+     * </p>
      */
     public static final String CHECKICONOFFSET = "CheckBoxMenuItem.checkIconOffset";
+
+    public void uninitialize()
+    {
+        UIManager.put(NORMAL_IMG, null);
+
+        UIManager.put(ROLLVER_IMG, null);
+    }
 
     @Override
     protected void installColor(UIDefaults table)
@@ -96,9 +174,9 @@ public class LuckCheckboxMenuItemUIBundle extends LuckResourceBundle
 
         table.put(ARROW_ICON, new IconUIResource(new LuckIcon(0, 0)));
 
-        table.put(NORMAL_ICON, LuckRes.getImage("menu/checkbox_normal.png"));
+        table.put(NORMAL_IMG, LuckRes.getImage("menu/checkbox_normal.png"));
 
-        table.put(ROLLVER_ICON, LuckRes.getImage("menu/checkbox_rollver.png"));
+        table.put(ROLLVER_IMG, LuckRes.getImage("menu/checkbox_rollver.png"));
     }
 
     @Override

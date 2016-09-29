@@ -114,9 +114,9 @@ public class LuckInternalFrameTitlePane extends BasicInternalFrameTitlePane
         else
         {
             setBtnAtrr(maxButton,
-                    LuckInternalFrameUIBundle.MINICON_NORMAL,
-                    LuckInternalFrameUIBundle.MINICON_ROLLVER,
-                    LuckInternalFrameUIBundle.MINICON_PRESSED);
+                    LuckInternalFrameUIBundle.MAXMINIMIZEICON_NORMAL,
+                    LuckInternalFrameUIBundle.MAXMINIMIZEICON_ROLLVER,
+                    LuckInternalFrameUIBundle.MAXMINIMIZEICON_PRESSED);
         }
 
         if (frame.isIcon())
@@ -125,6 +125,11 @@ public class LuckInternalFrameTitlePane extends BasicInternalFrameTitlePane
                     LuckInternalFrameUIBundle.MAXICON_NORMAL,
                     LuckInternalFrameUIBundle.MAXICON_ROLLVER,
                     LuckInternalFrameUIBundle.MAXICON_PRESSED);
+            
+            setBtnAtrr(maxButton,
+                    LuckInternalFrameUIBundle.MAXMINIMIZEICON_NORMAL,
+                    LuckInternalFrameUIBundle.MAXMINIMIZEICON_ROLLVER,
+                    LuckInternalFrameUIBundle.MAXMINIMIZEICON_PRESSED);
         }
         else
         {

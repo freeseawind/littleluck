@@ -7,7 +7,7 @@ import java.awt.Color;
  * 按钮配置颜色工厂类。
  *
  * Button Color factory class.
- * <pre>
+ * </pre>
  *
  * @author freeseawind@github
  * @version 1.0
