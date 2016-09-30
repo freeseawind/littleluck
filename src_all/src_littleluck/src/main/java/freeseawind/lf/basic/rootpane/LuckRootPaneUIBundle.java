@@ -239,7 +239,7 @@ public class LuckRootPaneUIBundle extends LuckResourceBundle
         // 初始化阴影边框
         Insets insets = new Insets(5, 5, 5, 5);
         BufferedImage shadowImg = LuckRes.getImage("frame/shadow_border.9.png");
-        Border shadowBorder = new LuckNinePatchBorder(insets, shadowImg);
+        Border shadowBorder = getBorderRes(new LuckNinePatchBorder(insets, shadowImg));
 
         // 设置窗体、弹窗边框配置
         table.put(FRAME_BORDER, shadowBorder);

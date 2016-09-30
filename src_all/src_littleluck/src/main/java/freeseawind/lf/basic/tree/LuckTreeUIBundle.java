@@ -8,7 +8,6 @@ import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 
 import freeseawind.lf.cfg.LuckResourceBundle;
-import freeseawind.lf.utils.LuckRes;
 
 /**
  * <p>TreeUI 资源绑定类。</p>
@@ -56,9 +55,14 @@ public class LuckTreeUIBundle extends LuckResourceBundle
     public static final String LEAFICON = "Tree.leafIcon";
 
     /**
-     * <p>[LittleLuck属性]TreeUI层次线绘制属性key(true:绘制层次线)，布尔类型， 默认false。</p>
+     * <p>
+     * <strong>[LittleLuck属性]</strong>TreeUI层次线绘制属性key(true:绘制层次线)， 默认false。
+     * </p>
      *
-     * <p>[LittLeLuck Attributes] Level line drawing attributes(true is drawn), Defaults false.</p>
+     * <p>
+     * <strong>[LittLeLuck Attributes]</strong> Level line drawing
+     * attributes(true is drawn), Defaults false.
+     * </p>
      */
     public static final String PAINTLINES = "Tree.paintLines";
 
@@ -121,15 +125,15 @@ public class LuckTreeUIBundle extends LuckResourceBundle
     @Override
     protected void loadImages(UIDefaults table)
     {
-        UIManager.put(OPENICON, new ImageIcon(LuckRes.getImage("tree/folder_open.png")));
+        UIManager.put(OPENICON, getIconRes("tree/folder_open.png"));
 
-        UIManager.put(CLOSEDICON, new ImageIcon(LuckRes.getImage("tree/folder_normal.png")));
+        UIManager.put(CLOSEDICON, getIconRes("tree/folder_normal.png"));
 
-        UIManager.put(EXPANDEDICON, new ImageIcon(LuckRes.getImage("tree/expanded.png")));
+        UIManager.put(EXPANDEDICON, getIconRes("tree/expanded.png"));
 
-        UIManager.put(COLLAPSEDICON, new ImageIcon(LuckRes.getImage("tree/collapsed.png")));
+        UIManager.put(COLLAPSEDICON, getIconRes("tree/collapsed.png"));
 
-        UIManager.put(LEAFICON, new ImageIcon());
+        UIManager.put(LEAFICON, getIconRes(new ImageIcon()));
     }
 
     @Override

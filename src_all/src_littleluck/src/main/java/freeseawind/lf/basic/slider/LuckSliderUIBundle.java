@@ -105,7 +105,7 @@ public class LuckSliderUIBundle extends LuckResourceBundle
     {
         table.put(TICKCOLOR, getColorRes(131, 131, 131));
         
-        table.put(BACKGROUND, Color.WHITE);
+        table.put(BACKGROUND, getColorRes(Color.WHITE));
     }
 
     @Override

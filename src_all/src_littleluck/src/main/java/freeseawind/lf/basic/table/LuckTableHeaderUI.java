@@ -1,12 +1,12 @@
 package freeseawind.lf.basic.table;
 
-import java.awt.Graphics;
-
 import javax.swing.JComponent;
 import javax.swing.plaf.ComponentUI;
 import javax.swing.plaf.UIResource;
 import javax.swing.plaf.basic.BasicTableHeaderUI;
 import javax.swing.table.TableCellRenderer;
+
+import sun.swing.table.DefaultTableCellHeaderRenderer;
 
 /**
  * <p>
@@ -47,8 +47,11 @@ public class LuckTableHeaderUI extends BasicTableHeaderUI
         }
     }
 
-    public void paint(Graphics g, JComponent c)
+    @Override
+    public void uninstallUI(JComponent c)
     {
-        super.paint(g, c);
+        header.setDefaultRenderer(new DefaultTableCellHeaderRenderer());
+
+        super.uninstallUI(c);
     }
 }

@@ -12,9 +12,9 @@ import javax.swing.UIManager;
 
 /**
  * <p>复选框图标实现类, 此类参考Beautyeye的实现。</p>
- * 
+ *
  * <p>CheckBoxIcon implement class.</p>
- * 
+ *
  * @author freeseawind@github
  * @version 1.0
  *
@@ -34,7 +34,6 @@ public class LuckCheckBoxIcon implements Icon, Serializable
         boolean isPressed = (model.isArmed() && model.isPressed());
 
         boolean isRollver = (model.isRollover() && cb.isRolloverEnabled());
-
 
         if(model.isSelected())
         {
@@ -69,11 +68,17 @@ public class LuckCheckBoxIcon implements Icon, Serializable
         }
     }
 
+    /**
+     * Gets icon width.
+     */
     public int getIconWidth()
     {
         return 16;
     }
 
+    /**
+     * Gets icon height.
+     */
     public int getIconHeight()
     {
         return 16;

@@ -33,4 +33,12 @@ public class LuckViewportUI extends BasicViewportUI
 
         LookAndFeel.installProperty(c, "opaque", Boolean.FALSE);
     }
+
+    @Override
+    protected void uninstallDefaults(JComponent c)
+    {
+        super.uninstallDefaults(c);
+
+        c.setOpaque(true);
+    }
 }

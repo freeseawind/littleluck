@@ -39,16 +39,12 @@ public class LuckSpinnerUI extends BasicSpinnerUI
     public void installUI(JComponent c)
     {
         super.installUI(c);
-
-        border = UIManager.getBorder("Spinner.arrowButtonBorder");
     }
 
     @Override
     public void uninstallUI(JComponent c)
     {
         super.uninstallUI(c);
-
-        border = null;
     }
 
     protected JComponent createEditor()
@@ -118,7 +114,7 @@ public class LuckSpinnerUI extends BasicSpinnerUI
     {
         JButton b = new LuckArrowButton(direction);
 
-        b.setBorder(border);
+        b.setBorder(UIManager.getBorder(LuckSpinnerUIBundle.ARROWBUTTONBORDER));
 
         b.setInheritsPopupMenu(true);
 

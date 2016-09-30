@@ -6,7 +6,7 @@ import javax.swing.plaf.metal.MetalCheckBoxUI;
 
 /**
  * A CheckBoxUI implement class.
- * 
+ *
  * @author freeseawind@github
  * @version 1.0
  */

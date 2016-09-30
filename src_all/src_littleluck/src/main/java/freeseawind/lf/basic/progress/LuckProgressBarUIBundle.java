@@ -40,37 +40,62 @@ public class LuckProgressBarUIBundle extends LuckResourceBundle
     public static final String VERTICALSIZE = "ProgressBar.verticalSize";
 
     /**
-     * <p>[LittleLuck属性] 水平进度条背景图片属性key</p>
+     * <p>
+     * <strong>[LittleLuck属性]</strong> 水平进度条背景图片属性key
+     * </p>
      *
-     * <p>[LittLeLuck Attributes] Horizontal ProgressBar background image properties.</p>
+     * <p>
+     * <strong>[LittLeLuck Attributes]</strong> Horizontal ProgressBar
+     * background image properties.
+     * </p>
      */
     public static final String HORIZONTALIMG = "ProgressBar.horizontalIcon";
 
     /**
-     * <p>[LittleLuck属性] 水平进度条图片属性key</p>
+     * <p>
+     * <strong>[LittleLuck属性]</strong> 水平进度条图片属性key
+     * </p>
      *
-     * <p>[LittLeLuck Attributes] Horizontal ProgressBar progress image properties.</p>
+     * <p>
+     * <strong>[LittLeLuck Attributes]</strong> Horizontal ProgressBar progress
+     * image properties.
+     * </p>
      */
     public static final String HORIZONTALCELLIMG = "ProgressBar.horizontalCellIcon";
 
     /**
-     * <p>[LittleLuck属性] 垂直进度条背景图片属性key</p>
+     * <p>
+     * <strong>[LittleLuck属性]</strong> 垂直进度条背景图片属性key
+     * </p>
      *
-     * <p>[LittLeLuck Attributes] Vertical ProgressBar background image properties.</p>
+     * <p>
+     * <strong>[LittLeLuck Attributes]</strong> Vertical ProgressBar background
+     * image properties.
+     * </p>
      */
     public static final String VERTICALIMG = "ProgressBar.verticalIcon";
 
     /**
-     * <p>[LittleLuck属性] 垂直进度条图片属性key</p>
+     * <p>
+     * <strong>[LittleLuck属性]</strong> 垂直进度条图片属性key
+     * </p>
      *
-     * <p>[LittLeLuck Attributes] Vertical ProgressBar progress image properties</p>
+     * <p>
+     * <strong>[LittLeLuck Attributes]</strong> Vertical ProgressBar progress
+     * image properties.
+     * </p>
      */
     public static final String VERTICALCELLIMG = "ProgressBar.verticalCellIcon";
 
     /**
-     * <p>[LittleLuck属性] 进度条间距属性key</p>
+     * <p>
+     * <strong>[LittleLuck属性]</strong> 进度条间距属性key
+     * </p>
      *
-     * <p>[LittLeLuck Attributes] Vertical ProgressBar thumb insets properties.</p>
+     * <p>
+     * <strong>[LittLeLuck Attributes]</strong> Vertical ProgressBar thumb
+     * insets properties.
+     * </p>
      */
     public static final String CELLBAR_INSETS = "ProgressBar.thumbInsets";
 

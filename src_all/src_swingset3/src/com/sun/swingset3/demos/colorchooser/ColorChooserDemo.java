@@ -39,6 +39,9 @@ import javax.swing.border.EmptyBorder;
 
 import com.sun.swingset3.demos.JGridPanel;
 import com.sun.swingset3.demos.ResourceManager;
+
+import freeseawind.lf.basic.button.LuckButtonUIBundle;
+
 import com.sun.swingset3.DemoProperties;
 
 
@@ -96,12 +99,20 @@ public class ColorChooserDemo extends JPanel {
         setLayout(new BorderLayout());
 
         outerColorButton.setIcon(new ColorSwatch(BezierAnimationPanel.BezierColor.OUTER));
+        
+        outerColorButton.putClientProperty(LuckButtonUIBundle.IS_PAINTBG, "");
 
         backgroundColorButton.setIcon(new ColorSwatch(BezierAnimationPanel.BezierColor.BACKGROUND));
+        
+        backgroundColorButton.putClientProperty(LuckButtonUIBundle.IS_PAINTBG, "");
 
         gradientAButton.setIcon(new ColorSwatch(BezierAnimationPanel.BezierColor.GRADIENT_A));
+        
+        gradientAButton.putClientProperty(LuckButtonUIBundle.IS_PAINTBG, "");
 
         gradientBButton.setIcon(new ColorSwatch(BezierAnimationPanel.BezierColor.GRADIENT_B));
+        
+        gradientBButton.putClientProperty(LuckButtonUIBundle.IS_PAINTBG, "");
 
         ActionListener l = new ActionListener() {
             public void actionPerformed(ActionEvent e) {

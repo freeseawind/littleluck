@@ -1,12 +1,12 @@
 package freeseawind.lf.basic.popupmenu;
 
-import java.awt.Color;
 import java.awt.Insets;
 import java.awt.image.BufferedImage;
 
 import javax.swing.PopupFactory;
 import javax.swing.UIDefaults;
 import javax.swing.UIManager;
+import javax.swing.border.Border;
 
 import freeseawind.lf.border.LuckNinePatchBorder;
 import freeseawind.lf.cfg.LuckResourceBundle;
@@ -46,15 +46,17 @@ public class LuckPopupMenuUIBundle extends LuckResourceBundle
     @Override
     protected void installColor(UIDefaults table)
     {
-        UIManager.put(SEPEREATOR_COLOR, new Color(215, 220, 222));
+        UIManager.put(SEPEREATOR_COLOR, getColorRes(215, 220, 222));
     }
 
     @Override
     protected void installBorder(UIDefaults table)
     {
         BufferedImage img = LuckRes.getImage("popupmenu/shadow_border.9.png");
+        
+        Border border = new LuckNinePatchBorder(new Insets(5, 3, 6, 3), img);
 
-        table.put(BORDER, new LuckNinePatchBorder(new Insets(5, 3, 6, 3), img));
+        table.put(BORDER, getBorderRes(border));
     }
 
     @Override
