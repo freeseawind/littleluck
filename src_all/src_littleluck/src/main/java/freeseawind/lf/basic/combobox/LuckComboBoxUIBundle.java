@@ -159,15 +159,15 @@ public class LuckComboBoxUIBundle extends LuckResourceBundle
     @Override
     protected void installColor(UIDefaults table)
     {
-        table.put(BACKGROUND, Color.WHITE);
+        table.put(BACKGROUND, getColorRes(Color.WHITE));
 
-        table.put(SELECTIONBACKGROUND, new Color(0, 150, 201, 200));
+        table.put(SELECTIONBACKGROUND, getColorRes(0, 150, 201, 200));
 
-        table.put(BUTTONBACKGROUND, Color.WHITE);
+        table.put(BUTTONBACKGROUND, getColorRes(Color.WHITE));
 
-        table.put(BUTTONFOCUS, new Color(0, 150, 201, 200));
+        table.put(BUTTONFOCUS, getColorRes(245, 171, 84));
 
-        table.put(SELECTIONFOREGROUND, Color.WHITE);
+        table.put(SELECTIONFOREGROUND, getColorRes(Color.WHITE));
     }
 
     @Override
@@ -195,9 +195,9 @@ public class LuckComboBoxUIBundle extends LuckResourceBundle
 
         BufferedImage img = LuckRes.getImage("popupmenu/shadow_border.9.png");
 
-        table.put(POPUPBORDER, new LuckNinePatchBorder(new Insets(5, 3, 6, 3), img));
+        UIManager.put(POPUPBORDER, getBorderRes(new LuckNinePatchBorder(new Insets(5, 3, 6, 3), img)));
 
-        table.put(RENDERERBORDER, new EmptyBorder(new Insets(0, 4, 0, 0)));
+        table.put(RENDERERBORDER, getBorderRes(new EmptyBorder(new Insets(0, 4, 0, 0))));
     }
 
     @Override

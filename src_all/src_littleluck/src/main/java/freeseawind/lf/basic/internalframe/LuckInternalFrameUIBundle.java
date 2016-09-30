@@ -7,8 +7,6 @@ import java.awt.image.BufferedImage;
 import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
-import javax.swing.plaf.BorderUIResource;
-import javax.swing.plaf.ColorUIResource;
 
 import freeseawind.lf.border.LuckNinePatchBorder;
 import freeseawind.lf.cfg.LuckResourceBundle;
@@ -19,7 +17,7 @@ import freeseawind.lf.utils.LuckRes;
  * LuckInternalFrameUI资源绑定类。
  *
  * LuckInternalFrameUI resource bundle class.
- * <pre>
+ * </pre>
  *
  * @author freeseawind@github
  * @version 1.0
@@ -209,6 +207,8 @@ public class LuckInternalFrameUIBundle extends LuckResourceBundle
         UIManager.put(TITLEPANEL_BG_IMG, null);
 
         UIManager.put(TITLEPANE_HEIGHT, null);
+
+        UIManager.put(LAYOUTTITLEPANEATORIGIN, Boolean.TRUE);
     }
 
     @Override
@@ -220,19 +220,19 @@ public class LuckInternalFrameUIBundle extends LuckResourceBundle
         Border shadowBorder = new LuckNinePatchBorder(insets, shadowImg);
 
         //
-        table.put(BORDER, new BorderUIResource(shadowBorder));
-        table.put(PALETTEBORDER, new BorderUIResource(shadowBorder));
-        table.put(OPTIONDIALOGBORDER, new BorderUIResource(shadowBorder));
+        table.put(BORDER, getBorderRes(shadowBorder));
+        table.put(PALETTEBORDER, getBorderRes(shadowBorder));
+        table.put(OPTIONDIALOGBORDER, getBorderRes(shadowBorder));
     }
 
     @Override
     protected void installColor(UIDefaults table)
     {
-        UIManager.put(ACTIVETITLEBACKGROUND, new ColorUIResource(Color.WHITE));
+        UIManager.put(ACTIVETITLEBACKGROUND, getColorRes(Color.WHITE));
 
-        UIManager.put(INACTIVETITLEBACKGROUND, new ColorUIResource(Color.WHITE));
+        UIManager.put(INACTIVETITLEBACKGROUND, getColorRes(Color.WHITE));
 
-        UIManager.put(DESKTOP_BACKGROUND, new ColorUIResource(Color.white));
+        UIManager.put(DESKTOP_BACKGROUND, getColorRes(Color.white));
     }
 
     @Override

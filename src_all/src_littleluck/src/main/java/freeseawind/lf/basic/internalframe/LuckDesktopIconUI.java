@@ -12,7 +12,7 @@ import javax.swing.plaf.basic.BasicDesktopIconUI;
  * <p>
  * 内部窗口托盘图标UI实现类, 重写{@link BasicDesktopIconUI#installComponents()}方法, 使用自定义边框。
  * </p>
- * 
+ *
  * <p>
  * The internal window tray icon UI implementation class, overriding the
  * {@link BasicDesktopIconUI#installComponents()} , using a custom border
@@ -29,17 +29,11 @@ public class LuckDesktopIconUI extends BasicDesktopIconUI
         return new LuckDesktopIconUI();
     }
 
-    public Dimension getPreferredSize(JComponent c)
-    {
-        return getMinimumSize(c);
-    }
-
-    public Dimension getMinimumSize(JComponent c)
-    {
-        return new Dimension(UIManager.getInt("DesktopIcon.width"),
-                desktopIcon.getLayout().minimumLayoutSize(desktopIcon).height);
-    }
-
+    /**
+     * <p>重写该方法，使用自定义边框</p>
+     *
+     * <p>Override the method to use a custom border</p>
+     */
     protected void installComponents()
     {
         iconPane = new LuckInternalFrameTitlePane(frame);
@@ -50,5 +44,16 @@ public class LuckDesktopIconUI extends BasicDesktopIconUI
 
         // install border
         desktopIcon.setBorder(UIManager.getBorder(LuckInternalFrameUIBundle.BORDER));
+    }
+
+    public Dimension getPreferredSize(JComponent c)
+    {
+        return getMinimumSize(c);
+    }
+
+    public Dimension getMinimumSize(JComponent c)
+    {
+        return new Dimension(UIManager.getInt("DesktopIcon.width"),
+                desktopIcon.getLayout().minimumLayoutSize(desktopIcon).height);
     }
 }
