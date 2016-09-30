@@ -15,11 +15,9 @@ import javax.swing.plaf.basic.BasicMenuItemUI;
  * <p>
  * MenuItemUI implementation class, the menu minimum height of 20.
  * </p>
- *
- * <p>
- * See Also:{@link LuckMenuItemUIBundle}.
- * </p>
- *
+ * 
+ * @see LuckMenuItemUIBundle
+ *  
  * @author freeseawind@github
  * @version 1.0
  *

@@ -4,7 +4,7 @@ import java.awt.Color;
 
 import javax.swing.BorderFactory;
 import javax.swing.UIDefaults;
-import javax.swing.plaf.BorderUIResource;
+import javax.swing.border.Border;
 
 import freeseawind.lf.cfg.LuckResourceBundle;
 
@@ -57,19 +57,22 @@ public class LuckListUIBundle extends LuckResourceBundle
     @Override
     protected void installBorder(UIDefaults table)
     {
-        table.put(CELL_BORDER, BorderFactory.createEmptyBorder(5, 5, 5, 0));
+        Border cellBorder = BorderFactory.createEmptyBorder(5, 5, 5, 0);
+        
+        table.put(CELL_BORDER, getBorderRes(cellBorder));
+        
+        Border nofocusBorder = BorderFactory.createEmptyBorder(5, 5, 5, 0);
 
-        table.put(CELL_NOFOCUSBORDER, new BorderUIResource(
-                BorderFactory.createEmptyBorder(5, 5, 5, 0)));
+        table.put(CELL_NOFOCUSBORDER, getBorderRes(nofocusBorder));
     }
 
     @Override
     protected void installColor(UIDefaults table)
     {
-        table.put(SELECTIONBACKGROUND, new Color(60, 175, 210));
+        table.put(SELECTIONBACKGROUND, getColorRes(60, 175, 210));
 
-        table.put(SELECTIONFOREGROUND, Color.WHITE);
+        table.put(SELECTIONFOREGROUND, getColorRes(Color.WHITE));
 
-        table.put(BACKGROUND, Color.white);
+        table.put(BACKGROUND, getColorRes(Color.white));
     }
 }

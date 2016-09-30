@@ -9,9 +9,7 @@ import javax.swing.plaf.basic.BasicListUI;
  *
  * <p>A ListUI implement class.</p>
  *
- * <p>
- * See Also: {@link LuckListUIBundle}.
- * </p>
+ * @see LuckListUIBundle
  *
  * @author freeseawind@github
  * @version 1.0
@@ -22,10 +20,5 @@ public class LuckListUI extends BasicListUI
     public static ComponentUI createUI(JComponent list)
     {
         return new LuckListUI();
-    }
-    
-    public void installUI(JComponent c)
-    {
-        super.installUI(c);
     }
 }

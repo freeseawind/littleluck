@@ -64,16 +64,21 @@ public class LuckMenuUIBundle extends LuckResourceBundle
     public static final String MENU_BACKGROUND = "Menu.background";
 
     /**
-     * <p>[LittleLuck属性] JMenu箭头图标<p>
+     * <p><strong>[LittleLuck属性]</strong> JMenu箭头图标<p>
      *
-     * <p>[LittLeLuck Attributes] JMenu arrow image properties.</p>
+     * <p><strong>[LittLeLuck Attributes]</strong> JMenu arrow image properties.</p>
      */
     public static final String ARROW_NORMAL_IMG = "Menu.arrowNormalIcon";
 
     /**
-     * <p>[自定义属性] JMenu鼠标经过时箭头图标<p>
+     * <p>
+     * <strong>[LittleLuck属性]</strong> JMenu鼠标经过时箭头图标
+     * <p>
      *
-     * <p>[LittLeLuck Attributes] JMenu arrow image properties when selected.</p>
+     * <p>
+     * <strong>[LittLeLuck Attributes]</strong> JMenu arrow image properties
+     * when selected.
+     * </p>
      */
     public static final String ARROW_ROLLVER_IMG = "Menu.arrowRollverIcon";
 
@@ -150,9 +155,9 @@ public class LuckMenuUIBundle extends LuckResourceBundle
     @Override
     protected void installBorder(UIDefaults table)
     {
-        table.put(MENUBAR_BORDER, BorderFactory.createEmptyBorder(3, 0, 3, 0));
+        table.put(MENUBAR_BORDER, getBorderRes(BorderFactory.createEmptyBorder(3, 0, 3, 0)));
 
-        table.put(MENU_BORDER, BorderFactory.createEmptyBorder());
+        table.put(MENU_BORDER, getBorderRes(BorderFactory.createEmptyBorder()));
     }
 
     @Override
@@ -160,11 +165,11 @@ public class LuckMenuUIBundle extends LuckResourceBundle
     {
         table.put(MENU_SELECTIONBG, getColorRes(60, 175, 210));
 
-        table.put(MENU_SELECTIONFG, Color.WHITE);
+        table.put(MENU_SELECTIONFG, getColorRes(Color.WHITE));
 
-        table.put(MENU_BACKGROUND, Color.WHITE);
+        table.put(MENU_BACKGROUND, getColorRes(Color.WHITE));
 
-        table.put(MENUBAR_BACKGROUND, Color.WHITE);
+        table.put(MENUBAR_BACKGROUND, getColorRes(Color.WHITE));
     }
 
     @Override
@@ -174,7 +179,7 @@ public class LuckMenuUIBundle extends LuckResourceBundle
 
         table.put(ARROW_ROLLVER_IMG, LuckRes.getImage("menu/arrow_rollver.png"));
 
-        table.put(ARROW_ICON, new LuckArrowIcon());
+        table.put(ARROW_ICON, getIconRes(new LuckArrowIcon()));
 
         table.put(CHECK_ICON, getIconRes(new LuckIcon(16, 0)));
     }

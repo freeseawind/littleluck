@@ -5,7 +5,6 @@ import java.awt.Color;
 import javax.swing.BorderFactory;
 import javax.swing.UIDefaults;
 import javax.swing.UIManager;
-import javax.swing.plaf.IconUIResource;
 
 import freeseawind.lf.cfg.LuckResourceBundle;
 import freeseawind.lf.img.LuckIcon;
@@ -90,23 +89,23 @@ public class LuckMenuItemUIBundle extends LuckResourceBundle
     {
         table.put(SELECTIONBG, getColorRes(60, 175, 210));
 
-        table.put(SELECTIONFG, Color.WHITE);
+        table.put(SELECTIONFG, getColorRes(Color.WHITE));
 
-        table.put(BACKGROUND, Color.WHITE);
+        table.put(BACKGROUND, getColorRes(Color.WHITE));
     }
 
     @Override
     protected void installBorder(UIDefaults table)
     {
-        table.put(BORDER, BorderFactory.createEmptyBorder());
+        table.put(BORDER, getBorderRes(BorderFactory.createEmptyBorder()));
     }
 
     @Override
     protected void loadImages(UIDefaults table)
     {
-        table.put(CHECK_ICON, new IconUIResource(new LuckIcon(0, 0)));
+        table.put(CHECK_ICON, getIconRes(new LuckIcon(0, 0)));
 
-        table.put(ARROW_ICON, new IconUIResource(new LuckIcon(0, 0)));
+        table.put(ARROW_ICON, getIconRes(new LuckIcon(0, 0)));
     }
 
     @Override
