@@ -59,6 +59,8 @@ public class LuckFormattedTextFieldUI extends BasicFormattedTextFieldUI
         c.removeFocusListener(handle);
 
         handle = null;
+
+        borderShape = null;
     }
 
     /**

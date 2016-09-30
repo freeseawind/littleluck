@@ -18,9 +18,4 @@ public class LuckTableUI extends BasicTableUI
     {
         return new LuckTableUI();
     }
-
-    public void installUI(JComponent c)
-    {
-        super.installUI(c);
-    }
 }

@@ -68,6 +68,14 @@ public class LuckScrollBarUI extends BasicScrollBarUI
         LookAndFeel.installProperty(scrollbar, "opaque", Boolean.FALSE);
     }
 
+    @Override
+    protected void uninstallDefaults()
+    {
+        super.uninstallDefaults();
+
+        scrollbar.setOpaque(true);
+    }
+
     /**
      * <p>设置按钮宽和高为0, 达到隐藏该按钮的效果。</p>
      *

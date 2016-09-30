@@ -51,11 +51,11 @@ public class LuckSplitPaneUIBundle extends LuckResourceBundle
     @Override
     protected void installBorder(UIDefaults table)
     {
-        table.put(BORDER, BorderFactory.createEmptyBorder());
+        table.put(BORDER, getBorderRes(BorderFactory.createEmptyBorder()));
 
-        table.put(DIVIDERBORDER, new LuckLineBorder(new Insets(1, 1, 1, 1), 2));
+        table.put(DIVIDERBORDER, getBorderRes(new LuckLineBorder(new Insets(1, 1, 1, 1), 2)));
 
-        table.put(BACKGROUND, Color.white);
+        table.put(BACKGROUND, getColorRes(Color.white));
 
         table.put(DIVIDERSIZE, 5);
     }

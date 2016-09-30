@@ -50,9 +50,9 @@ public class LuckTableUIBundle extends LuckResourceBundle
     @Override
     protected void installColor(UIDefaults table)
     {
-        table.put(SELECTIONBACKGROUND, new Color(60, 175, 210));
+        table.put(SELECTIONBACKGROUND, getColorRes(60, 175, 210));
 
-        table.put(SELECTIONFOREGROUND, Color.white);
+        table.put(SELECTIONFOREGROUND, getColorRes(Color.white));
     }
 
     @Override

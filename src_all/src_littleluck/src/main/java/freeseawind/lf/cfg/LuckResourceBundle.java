@@ -107,6 +107,11 @@ public abstract class LuckResourceBundle
     {
         return new ColorUIResource(r, g, b);
     }
+    
+    protected ColorUIResource getColorRes(int r, int g, int b, int a)
+    {
+        return new ColorUIResource(new Color(r, g, b, a));
+    }
 
     protected ColorUIResource getColorRes(Color color)
     {

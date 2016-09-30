@@ -57,6 +57,8 @@ public class LuckTexFieldUI extends BasicTextFieldUI implements LuckBorderField
         c.removeFocusListener(handle);
 
         handle = null;
+
+        borderShape = null;
     }
 
     /**

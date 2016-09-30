@@ -97,9 +97,14 @@ public class LuckTabbedPaneUIBundle extends LuckResourceBundle
     public static final String SHADOW = "TabbedPane.shadow";
 
     /**
-     * <p>[LittleLuck属性]选项卡选中时的边框颜色属性key。</p>
+     * <p>
+     * <strong>[LittleLuck属性]</strong>选项卡选中时的边框颜色属性key。
+     * </p>
      *
-     * <p>[LittLeLuck Attributes]TabbedPane tab border color properties when selected.</p>
+     * <p>
+     * <strong>[LittLeLuck Attributes]</strong>TabbedPane tab border color
+     * properties when selected.
+     * </p>
      */
     public static final String SELECTEDSHADOW = "TabbedPane.selectedShadow";
 
@@ -109,7 +114,7 @@ public class LuckTabbedPaneUIBundle extends LuckResourceBundle
      * <p>Tab spacing attribute key, you can control the Tab width and height by this property.</p>
      */
     public static final String TABINSETS = "TabbedPane.tabInsets";
-    
+
     public void uninitialize()
     {
         UIManager.put(BACKGROUNDCOLOR, null);
@@ -123,13 +128,13 @@ public class LuckTabbedPaneUIBundle extends LuckResourceBundle
         UIManager.put(SHADOW, null);
 
         UIManager.put(SELECTEDSHADOW, null);
-        
+
         UIManager.put(CONTENTOPAQUE, null);
 
         UIManager.put(OPAQUE, null);
 
         UIManager.put(TABSOVERLAPBORDER, null);
-        
+
         UIManager.put(SELECTEDTABPADINSETS, null);
 
         UIManager.put(TABAREAINSETS, null);
@@ -142,11 +147,11 @@ public class LuckTabbedPaneUIBundle extends LuckResourceBundle
     @Override
     protected void installColor(UIDefaults table)
     {
-        UIManager.put(BACKGROUNDCOLOR, Color.WHITE);
+        UIManager.put(BACKGROUNDCOLOR, getColorRes(Color.WHITE));
 
-        UIManager.put(CONTENTAREACOLOR, Color.WHITE);
+        UIManager.put(CONTENTAREACOLOR, getColorRes(Color.WHITE));
 
-        UIManager.put(SELECTEDFOREGROUND, Color.WHITE);
+        UIManager.put(SELECTEDFOREGROUND, getColorRes(Color.WHITE));
 
         //171, 225, 235
         UIManager.put(SELECTEDCOLOR, getColorRes(9, 163, 200));

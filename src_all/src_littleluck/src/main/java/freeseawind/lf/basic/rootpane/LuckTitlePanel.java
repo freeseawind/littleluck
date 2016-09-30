@@ -31,15 +31,15 @@ import freeseawind.ninepatch.swing.SwingNinePatch;
 
 /**
  * <p>窗体标题面板实现类, 当使用非系统窗体装饰时，该类会被创建。</p>
- * 
- * 
+ *
+ *
  * <p>
  * Class that manages a JLF awt.Window-descendant class's title bar.
  * This class assumes it will be created with a particular window
  * decoration style, and that if the style changes, a new one will
  * be created.
  * <p>
- * 
+ *
  * @author freeseawind@github
  * @version 1.0
  *
@@ -170,7 +170,7 @@ public class LuckTitlePanel extends JPanel
 
     /**
      * <p>设置窗体拉伸状体,根据状态隐藏或显示放大按钮</p>
-     * 
+     *
      * <p>Set the form stretched state, according to the state to hide or display the zoom button</p>
      *
      * @param isResizeable resize able return true, otherwise return false
@@ -189,7 +189,7 @@ public class LuckTitlePanel extends JPanel
 
     /**
      * <p>创建标题面板布局<p>
-     * 
+     *
      * <p>Create TitlePane layout manager</p>
      *
      * @return 标题面板布局对象
@@ -201,7 +201,7 @@ public class LuckTitlePanel extends JPanel
 
     /**
      * <p>安装放大、缩小、关闭按钮<p>
-     * 
+     *
      * <p>Installation Form button<p>
      */
     protected void installBtn()
@@ -254,7 +254,7 @@ public class LuckTitlePanel extends JPanel
 
     /**
      * <p>安装窗体图标和标题<p>
-     * 
+     *
      * <p>Installation Window icon and title<p>
      */
     protected void installTitle()
@@ -276,10 +276,10 @@ public class LuckTitlePanel extends JPanel
 
     /**
      * <p>设置按钮属性</p>
-     * 
+     *
      * <p>set window button attribute</p>
      *
-     * @param btn 
+     * @param btn
      */
     protected void setBtnAtrr(JButton btn)
     {
@@ -298,7 +298,7 @@ public class LuckTitlePanel extends JPanel
 
     /**
      * <p>获取面板所在的窗体</p>
-     * 
+     *
      * <p>get parent window</p>
      *
      * @return

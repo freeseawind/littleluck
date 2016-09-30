@@ -59,6 +59,8 @@ public class LuckPasswordFieldUI extends BasicPasswordFieldUI
         c.removeFocusListener(handle);
 
         handle = null;
+
+        borderShape = null;
     }
 
     /**

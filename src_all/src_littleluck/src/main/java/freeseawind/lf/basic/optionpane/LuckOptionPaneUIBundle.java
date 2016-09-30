@@ -44,6 +44,14 @@ public class LuckOptionPaneUIBundle extends LuckResourceBundle
      */
     public static final String ERROR_ICON = "OptionPane.errorIcon";
 
+    public void uninitialize()
+    {
+        UIManager.put(QUESTION_ICON, null);
+        UIManager.put(WARNING_ICON, null);
+        UIManager.put(INFORMATION_ICON, null);
+        UIManager.put(ERROR_ICON, null);
+    }
+
     @Override
     protected void loadImages(UIDefaults table)
     {

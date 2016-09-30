@@ -1,12 +1,12 @@
 package freeseawind.lf.basic.scroll;
 
 import java.awt.Color;
-import java.awt.Dimension;
 
 import javax.swing.BorderFactory;
 import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
+import javax.swing.plaf.DimensionUIResource;
 
 import freeseawind.lf.cfg.LuckResourceBundle;
 import freeseawind.lf.utils.LuckRes;
@@ -77,9 +77,9 @@ public class LuckScrollUIBundle extends LuckResourceBundle
     @Override
     protected void installBorder(UIDefaults table)
     {
-        table.put(SCROLLBAR_BORDER, BorderFactory.createEmptyBorder());
+        table.put(SCROLLBAR_BORDER, getBorderRes(BorderFactory.createEmptyBorder()));
 
-        table.put(SCROLLPANE_BORDER, new LineBorder(new Color(200, 200, 200)));
+        table.put(SCROLLPANE_BORDER, getBorderRes(new LineBorder(new Color(200, 200, 200))));
     }
 
     @Override
@@ -93,8 +93,8 @@ public class LuckScrollUIBundle extends LuckResourceBundle
     {
         table.put(SCROLLBAR_WIDTH, 9);
 
-        table.put(SCROLLBAR_BACKGROUND, Color.WHITE);
+        table.put(SCROLLBAR_BACKGROUND, getColorRes(Color.WHITE));
 
-        table.put(MINIMUMTHUMBSIZE, new Dimension(48, 48));
+        table.put(MINIMUMTHUMBSIZE, new DimensionUIResource(48, 48));
     }
 }

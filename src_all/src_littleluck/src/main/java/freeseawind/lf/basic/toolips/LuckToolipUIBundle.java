@@ -10,12 +10,11 @@ import freeseawind.lf.cfg.LuckResourceBundle;
 import freeseawind.lf.utils.LuckRes;
 
 /**
- * <p>
+ * <pre>
  * LuckToolipUI资源绑定类。
- * </p>
- * <p>
+ *
  * A LuckToolipUI resource bundle class.
- * </p>
+ * </pre>
  *
  * @author freeseawind@github
  * @version 1.0
@@ -25,13 +24,19 @@ public class LuckToolipUIBundle extends LuckResourceBundle
 {
     /**
      * <p>JToolip边框属性key</p>
+     *
      * <p>JToolip border properties.</p>
      */
     public static final String BORDER = "ToolTip.border";
 
     /**
-     * <p>[LittleLuck属性]JToolip背景图片属性key。<p>
-     * <p>[LittLeLuck Attributes] JToolip background image properties.</p>
+     * <p>
+     * <strong>[LittleLuck属性]</strong>JToolip背景图片属性key。
+     * <p>
+     *
+     * <p>
+     * <strong>[LittLeLuck Attributes]</strong> JToolip background image properties.
+     * </p>
      */
     public static final String BGIMG = "ToolTip.bgImg";
 
@@ -50,7 +55,7 @@ public class LuckToolipUIBundle extends LuckResourceBundle
         // Because it is not applied directly on JToolip translucent shadow
         // border, where border use only as an internal border, spacing,
         // according to the background image to set the shadow.
-        UIManager.put(BORDER, new EmptyBorder(new Insets(6, 8, 8, 8)));
+        UIManager.put(BORDER, getBorderRes(new EmptyBorder(new Insets(6, 8, 8, 8))));
     }
 
     @Override
