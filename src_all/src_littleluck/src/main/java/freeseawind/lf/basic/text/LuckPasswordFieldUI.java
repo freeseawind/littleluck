@@ -8,6 +8,7 @@ import javax.swing.plaf.ComponentUI;
 import javax.swing.plaf.basic.BasicPasswordFieldUI;
 
 import freeseawind.lf.border.LuckBorderField;
+import freeseawind.lf.border.LuckShapeBorder;
 import freeseawind.lf.event.LuckBorderFocusHandle;
 
 /**
@@ -40,13 +41,10 @@ public class LuckPasswordFieldUI extends BasicPasswordFieldUI
     {
         super.installUI(c);
 
-        borderShape = new RoundRectangle2D.Float(0, 0, 0, 0, 8, 8);
-
-        handle = createFocusHandle();
-
-        c.addMouseListener(handle);
-
-        c.addFocusListener(handle);
+        if(c.getBorder() instanceof LuckShapeBorder)
+        {
+            installFocusListener(c);
+        }
     }
 
     @Override
@@ -54,12 +52,45 @@ public class LuckPasswordFieldUI extends BasicPasswordFieldUI
     {
         super.uninstallUI(c);
 
-        c.removeMouseListener(handle);
+        uninstallFocusListener(c);
+    }
+    
+    /**
+     * <pre>
+     * 初始化边框焦点监听器
+     *
+     * Initializes the border focus listener
+     * <pre>
+     *
+     * @param c
+     */
+    protected void installFocusListener(JComponent c)
+    {
+        handle = createFocusHandle();
 
-        c.removeFocusListener(handle);
+        borderShape = new RoundRectangle2D.Float(0, 0, 0, 0, 8, 8);
 
-        handle = null;
+        c.addMouseListener(handle);
 
+        c.addFocusListener(handle);
+    }
+    
+    /**
+     * remove focus Listener
+     *
+     * @param c
+     */
+    protected void uninstallFocusListener(JComponent c)
+    {
+        if(handle != null)
+        {
+            c.removeMouseListener(handle);
+
+            c.removeFocusListener(handle);
+
+            handle = null;
+        }
+        
         borderShape = null;
     }
 

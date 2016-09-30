@@ -9,6 +9,7 @@ import javax.swing.AbstractButton;
 import javax.swing.ButtonModel;
 import javax.swing.Icon;
 import javax.swing.UIManager;
+import static freeseawind.lf.basic.togglebutton.LuckToggleButtonUIBundle.*;
 
 /**
  * <p>复选框图标实现类, 此类参考Beautyeye的实现。</p>
@@ -39,26 +40,26 @@ public class LuckCheckBoxIcon implements Icon, Serializable
         {
             if(isPressed)
             {
-                image = (Image) UIManager.get(LuckToggleButtonUIBundle.CHECKBOX_UNPRESSED_IMG);
+                image = (Image) UIManager.get(CHECKBOX_UNPRESSED_IMG);
             }
             else
             {
-                image = (Image) UIManager.get(LuckToggleButtonUIBundle.CHECKBOX_PRESSED_IMG);
+                image = (Image) UIManager.get(CHECKBOX_PRESSED_IMG);
             }
         }
         else
         {
             if(isRollver && !isPressed)
             {
-                image = (Image) UIManager.get(LuckToggleButtonUIBundle.CHECKBOX_ROLLVER_IMG);
+                image = (Image) UIManager.get(CHECKBOX_ROLLVER_IMG);
             }
             else if(isRollver && isPressed)
             {
-                image = (Image) UIManager.get(LuckToggleButtonUIBundle.CHECKBOX_UNROLLVER_IMG);
+                image = (Image) UIManager.get(CHECKBOX_UNROLLVER_IMG);
             }
             else
             {
-                image = (Image) UIManager.get(LuckToggleButtonUIBundle.CHECKBOX_NORMAL_IMG);
+                image = (Image) UIManager.get(CHECKBOX_NORMAL_IMG);
             }
         }
 

@@ -52,6 +52,13 @@ public class LuckRadioIcon implements Icon, Serializable
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_OFF);
     }
 
+    /**
+     * 
+     * @param g2d
+     * @param x
+     * @param y
+     * @param isFocus
+     */
     protected void drawOval(Graphics2D g2d, int x, int y,  boolean isFocus)
     {
         if(!isFocus)
@@ -67,6 +74,12 @@ public class LuckRadioIcon implements Icon, Serializable
                 getIconHeight() - 3);
     }
 
+    /**
+     * 
+     * @param g2d
+     * @param x
+     * @param y
+     */
     protected void drawOvalShadow(Graphics2D g2d, int x, int y)
     {
         g2d.setColor(UIManager.getColor(LuckToggleButtonUIBundle.RADIO_SHADOW_COLOR));
@@ -75,6 +88,13 @@ public class LuckRadioIcon implements Icon, Serializable
                 getIconWidth() - 5, getIconHeight() - 5);
     }
 
+    /**
+     * draw selected oval
+     * 
+     * @param g2d
+     * @param x
+     * @param y
+     */
     protected void fillOval(Graphics2D g2d, int x, int y)
     {
         g2d.setColor(UIManager.getColor(LuckToggleButtonUIBundle.RADIO_CHECK_COLOR));
