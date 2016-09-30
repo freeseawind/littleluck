@@ -169,7 +169,7 @@ public class LuckMenuUIBundle extends LuckResourceBundle
 
         table.put(MENU_BACKGROUND, getColorRes(Color.WHITE));
 
-        table.put(MENUBAR_BACKGROUND, getColorRes(Color.WHITE));
+        table.put(MENUBAR_BACKGROUND, Color.WHITE);
     }
 
     @Override

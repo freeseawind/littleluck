@@ -11,7 +11,7 @@ import java.awt.geom.RectangularShape;
 import javax.swing.border.AbstractBorder;
 
 /**
- * 具有焦点处理的线型边框
+ * Support focus change borders. Adds focus listener to change the border color.
  *
  * @author freeseawind@github
  * @version 1.0
@@ -106,15 +106,16 @@ public abstract class LuckShapeBorder extends AbstractBorder
     }
 
     /**
-     * 获取边框属性
+     * get border field.
      *
-     * @param c 边框所属容器类
-     * @return 当前边框属性
+     * @param c 
+     * @return border field.
      */
     public abstract LuckBorderField getBorderField(Component c);
 
     /**
-     * 返回边框形状
+     * get border shape.
+     * 
      * @param field
      * @param c
      * @return
@@ -130,7 +131,8 @@ public abstract class LuckShapeBorder extends AbstractBorder
     }
 
     /**
-     * 组件是否获取焦点
+     * component isFoucusGaind.
+     * 
      * @param field
      * @return
      */

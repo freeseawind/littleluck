@@ -37,7 +37,14 @@ public class LuckTreeUI extends BasicTreeUI
 
         LookAndFeel.installProperty(tree, "opaque", Boolean.FALSE);
     }
-
+    
+    public void uninstallUI(JComponent c)
+    {
+        super.uninstallUI(c);
+        
+        c.setOpaque(true);
+    }
+    
     /**
      * <P>使用自定义TreeCellRenderer， 去除焦点边框绘制。</p>
      *
