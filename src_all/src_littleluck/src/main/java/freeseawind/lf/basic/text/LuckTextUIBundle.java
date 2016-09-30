@@ -66,10 +66,10 @@ public class LuckTextUIBundle extends LuckResourceBundle
 
         LuckTextBorder normalBorder = new LuckTextBorder(insets);
 
-        table.put(TEXTFIELD_BORDER, getBorderRes(normalBorder));
+        table.put(TEXTFIELD_BORDER, normalBorder);
 
-        table.put(PASSWORDFIELD_BORDER, getBorderRes(normalBorder));
+        table.put(PASSWORDFIELD_BORDER, normalBorder);
 
-        table.put(FORMATTEDTEXTFIELD_BORDER, getBorderRes(normalBorder));
+        table.put(FORMATTEDTEXTFIELD_BORDER, normalBorder);
     }
 }
