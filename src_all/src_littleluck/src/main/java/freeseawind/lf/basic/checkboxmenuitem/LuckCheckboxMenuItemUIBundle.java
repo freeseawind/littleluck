@@ -5,7 +5,6 @@ import java.awt.Color;
 import javax.swing.BorderFactory;
 import javax.swing.UIDefaults;
 import javax.swing.UIManager;
-import javax.swing.plaf.IconUIResource;
 
 import freeseawind.lf.cfg.LuckResourceBundle;
 import freeseawind.lf.img.LuckIcon;
@@ -91,11 +90,11 @@ public class LuckCheckboxMenuItemUIBundle extends LuckResourceBundle
 
     /**
      * <p>
-     * [LittleLuck属性] JCheckBoxMenuItem选中时图片属性key
+     * <strong>[LittleLuck属性]</strong> JCheckBoxMenuItem选中时图片属性key
      * </p>
      *
      * <p>
-     * [LittleLuck Attributes] JCheckBoxMenuItem image properties when is selected.
+     * <strong>[LittleLuck Attributes]</strong> JCheckBoxMenuItem image properties when is selected.
      * </p>
      */
     public static final String NORMAL_IMG = "CheckBoxMenuItem.checkNormlIcon";
@@ -156,23 +155,23 @@ public class LuckCheckboxMenuItemUIBundle extends LuckResourceBundle
     {
         table.put(SELECTIONBG, getColorRes(60, 175, 210));
 
-        table.put(SELECTIONFG, Color.WHITE);
+        table.put(SELECTIONFG, getColorRes(Color.WHITE));
 
-        table.put(BACKGROUND, Color.WHITE);
+        table.put(BACKGROUND, getColorRes(Color.WHITE));
     }
 
     @Override
     protected void installBorder(UIDefaults table)
     {
-        table.put(BORDER, BorderFactory.createEmptyBorder());
+        table.put(BORDER, getBorderRes(BorderFactory.createEmptyBorder()));
     }
 
     @Override
     protected void loadImages(UIDefaults table)
     {
-        table.put(CHECK_ICON, new LuckCheckboxIcon());
+        table.put(CHECK_ICON, getIconRes(new LuckCheckboxIcon()));
 
-        table.put(ARROW_ICON, new IconUIResource(new LuckIcon(0, 0)));
+        table.put(ARROW_ICON, getIconRes(new LuckIcon(0, 0)));
 
         table.put(NORMAL_IMG, LuckRes.getImage("menu/checkbox_normal.png"));
 

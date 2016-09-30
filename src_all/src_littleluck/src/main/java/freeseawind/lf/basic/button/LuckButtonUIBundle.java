@@ -35,7 +35,7 @@ public class LuckButtonUIBundle extends LuckResourceBundle
      * <p>
      * <strong>[LittleLuck属性]</strong> 按钮颜色配置信息属性key，默认蓝色按钮
      * </p>
-     * 
+     *
      * <p>
      * <strong>[LittLeLuck Attributes]</strong> Button color configuration information attribute
      * key, the default blue button.
@@ -48,7 +48,7 @@ public class LuckButtonUIBundle extends LuckResourceBundle
      * <p>
      * Button背景颜色属性key, 默认白色
      * </p>
-     * 
+     *
      * <p>
      * Button Background color property, Default white.
      * </p>
@@ -57,10 +57,21 @@ public class LuckButtonUIBundle extends LuckResourceBundle
 
     /**
      * <p>
+     * Button字体颜色属性key, 默认白色
+     * </p>
+     *
+     * <p>
+     * Button font color property, Default white.
+     * </p>
+     */
+    public static final String FOREGROUND = "Button.foreground";
+
+    /**
+     * <p>
      * <strong>[LittleLuck属性]</strong> 如需要在有图标的时候仍绘制背景, 使用如下代码:
      * <code>button.putClientProperty(IS_PAINTBG, "");</code>
      * </p>
-     * 
+     *
      * <p>
      * <strong>[LittLeLuck Attributes]</strong> If you need to draw the background when there is
      * an icon, use the following code:
@@ -79,7 +90,7 @@ public class LuckButtonUIBundle extends LuckResourceBundle
     @Override
     protected void installBorder(UIDefaults table)
     {
-        table.put(BORDER, new EmptyBorder(3, 14, 3, 15));
+        table.put(BORDER, getBorderRes(new EmptyBorder(3, 14, 3, 15)));
     }
 
     @Override
@@ -87,6 +98,6 @@ public class LuckButtonUIBundle extends LuckResourceBundle
     {
         table.put(COLOR_INFO, LuckButtonColorFactory.getBlueBtnInfo());
 
-        table.put(BACKGROUND, Color.WHITE);
+        table.put(BACKGROUND, getColorRes(Color.WHITE));
     }
 }

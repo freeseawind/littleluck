@@ -175,7 +175,7 @@ public class LuckButtonUI extends BasicButtonUI
 
     /**
      * check if use the default button style.
-     * 
+     *
      * @param b
      * @return default style return true, otherwise return false.
      */
@@ -188,7 +188,7 @@ public class LuckButtonUI extends BasicButtonUI
         {
             return false;
         }
-        
+
         return true;
     }
 
