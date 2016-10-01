@@ -3,6 +3,8 @@ package freeseawind.lf.basic.button;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 
 import javax.swing.AbstractButton;
 import javax.swing.ButtonModel;
@@ -10,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.LookAndFeel;
 import javax.swing.UIManager;
+import javax.swing.plaf.ColorUIResource;
 import javax.swing.plaf.ComponentUI;
 import javax.swing.plaf.basic.BasicButtonUI;
 
@@ -70,6 +73,7 @@ import javax.swing.plaf.basic.BasicButtonUI;
 public class LuckButtonUI extends BasicButtonUI
 {
     private LuckButtonColorInfo btnColorInfo;
+    private PropertyChangeListener listener;
 
     public static ComponentUI createUI(JComponent c)
     {
@@ -88,17 +92,25 @@ public class LuckButtonUI extends BasicButtonUI
 
         // 使用配置颜色替换默认字体颜色
         // Replace the default font color with the configured color
-        if(checkIsPaintBg(b))
+        if(b.getForeground() instanceof ColorUIResource)
         {
             b.setForeground(btnColorInfo.getFontColor());
         }
+        
+        listener = new ButtonPropertyChangeListener();
+        
+        b.addPropertyChangeListener(listener);
     }
 
     public void uninstallUI(JComponent c)
     {
         super.uninstallUI(c);
+        
+        c.removePropertyChangeListener(listener);
 
         btnColorInfo = null;
+        
+        listener = null;
     }
 
     public void paint(Graphics g, JComponent c)
@@ -181,10 +193,14 @@ public class LuckButtonUI extends BasicButtonUI
      */
     private boolean checkIsPaintBg(AbstractButton b)
     {
+        if (!b.isContentAreaFilled())
+        {
+            return false;
+        }
+        
         Object isPaintBg = b.getClientProperty(LuckButtonUIBundle.IS_PAINTBG);
 
-        if (!b.isContentAreaFilled()
-                || (b.getIcon() != null && isPaintBg == null))
+        if (b.getIcon() != null && isPaintBg == null)
         {
             return false;
         }
@@ -200,5 +216,30 @@ public class LuckButtonUI extends BasicButtonUI
     public void setBtnColorInfo(LuckButtonColorInfo btnColorInfo)
     {
         this.btnColorInfo = btnColorInfo;
+    }
+    
+    public class ButtonPropertyChangeListener implements PropertyChangeListener
+    {
+        private static final String CONTENTAREAFILLED = "contentAreaFilled";
+        
+        @Override
+        public void propertyChange(PropertyChangeEvent evt)
+        {
+            if (evt.getPropertyName().equals(CONTENTAREAFILLED))
+            {
+                JButton btn = (JButton) evt.getSource();
+
+                boolean isDefaultColor = (btn.getForeground() instanceof ColorUIResource);
+
+                if (!checkIsPaintBg(btn) && isDefaultColor)
+                {
+                    btn.setForeground(UIManager.getColor(LuckButtonUIBundle.FOREGROUND));
+                }
+                else
+                {
+                    btn.setForeground(btnColorInfo.getFontColor());
+                }
+            }
+        }
     }
 }

@@ -1,5 +1,7 @@
 package freeseawind.lf.basic.text;
 
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.geom.RectangularShape;
 import java.awt.geom.RoundRectangle2D;
 
@@ -53,6 +55,14 @@ public class LuckPasswordFieldUI extends BasicPasswordFieldUI
         super.uninstallUI(c);
 
         uninstallFocusListener(c);
+    }
+    
+    protected void paintBackground(Graphics g)
+    {
+        JComponent editor = getComponent(); 
+        ((Graphics2D)g).setColor(editor.getBackground());
+        borderShape.setFrame(0, 0, editor.getWidth() - 1, editor.getHeight() - 1);
+        ((Graphics2D)g).fill(borderShape);
     }
     
     /**

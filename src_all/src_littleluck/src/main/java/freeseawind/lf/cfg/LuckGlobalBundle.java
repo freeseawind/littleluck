@@ -3,9 +3,13 @@ package freeseawind.lf.cfg;
 import java.awt.Color;
 
 import javax.swing.UIDefaults;
+import javax.swing.UIManager;
 
 /**
- * 全局资源绑定类
+ * <p>全局资源绑定类</p>
+ * 
+ * <p>Global resource bundle.</p>
+ * 
  * @author freeseawind@github
  * @version 1.0
  *
@@ -13,34 +17,59 @@ import javax.swing.UIDefaults;
 public class LuckGlobalBundle extends LuckResourceBundle
 {
     /**
-     *  [自定义属性]应用默认图标。
+     * <p><strong>[LittleLuck属性]</strong>窗体默认图标。</p>
+     * 
+     * <p><strong>[LittLeLuck Attributes]</strong> Default window icon properties.</p>
      */
     public static final String APPLICATION_ICON = "Application.icon";
 
     /**
-     *  [自定义属性]应用默认标题。
+     * <p><strong>[LittleLuck属性]</strong>窗体默认标题。</p>
+     * 
+     * <p><strong>[LittLeLuck Attributes]</strong> Default window title properties.</p>
      */
     public static final String APPLICATION_TITLE = "Application.title";
 
     /**
-     *[自定义属性] 完全透明。
+     * <p><strong>[LittleLuck属性]</strong>窗体透明颜色。</p>
+     * 
+     * <p><strong>[LittLeLuck Attributes]</strong> Translucent color properties.</p>
      */
     public static final String TRANSLUCENT_COLOR = "translucent.color";
 
     /**
-     * 面板背景颜色属性key。
+     * <p><strong>[LittleLuck属性]</strong>面板背景颜色属性key。</p>
+     * 
+     * <p>
+     * <strong>[LittLeLuck Attributes]</strong> Panel background color properties.
+     * </p>
      */
     public static final String PANEL_BACKGROUND = "Panel.background";
-    
+
     /**
-     * 颜色选择器背景颜色属性key。
+     * <p>
+     * <strong>[LittleLuck属性]</strong>颜色选择器背景颜色属性key。
+     * </p>
+     * 
+     * <p>
+     * <strong>[LittLeLuck Attributes]</strong> ColorChooser background color properties.
+     * </p>
      */
     public static final String COLORCHOOSERUI_BACKGROUND = "ColorChooserUI.background";
+    
+    public void uninitialize()
+    {
+        UIManager.put(TRANSLUCENT_COLOR, null);
+        
+        UIManager.put(APPLICATION_ICON, null);
+        
+        UIManager.put(APPLICATION_TITLE, null);
+    }
 
     @Override
     protected void installColor(UIDefaults table)
     {
-        table.put(TRANSLUCENT_COLOR, new Color(0, 0, 0, 0));
+        table.put(TRANSLUCENT_COLOR, getColorRes(0, 0, 0, 0));
     }
 
     @Override
@@ -54,8 +83,8 @@ public class LuckGlobalBundle extends LuckResourceBundle
     {
         table.put(APPLICATION_TITLE, "");
 
-        table.put(PANEL_BACKGROUND, Color.WHITE);
-        
-        table.put(COLORCHOOSERUI_BACKGROUND, Color.WHITE);
+        table.put(PANEL_BACKGROUND, getColorRes(Color.WHITE));
+
+        table.put(COLORCHOOSERUI_BACKGROUND, getColorRes(Color.WHITE));
     }
 }

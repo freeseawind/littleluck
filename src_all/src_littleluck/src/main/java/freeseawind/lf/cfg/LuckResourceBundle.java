@@ -14,9 +14,10 @@ import javax.swing.plaf.IconUIResource;
 import freeseawind.lf.utils.LuckRes;
 
 /**
- * UI初始化资源绑定类
+ * UI resource bundle class.
  *
  * @author freeseawind@github
+ * @version 1.0
  *
  */
 public abstract class LuckResourceBundle
@@ -38,6 +39,7 @@ public abstract class LuckResourceBundle
     
     /**
      * <p>卸载观感时移除资源。</p>
+     * 
      * <p>when uninstall LookAndFeel remove resource. </p>
      */
     public void uninitialize()

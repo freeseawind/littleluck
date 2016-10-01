@@ -27,9 +27,12 @@ import freeseawind.lf.basic.toolips.LuckToolipUIBundle;
 import freeseawind.lf.basic.tree.LuckTreeUIBundle;
 
 /**
- * 工厂类
+ * A <code>LuckResConfig</code> implement class.
  *
+ * @see LuckResConfig
+ * 
  * @author freeseawind@github
+ * @version 1.0
  *
  */
 public class LuckResConfigImpl implements LuckResConfig
@@ -146,7 +149,7 @@ public class LuckResConfigImpl implements LuckResConfig
 
     /**
      *
-     * @return RootPanelUI资源绑定信息
+     * @return RootPanelUI resource bundle object.
      */
     protected LuckResourceBundle getRootPanelUIBundle()
     {
@@ -155,7 +158,7 @@ public class LuckResConfigImpl implements LuckResConfig
 
     /**
      *
-     * @return InternalFrameUI资源绑定信息
+     * @return InternalFrameUI resource bundle object.
      */
     protected LuckResourceBundle getInternalFrameUIBundle()
     {
@@ -163,7 +166,7 @@ public class LuckResConfigImpl implements LuckResConfig
     }
 
     /**
-     * @return OptionPanelUI资源绑定信息
+     * @return OptionPanelUI resource bundle object.
      */
     protected LuckResourceBundle getOptionPanelUIBundle()
     {
@@ -171,7 +174,7 @@ public class LuckResConfigImpl implements LuckResConfig
     }
 
     /**
-     * @return ButtonUI资源绑定信息
+     * @return ButtonUI resource bundle object.
      */
     protected LuckResourceBundle getButtonUIBundle()
     {
@@ -179,7 +182,7 @@ public class LuckResConfigImpl implements LuckResConfig
     }
 
     /**
-     * @return ToggleButtonUI资源绑定信息
+     * @return ToggleButtonUI resource bundle object.
      */
     protected LuckResourceBundle getToggleButtonUIBundle()
     {
@@ -187,7 +190,7 @@ public class LuckResConfigImpl implements LuckResConfig
     }
 
     /**
-     * @return 文本控件UI资源绑定信息
+     * @return 文本控件UI resource bundle object.
      */
     protected LuckResourceBundle getTextUIBundle()
     {
@@ -196,7 +199,7 @@ public class LuckResConfigImpl implements LuckResConfig
 
     /**
      *
-     * @return 下拉列表UI资源绑定信息
+     * @return 下拉列表UI resource bundle object.
      */
     protected LuckResourceBundle getComboboxUIBundle()
     {
@@ -205,7 +208,7 @@ public class LuckResConfigImpl implements LuckResConfig
 
     /**
      *
-     * @return PopupMenuUI资源绑定信息
+     * @return PopupMenuUI resource bundle object.
      */
     protected LuckResourceBundle getPopupMenuUIBundle()
     {
@@ -214,7 +217,7 @@ public class LuckResConfigImpl implements LuckResConfig
 
     /**
      *
-     * @return TabbedPaneUI资源绑定信息
+     * @return TabbedPaneUI resource bundle object.
      */
     protected LuckResourceBundle getTabbedPaneUIBundle()
     {
@@ -223,7 +226,7 @@ public class LuckResConfigImpl implements LuckResConfig
 
     /**
      *
-     * @return MenuUI资源绑定信息
+     * @return MenuUI resource bundle object.
      */
     protected LuckResourceBundle getMenuUIBundle()
     {
@@ -232,7 +235,7 @@ public class LuckResConfigImpl implements LuckResConfig
 
     /**
      * 
-     * @return MenItemUI资源绑定信息
+     * @return MenItemUI resource bundle object.
      */
     protected LuckResourceBundle getMenItemUIBundle()
     {
@@ -241,7 +244,7 @@ public class LuckResConfigImpl implements LuckResConfig
 
     /**
      * 
-     * @return CheckboxMenItemUI资源绑定信息
+     * @return CheckboxMenItemUI resource bundle object.
      */
     protected LuckResourceBundle getCheckboxMenItemUIBundle()
     {
@@ -250,7 +253,7 @@ public class LuckResConfigImpl implements LuckResConfig
 
     /**
      * 
-     * @return RadioBtnMenItemUI资源绑定信息
+     * @return RadioBtnMenItemUI resource bundle object.
      */
     protected LuckResourceBundle getRadioBtnMenItemUIBundle()
     {
@@ -259,7 +262,7 @@ public class LuckResConfigImpl implements LuckResConfig
 
     /**
      *
-     * @return ScrollUI资源绑定信息
+     * @return ScrollUI resource bundle object.
      */
     protected LuckResourceBundle getScrollUIBundle()
     {
@@ -268,7 +271,7 @@ public class LuckResConfigImpl implements LuckResConfig
 
     /**
      *
-     * @return TreeUI资源绑定信息
+     * @return TreeUI resource bundle object.
      */
     protected LuckResourceBundle getTreeUIBundle()
     {
@@ -277,7 +280,7 @@ public class LuckResConfigImpl implements LuckResConfig
 
     /**
      *
-     * @return ListUI资源绑定信息
+     * @return ListUI resource bundle object.
      */
     protected LuckResourceBundle getListUIBundle()
     {
@@ -286,7 +289,7 @@ public class LuckResConfigImpl implements LuckResConfig
 
     /**
      *
-     * @return ToolipUI资源绑定信息
+     * @return ToolipUI resource bundle object.
      */
     protected LuckResourceBundle getToolipUIBundle()
     {
@@ -295,7 +298,7 @@ public class LuckResConfigImpl implements LuckResConfig
 
     /**
      *
-     * @return SpinnerUI资源绑定信息
+     * @return SpinnerUI resource bundle object.
      */
     protected LuckResourceBundle getSpinnerUIBundle()
     {
@@ -304,7 +307,7 @@ public class LuckResConfigImpl implements LuckResConfig
 
     /**
      *
-     * @return SliderUI资源绑定信息
+     * @return SliderUI resource bundle object.
      */
     protected LuckResourceBundle getSliderUIBundle()
     {
@@ -313,7 +316,7 @@ public class LuckResConfigImpl implements LuckResConfig
 
     /**
      *
-     * @return TableUI资源绑定信息
+     * @return TableUI resource bundle object.
      */
     protected LuckResourceBundle getTableUIBundle()
     {
@@ -322,7 +325,7 @@ public class LuckResConfigImpl implements LuckResConfig
 
     /**
      *
-     * @return ProgressBarUI资源绑定信息
+     * @return ProgressBarUI resource bundle object.
      */
     protected LuckResourceBundle getProgressBarUIBundle()
     {
@@ -331,7 +334,7 @@ public class LuckResConfigImpl implements LuckResConfig
 
     /**
      * 
-     * @return FileChooserUI资源绑定信息
+     * @return FileChooserUI resource bundle object.
      */
     protected LuckResourceBundle getFileChooserUIBundle()
     {
@@ -340,7 +343,7 @@ public class LuckResConfigImpl implements LuckResConfig
     
     /**
      * 
-     * @return SplitPaneUI资源绑定信息
+     * @return SplitPaneUI resource bundle object.
      */
     protected LuckResourceBundle getSplitPaneUIBundle()
     {
