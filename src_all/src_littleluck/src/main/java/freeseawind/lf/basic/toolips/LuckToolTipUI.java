@@ -56,8 +56,6 @@ public class LuckToolTipUI extends BasicToolTipUI
         super.uninstallUI(c);
 
         np = null;
-
-        c.setOpaque(true);
     }
 
     public void paint(Graphics g, JComponent c)

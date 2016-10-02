@@ -39,14 +39,6 @@ public class LuckPopupMenuUI extends BasicPopupMenuUI
         super.installUI(c);
     }
 
-    @Override
-    protected void uninstallDefaults()
-    {
-        super.uninstallDefaults();
-
-        popupMenu.setBorder(null);
-    }
-
     public void installDefaults()
     {
         super.installDefaults();

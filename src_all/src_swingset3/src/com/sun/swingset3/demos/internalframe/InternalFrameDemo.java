@@ -238,6 +238,7 @@ public class InternalFrameDemo extends JPanel {
         
 //        palette.setContentPane(new LuckJPanel());
         palette.putClientProperty("JInternalFrame.isPalette", Boolean.TRUE);
+        palette.getContentPane().setBackground(Color.WHITE);
         palette.getContentPane().setLayout(new BorderLayout());
         palette.setBounds(PALETTE_X, PALETTE_Y, PALETTE_WIDTH, PALETTE_HEIGHT);
         palette.setResizable(true);

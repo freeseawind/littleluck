@@ -4,11 +4,8 @@ import java.awt.Dimension;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
-import javax.swing.UIManager;
 import javax.swing.plaf.ComponentUI;
 import javax.swing.plaf.basic.BasicCheckBoxMenuItemUI;
-
-import freeseawind.lf.basic.radiomenuitem.LuckRadioBtnMenuItemUIBundle;
 
 /**
  * <pre>
@@ -33,17 +30,6 @@ public class LuckCheckBoxMenuItemUI extends BasicCheckBoxMenuItemUI
     public static ComponentUI createUI(JComponent c)
     {
         return new LuckCheckBoxMenuItemUI();
-    }
-
-    @Override
-    public void uninstallUI(JComponent c)
-    {
-        super.uninstallUI(c);
-
-        c.setBackground(
-                UIManager.getColor(LuckRadioBtnMenuItemUIBundle.BACKGROUND));
-
-        c.setOpaque(true);
     }
 
     /**

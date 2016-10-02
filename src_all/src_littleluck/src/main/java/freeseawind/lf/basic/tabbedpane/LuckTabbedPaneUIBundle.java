@@ -164,11 +164,11 @@ public class LuckTabbedPaneUIBundle extends LuckResourceBundle
     @Override
     protected void installOther(UIDefaults table)
     {
-        UIManager.put(CONTENTOPAQUE, false);
+        UIManager.put(CONTENTOPAQUE, Boolean.FALSE);
 
-        UIManager.put(OPAQUE, true);
+        UIManager.put(OPAQUE, Boolean.TRUE);
 
-        UIManager.put(TABSOVERLAPBORDER, false);
+        UIManager.put(TABSOVERLAPBORDER, Boolean.FALSE);
 
         UIManager.put(SELECTEDTABPADINSETS, new InsetsUIResource(0, 0, 0, 0));
 

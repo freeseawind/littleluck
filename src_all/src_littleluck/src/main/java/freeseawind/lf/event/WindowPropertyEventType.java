@@ -2,6 +2,7 @@ package freeseawind.lf.event;
 
 /**
  * 窗体属性事件常量
+ * 
  * @author freeseawind@github
  * @version 1.0
  */

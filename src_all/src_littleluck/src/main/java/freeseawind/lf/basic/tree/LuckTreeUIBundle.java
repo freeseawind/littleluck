@@ -111,15 +111,15 @@ public class LuckTreeUIBundle extends LuckResourceBundle
     @Override
     protected void installColor(UIDefaults table)
     {
-        UIManager.put(SELECTIONBACKGROUND, getColorRes(171, 225, 235));
+        table.put(SELECTIONBACKGROUND, getColorRes(171, 225, 235));
 
-        UIManager.put(SELECTIONFOREGROUND, Color.WHITE);
+        table.put(SELECTIONFOREGROUND, getColorRes(Color.WHITE));
     }
 
     @Override
     protected void installBorder(UIDefaults table)
     {
-        UIManager.put(EDITORBORDER, new LineBorder(new Color(3, 158, 211)));
+        table.put(EDITORBORDER, getBorderRes(new LineBorder(new Color(3, 158, 211))));
     }
 
     @Override
@@ -139,6 +139,6 @@ public class LuckTreeUIBundle extends LuckResourceBundle
     @Override
     protected void installOther(UIDefaults table)
     {
-        UIManager.put(PAINTLINES, false);
+        table.put(PAINTLINES, Boolean.FALSE);
     }
 }

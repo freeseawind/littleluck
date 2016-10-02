@@ -4,7 +4,6 @@ import java.awt.Color;
 
 import javax.swing.ImageIcon;
 import javax.swing.UIDefaults;
-import javax.swing.plaf.IconUIResource;
 
 import freeseawind.lf.cfg.LuckResourceBundle;
 import freeseawind.lf.utils.LuckRes;
@@ -60,10 +59,10 @@ public class LuckTableUIBundle extends LuckResourceBundle
     {
         ImageIcon ascIcon = new ImageIcon(LuckRes.getImage("table/asc.png"));
 
-        table.put(ASC_ICON, new IconUIResource(ascIcon));
+        table.put(ASC_ICON, getIconRes(ascIcon));
 
         ImageIcon descIcon = new ImageIcon(LuckRes.getImage("table/desc.png"));
 
-        table.put(DESC_ICON, new IconUIResource(descIcon));
+        table.put(DESC_ICON, getIconRes(descIcon));
     }
 }

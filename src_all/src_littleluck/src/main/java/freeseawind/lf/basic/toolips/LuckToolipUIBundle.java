@@ -55,12 +55,12 @@ public class LuckToolipUIBundle extends LuckResourceBundle
         // Because it is not applied directly on JToolip translucent shadow
         // border, where border use only as an internal border, spacing,
         // according to the background image to set the shadow.
-        UIManager.put(BORDER, getBorderRes(new EmptyBorder(new Insets(6, 8, 8, 8))));
+        table.put(BORDER, getBorderRes(new EmptyBorder(new Insets(6, 8, 8, 8))));
     }
 
     @Override
     protected void loadImages(UIDefaults table)
     {
-        UIManager.put(BGIMG, LuckRes.getImage("toolip/shadow_border.9.png"));
+        table.put(BGIMG, LuckRes.getImage("toolip/shadow_border.9.png"));
     }
 }

@@ -40,13 +40,7 @@ public class LuckSpinnerUI extends BasicSpinnerUI
     {
         super.installUI(c);
     }
-
-    @Override
-    public void uninstallUI(JComponent c)
-    {
-        super.uninstallUI(c);
-    }
-
+    
     protected JComponent createEditor()
     {
         JComponent editor = super.createEditor();

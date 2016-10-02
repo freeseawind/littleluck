@@ -33,12 +33,4 @@ public class LuckScrollPaneUI extends BasicScrollPaneUI
 
         LookAndFeel.installProperty(scrollpane, "opaque", Boolean.FALSE);
     }
-
-    @Override
-    protected void uninstallDefaults(JScrollPane scrollpane)
-    {
-        super.uninstallDefaults(scrollpane);
-
-        scrollpane.setOpaque(true);
-    }
 }

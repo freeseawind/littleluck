@@ -30,7 +30,6 @@ public class LuckFormattedTextFieldUI extends BasicFormattedTextFieldUI
         implements LuckBorderField
 {
     protected LuckBorderFocusHandle handle;
-    private RectangularShape contentShape;
     private RectangularShape borderShape;
     private boolean isFocusGained;
 
@@ -134,16 +133,6 @@ public class LuckFormattedTextFieldUI extends BasicFormattedTextFieldUI
     public void setBorderShape(RectangularShape shape)
     {
         this.borderShape = shape;
-    }
-
-    public RectangularShape getContentShape()
-    {
-        return contentShape;
-    }
-
-    public void setContentShape(RectangularShape contentShape)
-    {
-        this.contentShape = contentShape;
     }
 
     public class LuckFocusHandler extends LuckBorderFocusHandle

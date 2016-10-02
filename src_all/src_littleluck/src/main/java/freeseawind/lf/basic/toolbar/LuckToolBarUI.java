@@ -31,12 +31,4 @@ public class LuckToolBarUI extends BasicToolBarUI
 
         LookAndFeel.installProperty(c, "opaque", Boolean.FALSE);
     }
-
-    @Override
-    public void uninstallUI(JComponent c)
-    {
-        super.uninstallUI(c);
-
-        c.setOpaque(true);
-    }
 }

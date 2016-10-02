@@ -207,8 +207,6 @@ public class LuckInternalFrameUIBundle extends LuckResourceBundle
         UIManager.put(TITLEPANEL_BG_IMG, null);
 
         UIManager.put(TITLEPANE_HEIGHT, null);
-
-        UIManager.put(LAYOUTTITLEPANEATORIGIN, Boolean.TRUE);
     }
 
     @Override
@@ -232,7 +230,7 @@ public class LuckInternalFrameUIBundle extends LuckResourceBundle
 
         UIManager.put(INACTIVETITLEBACKGROUND, getColorRes(Color.WHITE));
 
-        UIManager.put(DESKTOP_BACKGROUND, getColorRes(Color.white));
+        UIManager.put(DESKTOP_BACKGROUND, getColorRes(Color.WHITE));
     }
 
     @Override
@@ -269,6 +267,6 @@ public class LuckInternalFrameUIBundle extends LuckResourceBundle
     {
         UIManager.put(TITLEPANE_HEIGHT, 26);
 
-        UIManager.put(LAYOUTTITLEPANEATORIGIN, Boolean.FALSE);
+        table.put(LAYOUTTITLEPANEATORIGIN, Boolean.FALSE);
     }
 }

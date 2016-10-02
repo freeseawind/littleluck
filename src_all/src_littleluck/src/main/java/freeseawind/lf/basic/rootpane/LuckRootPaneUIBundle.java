@@ -7,7 +7,6 @@ import java.awt.image.BufferedImage;
 import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
-import javax.swing.plaf.ColorUIResource;
 import javax.swing.plaf.InsetsUIResource;
 
 import freeseawind.lf.border.LuckNinePatchBorder;
@@ -230,7 +229,7 @@ public class LuckRootPaneUIBundle extends LuckResourceBundle
     @Override
     protected void installColor(UIDefaults table)
     {
-        table.put(TITLE_FONT_COLOR, new ColorUIResource(Color.BLACK));
+        table.put(TITLE_FONT_COLOR, getColorRes(Color.BLACK));
     }
 
     @Override
