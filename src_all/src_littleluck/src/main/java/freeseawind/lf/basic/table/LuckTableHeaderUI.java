@@ -6,8 +6,6 @@ import javax.swing.plaf.UIResource;
 import javax.swing.plaf.basic.BasicTableHeaderUI;
 import javax.swing.table.TableCellRenderer;
 
-import sun.swing.table.DefaultTableCellHeaderRenderer;
-
 /**
  * <p>
  * TableHeaderUI实现类，使用{@link LuckTableCellHeaderRenderer}作为默认单元渲染处理器。
@@ -45,13 +43,5 @@ public class LuckTableHeaderUI extends BasicTableHeaderUI
         {
             header.setDefaultRenderer(new LuckTableCellHeaderRenderer());
         }
-    }
-
-    @Override
-    public void uninstallUI(JComponent c)
-    {
-        header.setDefaultRenderer(new DefaultTableCellHeaderRenderer());
-
-        super.uninstallUI(c);
     }
 }
