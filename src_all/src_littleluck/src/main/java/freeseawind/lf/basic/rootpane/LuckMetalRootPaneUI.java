@@ -78,6 +78,8 @@ public class LuckMetalRootPaneUI extends LuckRootPaneUI
 
         if (titlePane != null)
         {
+        	titlePane.setOpaque(true);
+        	
             layeredPane.add(titlePane, JLayeredPane.FRAME_CONTENT_LAYER);
 
             titlePane.setVisible(true);
