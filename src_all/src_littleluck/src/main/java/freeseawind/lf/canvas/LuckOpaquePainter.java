@@ -11,6 +11,8 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JComponent;
 
+import freeseawind.lf.utils.LuckPlatformUtils;
+
 
 /**
  * Opaque draw class.
@@ -36,13 +38,14 @@ public class LuckOpaquePainter
                                                                          T component,
                                                                          E canvas)
     {
+    	// 在Linux下渲染有问题
     	if(!component.isOpaque())
     	{
     	    canvas.drawComponent(g, component);
 
     		return;
     	}
-
+    	
     	paintOpaque(g, component, canvas, null);
 	}
 
@@ -92,9 +95,18 @@ public class LuckOpaquePainter
         int y = insets.top;
         int width = component.getWidth() - insets.left - insets.right;
         int height = component.getHeight() - insets.top - insets.bottom;
+        
+        int imageType = Transparency.OPAQUE;
+        
+        // @see http://stackoverflow.com/questions/24917253/java-swing-transparency-issues-under-linux
+        // 在Linux上会出现渲染问题
+        if(!LuckPlatformUtils.isWindows())
+        {
+        	imageType = Transparency.TRANSLUCENT;
+        }
 
         // 设置画布背景
-        BufferedImage contentImage = new BufferedImage(width, height, Transparency.OPAQUE);
+        BufferedImage contentImage = new BufferedImage(width, height, imageType);
 
         Graphics2D contentG2d = contentImage.createGraphics();
 

@@ -11,6 +11,7 @@ import javax.swing.JRootPane;
 import javax.swing.LookAndFeel;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
+import javax.swing.border.LineBorder;
 import javax.swing.event.MouseInputListener;
 import javax.swing.plaf.ComponentUI;
 import javax.swing.plaf.basic.BasicRootPaneUI;
@@ -19,6 +20,7 @@ import freeseawind.lf.canvas.LuckCanvas;
 import freeseawind.lf.cfg.LuckGlobalBundle;
 import freeseawind.lf.event.WindowMouseHandler;
 import freeseawind.lf.geom.LuckRectangle;
+import freeseawind.lf.utils.LuckPlatformUtils;
 
 /**
  * <p>RootPaneUI实现类， 使用完全不透明面板解决字体反走样问题。</p>
@@ -308,8 +310,16 @@ public class LuckRootPaneUI extends BasicRootPaneUI
         // 这句必须，否则会出现无法安装边框的情况
         // Sentence must, otherwise there will not be installed border situation
         root.setBorder(null);
-
-        root.setBorder(UIManager.getBorder(borderKeys[style]));
+        
+        //
+        if(LuckPlatformUtils.isWindows())
+        {
+        	root.setBorder(UIManager.getBorder(borderKeys[style]));
+        }
+        else
+        {
+        	root.setBorder(LineBorder.createBlackLineBorder());
+        }
     }
 
     /**
