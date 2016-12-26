@@ -107,7 +107,6 @@ public class LuckOpaquePainter
 
         if(shape != null)
         {
-            g2d.setComposite(AlphaComposite.Src);
             g2d.fill(shape);
             g2d.setComposite(AlphaComposite.SrcAtop);
         }

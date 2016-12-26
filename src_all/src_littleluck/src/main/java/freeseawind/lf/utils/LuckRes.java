@@ -15,11 +15,11 @@ import javax.imageio.ImageIO;
  */
 public class LuckRes
 {
-    private static ClassLoader cl;
+	private static ClassLoader cl;
 
 	static
 	{
-	    cl = LuckRes.class.getClassLoader();
+		cl = LuckRes.class.getClassLoader();
 	}
 
     /**

@@ -1,5 +1,6 @@
 package freeseawind.lf.basic.scroll;
 
+import java.awt.AlphaComposite;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -137,13 +138,27 @@ public class LuckScrollBarUI extends BasicScrollBarUI
         {
             h = h - 1;
         }
+        
+        // 增加hover效果
+        Graphics2D g2d = (Graphics2D)g;
+        
+        AlphaComposite composite = (AlphaComposite) g2d.getComposite();
+        
+        if(!isThumbRollover())
+        {
+            AlphaComposite transulent = AlphaComposite.getInstance(AlphaComposite.SRC_ATOP, 0.7f);
+            
+            g2d.setComposite(transulent);
+        }
 
         if (np != null)
         {
-            np.drawNinePatch((Graphics2D) g, 0, 0, w, h);
+            np.drawNinePatch(g2d, 0, 0, w, h);
         }
 
         g.translate(-thumbBounds.x, -thumbBounds.y);
+        
+        g2d.setComposite(composite);
     }
 
     /**

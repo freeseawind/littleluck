@@ -495,7 +495,7 @@ public class LuckTitlePanel extends JPanel
         this.np = np;
     }
 
-    protected JLabel getLabel()
+    public JLabel getLabel()
     {
         return label;
     }
