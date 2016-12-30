@@ -446,12 +446,12 @@ public class LuckTitlePanel extends JPanel
 
     public void setIcon(ImageIcon systemIcon)
     {
-        if(systemIcon == null)
-        {
-        	 label.setIcon(systemIcon);
-        	
-            return;
-        }
+		if (systemIcon == null)
+		{
+			label.setIcon(systemIcon);
+
+			return;
+		}
 
         Image image = systemIcon.getImage();
 
