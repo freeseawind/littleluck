@@ -448,6 +448,8 @@ public class LuckTitlePanel extends JPanel
     {
         if(systemIcon == null)
         {
+        	 label.setIcon(systemIcon);
+        	
             return;
         }
 
@@ -465,7 +467,7 @@ public class LuckTitlePanel extends JPanel
             systemIcon = new ImageIcon(image);
         }
 
-        this.label.setIcon(systemIcon);
+        label.setIcon(systemIcon);
     }
 
     public void setTitle(String title)
