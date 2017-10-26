@@ -1,5 +1,5 @@
 ## 简介
-littleuck是Java Swing跨平台外观(LookAndFeel)实现。 它的名字的灵感来源于我喜欢的一首歌
+littleluck是Java Swing跨平台外观(LookAndFeel)实现。 它的名字的灵感来源于我喜欢的一首歌
 [小幸运](http://bd.kuwo.cn/yinyue/7204931?from=baidu)，在这里把"它"献给所有仍在Swing奋斗的朋友。
 
 ## 功能介绍
