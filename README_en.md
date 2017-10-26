@@ -1,5 +1,5 @@
 ## Introduction
-littleuck is a cross platform Java Swing LookAndFeel. Its name inspired by a song I like [小幸运](http://bd.kuwo.cn/yinyue/7204931?from=baidu), where the "it" is dedicated to all the friends who are still struggling Swing.
+littleluck is a cross platform Java Swing LookAndFeel. Its name inspired by a song I like [小幸运](http://bd.kuwo.cn/yinyue/7204931?from=baidu), where the "it" is dedicated to all the friends who are still struggling Swing.
 
 ## Features
 * Translucent shadow window border
